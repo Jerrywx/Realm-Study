@@ -11,4 +11,5 @@
   3. Realm 是线程不安全的
  2. Creating & Initializing a Realm
   1. +defaultRealm  获取一个默认的Realm对象
+  2. +realmWithConfiguration:error: 返回指定配置的Realm对象
   
