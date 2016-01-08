@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34AF09391C3F9FDB008BDAF6 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF09361C3F9FDB008BDAF6 /* Dog.m */; };
+		34AF093A1C3F9FDB008BDAF6 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AF09381C3F9FDB008BDAF6 /* Person.m */; };
 		34C87D961C3F632A00420524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C87D951C3F632A00420524 /* main.m */; };
 		34C87D991C3F632A00420524 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C87D981C3F632A00420524 /* AppDelegate.m */; };
 		34C87D9C1C3F632A00420524 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C87D9B1C3F632A00420524 /* ViewController.m */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34AF09351C3F9FDB008BDAF6 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		34AF09361C3F9FDB008BDAF6 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		34AF09371C3F9FDB008BDAF6 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		34AF09381C3F9FDB008BDAF6 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		34C87D911C3F632A00420524 /* Realm-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C87D951C3F632A00420524 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34C87D971C3F632A00420524 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,10 +68,10 @@
 				34C87D981C3F632A00420524 /* AppDelegate.m */,
 				34C87D9A1C3F632A00420524 /* ViewController.h */,
 				34C87D9B1C3F632A00420524 /* ViewController.m */,
-				34C87D9D1C3F632A00420524 /* Main.storyboard */,
-				34C87DA01C3F632A00420524 /* Assets.xcassets */,
-				34C87DA21C3F632A00420524 /* LaunchScreen.storyboard */,
-				34C87DA51C3F632A00420524 /* Info.plist */,
+				34AF09351C3F9FDB008BDAF6 /* Dog.h */,
+				34AF09361C3F9FDB008BDAF6 /* Dog.m */,
+				34AF09371C3F9FDB008BDAF6 /* Person.h */,
+				34AF09381C3F9FDB008BDAF6 /* Person.m */,
 				34C87D941C3F632A00420524 /* Supporting Files */,
 			);
 			path = "Realm-Demo";
@@ -74,6 +80,10 @@
 		34C87D941C3F632A00420524 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34C87D9D1C3F632A00420524 /* Main.storyboard */,
+				34C87DA01C3F632A00420524 /* Assets.xcassets */,
+				34C87DA21C3F632A00420524 /* LaunchScreen.storyboard */,
+				34C87DA51C3F632A00420524 /* Info.plist */,
 				34C87D951C3F632A00420524 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -151,6 +161,8 @@
 			files = (
 				34C87D9C1C3F632A00420524 /* ViewController.m in Sources */,
 				34C87D991C3F632A00420524 /* AppDelegate.m in Sources */,
+				34AF093A1C3F9FDB008BDAF6 /* Person.m in Sources */,
+				34AF09391C3F9FDB008BDAF6 /* Dog.m in Sources */,
 				34C87D961C3F632A00420524 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +314,7 @@
 				34C87DAA1C3F632A00420524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
