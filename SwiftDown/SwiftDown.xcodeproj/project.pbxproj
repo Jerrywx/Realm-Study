@@ -12,9 +12,12 @@
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
+		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.debug.xcconfig"; sourceTree = "<group>"; };
+		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7A1E66D6E200A90FC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		307B2C7C1E66D6E200A90FC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307B2C841E66D6E300A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				307B2C791E66D6E200A90FC5 /* SwiftDown */,
 				307B2C781E66D6E200A90FC5 /* Products */,
+				AE4D8014C61A20AE630FF63C /* Pods */,
+				BB6BEB76565843C31648B73F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +79,23 @@
 			name = SupportFile;
 			sourceTree = "<group>";
 		};
+		AE4D8014C61A20AE630FF63C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */,
+				25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB6BEB76565843C31648B73F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 307B2C891E66D6E300A90FC5 /* Build configuration list for PBXNativeTarget "SwiftDown" */;
 			buildPhases = (
+				9148EFC386D60463EA28B4D5 /* [CP] Check Pods Manifest.lock */,
 				307B2C731E66D6E200A90FC5 /* Sources */,
 				307B2C741E66D6E200A90FC5 /* Frameworks */,
 				307B2C751E66D6E200A90FC5 /* Resources */,
+				0E83A50B886DE464A8107832 /* [CP] Embed Pods Frameworks */,
+				5247CF0D66FFA42DCC400300 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -104,6 +131,7 @@
 				TargetAttributes = {
 					307B2C761E66D6E200A90FC5 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = B5SJ8JYP65;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +166,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E83A50B886DE464A8107832 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5247CF0D66FFA42DCC400300 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9148EFC386D60463EA28B4D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		307B2C731E66D6E200A90FC5 /* Sources */ = {
@@ -266,9 +342,12 @@
 		};
 		307B2C8A1E66D6E300A90FC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B5SJ8JYP65;
 				INFOPLIST_FILE = SwiftDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jerry.wx.SwiftDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -278,9 +357,12 @@
 		};
 		307B2C8B1E66D6E300A90FC5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B5SJ8JYP65;
 				INFOPLIST_FILE = SwiftDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jerry.wx.SwiftDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +389,7 @@
 				307B2C8B1E66D6E300A90FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
