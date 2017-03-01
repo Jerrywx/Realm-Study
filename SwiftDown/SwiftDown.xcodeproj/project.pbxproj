@@ -7,11 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		307B2C7B1E66D6E200A90FC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B2C7A1E66D6E200A90FC5 /* AppDelegate.swift */; };
-		307B2C7D1E66D6E200A90FC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B2C7C1E66D6E200A90FC5 /* ViewController.swift */; };
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
+		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
+		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
+		C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B421E67098000DF6E36 /* JRBaseViewController.swift */; };
+		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
+		C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B471E670A3300DF6E36 /* JRNavigationController.swift */; };
+		C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B4D1E670C1800DF6E36 /* NSArray+Log.m */; };
+		C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B4F1E670C1800DF6E36 /* NSAttributedString+CZAdditon.m */; };
+		C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B511E670C1800DF6E36 /* NSObject+CZRuntime.m */; };
+		C4151B671E670C1800DF6E36 /* NSString+CZBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B531E670C1800DF6E36 /* NSString+CZBase64.m */; };
+		C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B551E670C1800DF6E36 /* NSString+CZHash.m */; };
+		C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B571E670C1800DF6E36 /* NSString+CZPath.m */; };
+		C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B591E670C1800DF6E36 /* UIButton+CZAddition.m */; };
+		C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B5B1E670C1800DF6E36 /* UIColor+CZAddition.m */; };
+		C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B5D1E670C1800DF6E36 /* UILabel+CZAddition.m */; };
+		C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B5F1E670C1800DF6E36 /* UIScreen+CZAddition.m */; };
+		C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B611E670C1800DF6E36 /* UIView+CZAddition.m */; };
+		C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */; };
+		C4151B721E670D4000DF6E36 /* JRBookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */; };
+		C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */; };
+		C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B751E670D5500DF6E36 /* JRForumViewController.swift */; };
+		C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */; };
 		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,12 +38,45 @@
 		11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.debug.xcconfig"; sourceTree = "<group>"; };
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		307B2C7A1E66D6E200A90FC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		307B2C7C1E66D6E200A90FC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307B2C841E66D6E300A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4151B421E67098000DF6E36 /* JRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBaseViewController.swift; sourceTree = "<group>"; };
+		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
+		C4151B471E670A3300DF6E36 /* JRNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNavigationController.swift; sourceTree = "<group>"; };
+		C4151B4B1E670C1800DF6E36 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		C4151B4C1E670C1800DF6E36 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		C4151B4D1E670C1800DF6E36 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		C4151B4E1E670C1800DF6E36 /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
+		C4151B4F1E670C1800DF6E36 /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
+		C4151B501E670C1800DF6E36 /* NSObject+CZRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CZRuntime.h"; sourceTree = "<group>"; };
+		C4151B511E670C1800DF6E36 /* NSObject+CZRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CZRuntime.m"; sourceTree = "<group>"; };
+		C4151B521E670C1800DF6E36 /* NSString+CZBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZBase64.h"; sourceTree = "<group>"; };
+		C4151B531E670C1800DF6E36 /* NSString+CZBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZBase64.m"; sourceTree = "<group>"; };
+		C4151B541E670C1800DF6E36 /* NSString+CZHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZHash.h"; sourceTree = "<group>"; };
+		C4151B551E670C1800DF6E36 /* NSString+CZHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZHash.m"; sourceTree = "<group>"; };
+		C4151B561E670C1800DF6E36 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
+		C4151B571E670C1800DF6E36 /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
+		C4151B581E670C1800DF6E36 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B591E670C1800DF6E36 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B5A1E670C1800DF6E36 /* UIColor+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B5B1E670C1800DF6E36 /* UIColor+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B5C1E670C1800DF6E36 /* UILabel+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B5D1E670C1800DF6E36 /* UILabel+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B5E1E670C1800DF6E36 /* UIScreen+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B5F1E670C1800DF6E36 /* UIScreen+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B601E670C1800DF6E36 /* UIView+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B611E670C1800DF6E36 /* UIView+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B621E670C1800DF6E36 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
+		C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
+		C4151B701E670C6500DF6E36 /* SwiftDemo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridge.h"; sourceTree = "<group>"; };
+		C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
+		C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShopViewController.swift; sourceTree = "<group>"; };
+		C4151B751E670D5500DF6E36 /* JRForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
+		C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPersonViewController.swift; sourceTree = "<group>"; };
 		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,8 +113,7 @@
 		307B2C791E66D6E200A90FC5 /* SwiftDown */ = {
 			isa = PBXGroup;
 			children = (
-				307B2C7A1E66D6E200A90FC5 /* AppDelegate.swift */,
-				307B2C7C1E66D6E200A90FC5 /* ViewController.swift */,
+				C4151B371E67078800DF6E36 /* Product */,
 				307B2C8C1E66D6ED00A90FC5 /* SupportFile */,
 			);
 			path = SwiftDown;
@@ -75,6 +126,7 @@
 				307B2C811E66D6E300A90FC5 /* Assets.xcassets */,
 				307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */,
 				307B2C861E66D6E300A90FC5 /* Info.plist */,
+				C4151B701E670C6500DF6E36 /* SwiftDemo-Bridge.h */,
 			);
 			name = SupportFile;
 			sourceTree = "<group>";
@@ -94,6 +146,127 @@
 				F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4151B371E67078800DF6E36 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B381E67078800DF6E36 /* AppDelegate.swift */,
+				C4151B441E6709CA00DF6E36 /* JRMainModule(框架) */,
+				C4151B411E67096F00DF6E36 /* JRBaseModule(基类) */,
+				C4151B391E67078800DF6E36 /* JRBookShelf(书架) */,
+				C4151B3A1E67078800DF6E36 /* JRBookShop(书城) */,
+				C4151B3B1E67078800DF6E36 /* JRForum(圈子) */,
+				C4151B3C1E67078800DF6E36 /* JRModule(其他模块) */,
+				C4151B3D1E67078800DF6E36 /* JRPerson(个人) */,
+				C4151B3E1E67078800DF6E36 /* ViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		C4151B391E67078800DF6E36 /* JRBookShelf(书架) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */,
+			);
+			name = "JRBookShelf(书架)";
+			path = JRBookShelf;
+			sourceTree = "<group>";
+		};
+		C4151B3A1E67078800DF6E36 /* JRBookShop(书城) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */,
+			);
+			name = "JRBookShop(书城)";
+			path = JRBookShop;
+			sourceTree = "<group>";
+		};
+		C4151B3B1E67078800DF6E36 /* JRForum(圈子) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B751E670D5500DF6E36 /* JRForumViewController.swift */,
+			);
+			name = "JRForum(圈子)";
+			path = JRForum;
+			sourceTree = "<group>";
+		};
+		C4151B3C1E67078800DF6E36 /* JRModule(其他模块) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B491E670BFC00DF6E36 /* JRTools(工具) */,
+			);
+			name = "JRModule(其他模块)";
+			path = JRModule;
+			sourceTree = "<group>";
+		};
+		C4151B3D1E67078800DF6E36 /* JRPerson(个人) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */,
+			);
+			name = "JRPerson(个人)";
+			path = JRPerson;
+			sourceTree = "<group>";
+		};
+		C4151B411E67096F00DF6E36 /* JRBaseModule(基类) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B421E67098000DF6E36 /* JRBaseViewController.swift */,
+			);
+			name = "JRBaseModule(基类)";
+			path = JRBaseModule;
+			sourceTree = "<group>";
+		};
+		C4151B441E6709CA00DF6E36 /* JRMainModule(框架) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */,
+				C4151B471E670A3300DF6E36 /* JRNavigationController.swift */,
+			);
+			name = "JRMainModule(框架)";
+			path = JRMainModule;
+			sourceTree = "<group>";
+		};
+		C4151B491E670BFC00DF6E36 /* JRTools(工具) */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B4A1E670C1800DF6E36 /* Additions */,
+			);
+			name = "JRTools(工具)";
+			path = JRTools;
+			sourceTree = "<group>";
+		};
+		C4151B4A1E670C1800DF6E36 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				C4151B4B1E670C1800DF6E36 /* CZAdditions.h */,
+				C4151B4C1E670C1800DF6E36 /* NSArray+Log.h */,
+				C4151B4D1E670C1800DF6E36 /* NSArray+Log.m */,
+				C4151B4E1E670C1800DF6E36 /* NSAttributedString+CZAdditon.h */,
+				C4151B4F1E670C1800DF6E36 /* NSAttributedString+CZAdditon.m */,
+				C4151B501E670C1800DF6E36 /* NSObject+CZRuntime.h */,
+				C4151B511E670C1800DF6E36 /* NSObject+CZRuntime.m */,
+				C4151B521E670C1800DF6E36 /* NSString+CZBase64.h */,
+				C4151B531E670C1800DF6E36 /* NSString+CZBase64.m */,
+				C4151B541E670C1800DF6E36 /* NSString+CZHash.h */,
+				C4151B551E670C1800DF6E36 /* NSString+CZHash.m */,
+				C4151B561E670C1800DF6E36 /* NSString+CZPath.h */,
+				C4151B571E670C1800DF6E36 /* NSString+CZPath.m */,
+				C4151B581E670C1800DF6E36 /* UIButton+CZAddition.h */,
+				C4151B591E670C1800DF6E36 /* UIButton+CZAddition.m */,
+				C4151B5A1E670C1800DF6E36 /* UIColor+CZAddition.h */,
+				C4151B5B1E670C1800DF6E36 /* UIColor+CZAddition.m */,
+				C4151B5C1E670C1800DF6E36 /* UILabel+CZAddition.h */,
+				C4151B5D1E670C1800DF6E36 /* UILabel+CZAddition.m */,
+				C4151B5E1E670C1800DF6E36 /* UIScreen+CZAddition.h */,
+				C4151B5F1E670C1800DF6E36 /* UIScreen+CZAddition.m */,
+				C4151B601E670C1800DF6E36 /* UIView+CZAddition.h */,
+				C4151B611E670C1800DF6E36 /* UIView+CZAddition.m */,
+				C4151B621E670C1800DF6E36 /* UIViewController+CZAddition.h */,
+				C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +393,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				307B2C7D1E66D6E200A90FC5 /* ViewController.swift in Sources */,
-				307B2C7B1E66D6E200A90FC5 /* AppDelegate.swift in Sources */,
+				C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */,
+				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
+				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
+				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
+				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
+				C4151B671E670C1800DF6E36 /* NSString+CZBase64.m in Sources */,
+				C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */,
+				C4151B401E67078800DF6E36 /* ViewController.swift in Sources */,
+				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
+				C4151B721E670D4000DF6E36 /* JRBookShelfViewController.swift in Sources */,
+				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
+				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
+				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
+				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
+				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,
+				C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */,
+				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
+				C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */,
+				C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */,
+				C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */,
+				C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jerry.wx.SwiftDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDown/SwiftDemo-Bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -366,6 +559,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jerry.wx.SwiftDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDown/SwiftDemo-Bridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
