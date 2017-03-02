@@ -8,8 +8,18 @@
 
 import UIKit
 
-class JRNetWorkURL: NSObject {
-	
-	static let aa = "asd"
+class JRNetWorkURL: NSObject { }
 
+// MARK: - 公共上行参数
+extension JRNetWorkURL {
+	
+	
+	static func getPublicParam() -> [String:Any] {
+		
+		
+		
+		return [:]
+	}
+	
 }
+
