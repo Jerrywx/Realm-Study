@@ -31,6 +31,8 @@
 		C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */; };
 		C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B751E670D5500DF6E36 /* JRForumViewController.swift */; };
 		C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */; };
+		C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */; };
+		C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */; };
 		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShopViewController.swift; sourceTree = "<group>"; };
 		C4151B751E670D5500DF6E36 /* JRForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
 		C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPersonViewController.swift; sourceTree = "<group>"; };
+		C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkManager.swift; sourceTree = "<group>"; };
+		C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkURL.swift; sourceTree = "<group>"; };
 		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +198,7 @@
 		C4151B3C1E67078800DF6E36 /* JRModule(其他模块) */ = {
 			isa = PBXGroup;
 			children = (
+				C42DB6A41E679F62008E277E /* JRNetManager */,
 				C4151B491E670BFC00DF6E36 /* JRTools(工具) */,
 			);
 			name = "JRModule(其他模块)";
@@ -267,6 +272,15 @@
 				C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		C42DB6A41E679F62008E277E /* JRNetManager */ = {
+			isa = PBXGroup;
+			children = (
+				C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */,
+				C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */,
+			);
+			path = JRNetManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +409,7 @@
 			files = (
 				C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */,
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
+				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
@@ -405,6 +420,7 @@
 				C4151B721E670D4000DF6E36 /* JRBookShelfViewController.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
 				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
+				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,
 				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
 				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
 				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,
