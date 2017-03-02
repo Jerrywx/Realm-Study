@@ -12,7 +12,5 @@ class JRForumViewController: JRBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        view.backgroundColor = UIColor.cz_random()
     }
 }

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class JRBookShelfViewController: JRBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor.cz_random()
     }
+
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		JRNetWorkManager.shared.testNetWork()
+	}
 }
