@@ -24,16 +24,11 @@ class JRBookShelfViewController: JRBaseViewController {
 	
 	func testNetWork(param:[String : String]) {
 		
-		let token = "NjY6ZWVhOTJjYWM5OThiYWM0ZWQ1ZjRkYzY1NmM0Mzg2Mjk="
-		let tok = String(format: "Token token=\"%@\"", token)
-
-		let header: HTTPHeaders = ["Authorization" : tok, "zhauth":token]
-		
 		JRNetWorkManager.shared.myRequest("http://api1.zongheng.com/iosapi/forum/detail", 
 		                                  method: HTTPMethod.post,
 		                                  parameters: param,
 		                                  encoding: URLEncoding.default, 
-		                                  headers: header) { (json, isSuccess) in
+		                                  headers: nil) { (json, isSuccess) in
 			print("成功")
 			if let js = json {
 				print(js)
