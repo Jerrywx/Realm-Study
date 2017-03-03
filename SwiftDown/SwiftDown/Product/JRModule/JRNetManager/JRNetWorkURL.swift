@@ -18,7 +18,22 @@ extension JRNetWorkURL {
 	
 	static func getPublicParam(param: [String : String]) -> [String:String] {
 		
+		/// 获取基础参数
+		var mParam = publicUpwardConcatenation()
+		/// 合并参数
+		for (k, v) in param {
+			mParam.updateValue(v, forKey: k)
+		}
+		mParam["sign"] = getParamSign(param: mParam);
+		/// 中文转义
+		let keys = mParam.keys
+		for key in keys {
+			let value: String = mParam[key]!
+			mParam.updateValue(value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
+			                   forKey: key)
+		}
 		
+		print(mParam)
 		
 		return [:]
 	}
@@ -64,7 +79,7 @@ extension JRNetWorkURL {
 				sign.append(String(format: "&%@=%@", key, param[key]!))
 			}
 		}
-		return sign
+		return JRIgnoreFile.encryptSign(sign: sign)
 	}
 }
 

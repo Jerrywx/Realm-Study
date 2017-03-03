@@ -19,9 +19,9 @@ class JRBookShelfViewController: JRBaseViewController {
 		/// 网络测试
 //		JRNetWorkManager.shared.testNetWork()
 		/// 公共上行基础信息测试
-//		print(JRNetWorkURL.publicUpwardConcatenation())
+		print(JRNetWorkURL.getPublicParam(param: ["TEST" : "哈哈哈"]))
 		/// 测试参数签名
-		print(JRNetWorkURL.getParamSign(param: JRNetWorkURL.publicUpwardConcatenation()))
+//		print(JRNetWorkURL.getParamSign(param: JRNetWorkURL.publicUpwardConcatenation()))
 	}
 	
 }
