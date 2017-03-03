@@ -16,6 +16,12 @@ class JRBookShelfViewController: JRBaseViewController {
     }
 
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		JRNetWorkManager.shared.testNetWork()
+		/// 网络测试
+//		JRNetWorkManager.shared.testNetWork()
+		/// 公共上行基础信息测试
+//		print(JRNetWorkURL.publicUpwardConcatenation())
+		/// 测试参数签名
+		print(JRNetWorkURL.getParamSign(param: JRNetWorkURL.publicUpwardConcatenation()))
 	}
+	
 }
