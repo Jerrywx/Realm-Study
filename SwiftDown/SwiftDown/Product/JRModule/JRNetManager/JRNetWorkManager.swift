@@ -41,11 +41,18 @@ extension JRNetWorkManager {
 		                  parameters: parameters,
 		                  encoding: encoding,
 		                  headers: headers).responseJSON { (response) in
-							print("=============================")
 							print(response.result)
 							completion(response.result.value as AnyObject?, true)
 		}
 	}
+	
+	/// 注册token
+	///
+	/// - Parameter token: token
+	func registerUserToken(token: String) {
+		
+	}
+	
 }
 
 // MARK: - 网络测试

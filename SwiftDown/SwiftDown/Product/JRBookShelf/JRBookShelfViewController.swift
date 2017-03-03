@@ -19,9 +19,26 @@ class JRBookShelfViewController: JRBaseViewController {
 		/// 网络测试
 //		JRNetWorkManager.shared.testNetWork()
 		/// 公共上行基础信息测试
-		print(JRNetWorkURL.getPublicParam(param: ["TEST" : "哈哈哈"]))
-		/// 测试参数签名
-//		print(JRNetWorkURL.getParamSign(param: JRNetWorkURL.publicUpwardConcatenation()))
+		testNetWork(param: JRNetWorkURL.getPublicParam(param: ["forumId" : "116320"]))
+	}
+	
+	func testNetWork(param:[String : String]) {
+		
+		let token = "NjY6ZWVhOTJjYWM5OThiYWM0ZWQ1ZjRkYzY1NmM0Mzg2Mjk="
+		let tok = String(format: "Token token=\"%@\"", token)
+
+		let header: HTTPHeaders = ["Authorization" : tok, "zhauth":token]
+		
+		JRNetWorkManager.shared.myRequest("http://api1.zongheng.com/iosapi/forum/detail", 
+		                                  method: HTTPMethod.post,
+		                                  parameters: param,
+		                                  encoding: URLEncoding.default, 
+		                                  headers: header) { (json, isSuccess) in
+			print("成功")
+			if let js = json {
+				print(js)
+			}
+		}
 	}
 	
 }

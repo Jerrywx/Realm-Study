@@ -16,6 +16,10 @@ class JRNetWorkURL: NSObject { }
 extension JRNetWorkURL {
 	
 	
+	/// 获取请求上行参数
+	///
+	/// - Parameter param: 功能参数
+	/// - Returns: 请求上行参数
 	static func getPublicParam(param: [String : String]) -> [String:String] {
 		
 		/// 获取基础参数
@@ -24,7 +28,7 @@ extension JRNetWorkURL {
 		for (k, v) in param {
 			mParam.updateValue(v, forKey: k)
 		}
-		mParam["sign"] = getParamSign(param: mParam);
+		mParam["sig"] = getParamSign(param: mParam);
 		/// 中文转义
 		let keys = mParam.keys
 		for key in keys {
@@ -32,10 +36,7 @@ extension JRNetWorkURL {
 			mParam.updateValue(value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
 			                   forKey: key)
 		}
-		
-		print(mParam)
-		
-		return [:]
+		return mParam
 	}
 	
 	/// 获取公共伤上行基础参数
@@ -70,7 +71,8 @@ extension JRNetWorkURL {
 	static func getParamSign(param: [String : String]) -> String {
 		
 		var sign: String = String()
-		let keys: Array = param.keys.sorted(by: {$0 > $1})
+		let keys: Array = param.keys.sorted(by: {$0 < $1})
+		
 		for i in 0..<keys.count {
 			let key = keys[i]
 			if(i == 0){
@@ -99,3 +101,4 @@ extension JRNetWorkURL {
 		return md5String as String
 	}
 }
+
