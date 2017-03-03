@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3043F6041E690A2300E9BA9E /* JRIgnoreFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043F6031E690A2300E9BA9E /* JRIgnoreFile.swift */; };
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.debug.xcconfig"; sourceTree = "<group>"; };
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
+		3043F6031E690A2300E9BA9E /* JRIgnoreFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRIgnoreFile.swift; sourceTree = "<group>"; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */,
 				C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */,
+				3043F6031E690A2300E9BA9E /* JRIgnoreFile.swift */,
 			);
 			path = JRNetManager;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
 				C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */,
 				C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */,
+				3043F6041E690A2300E9BA9E /* JRIgnoreFile.swift in Sources */,
 				C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */,
 				C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */,
 			);
