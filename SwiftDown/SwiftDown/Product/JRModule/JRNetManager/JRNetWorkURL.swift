@@ -8,13 +8,15 @@
 
 import UIKit
 
+//import <CommonCrypto/CommonCrypto.h>
+
 class JRNetWorkURL: NSObject { }
 
 // MARK: - 公共上行参数
 extension JRNetWorkURL {
 	
 	
-	static func getPublicParam() -> [String:Any] {
+	static func getPublicParam(param: [String : String]) -> [String:String] {
 		
 		
 		
@@ -64,6 +66,21 @@ extension JRNetWorkURL {
 		}
 		return sign
 	}
-	// userId=10&screenW=1242&screenH=2208&osVersion=9.3&os=ios&modelName=iPhoneSimulator&model=iPhoneSimulator&installId=5d9252cd8cf00290e07c0618ae143e5869280f5f&clientVersion=4.0.0&channelType=AppStore&channelId=0&brand=Apple&appId=ZHKXS&api_key=27A28A4D4B24022E543E
 }
 
+// MARK: - 加密方法
+// 注: 在 bridge 文件中引入 #import <CommonCrypto/CommonCrypto.h>
+extension JRNetWorkURL {
+	// Use of unresolved identifier 'CC_MD5'
+	static func md5String(str:String) -> String{
+		let cStr = str.cString(using: String.Encoding.utf8);
+		let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
+		CC_MD5(cStr!,(CC_LONG)(strlen(cStr!)), buffer)
+		let md5String = NSMutableString();
+		for i in 0 ..< 16{
+			md5String.appendFormat("%02x", buffer[i])
+		}
+		free(buffer)
+		return md5String as String
+	}
+}
