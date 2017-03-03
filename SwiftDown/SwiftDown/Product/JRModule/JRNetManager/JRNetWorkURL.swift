@@ -20,7 +20,7 @@ extension JRNetWorkURL {
 	///
 	/// - Parameter param: 功能参数
 	/// - Returns: 请求上行参数
-	static func getPublicParam(param: [String : String]) -> [String:String] {
+	static func getPublicParam(param: [String : Any]) -> [String:Any] {
 		
 		/// 获取基础参数
 		var mParam = publicUpwardConcatenation()
@@ -32,7 +32,7 @@ extension JRNetWorkURL {
 		/// 中文转义
 		let keys = mParam.keys
 		for key in keys {
-			let value: String = mParam[key]!
+			let value: String = mParam[key]! as! String
 			mParam.updateValue(value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
 			                   forKey: key)
 		}
@@ -42,7 +42,7 @@ extension JRNetWorkURL {
 	/// 获取公共伤上行基础参数
 	///
 	/// - Returns: 返回客户端基本信息
-	static func publicUpwardConcatenation() -> [String : String] {
+	static func publicUpwardConcatenation() -> [String : Any] {
 		
 		var publicUpwardDict: [String:String] = [:];
 		
@@ -68,7 +68,7 @@ extension JRNetWorkURL {
 	///
 	/// - Parameter param: 请求参数
 	/// - Returns: 参数签名
-	static func getParamSign(param: [String : String]) -> String {
+	static func getParamSign(param: [String : Any]) -> String {
 		
 		var sign: String = String()
 		let keys: Array = param.keys.sorted(by: {$0 < $1})
@@ -76,9 +76,9 @@ extension JRNetWorkURL {
 		for i in 0..<keys.count {
 			let key = keys[i]
 			if(i == 0){
-				sign.append(String(format: "%@=%@", key, param[key]!))
+				sign.append(String(format: "%@=%@", key, param[key]! as! String))
 			}else{
-				sign.append(String(format: "&%@=%@", key, param[key]!))
+				sign.append(String(format: "&%@=%@", key, param[key]! as! String))
 			}
 		}
 		return JRIgnoreFile.encryptSign(sign: sign)

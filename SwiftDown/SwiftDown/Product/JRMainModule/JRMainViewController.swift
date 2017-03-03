@@ -39,10 +39,10 @@ extension JRMainViewController {
 		forum.title  = "圈子"
 		person.title = "个人"
 		
-		shelf.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .highlighted)
-		shop.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .highlighted)
-		forum.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .highlighted)
-		person.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .highlighted)
+		shelf.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .selected)
+		shop.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .selected)
+		forum.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .selected)
+		person.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .selected)
 		
 		
 		shelf.tabBarItem.image = #imageLiteral(resourceName: "shujia_xiabiaoqian")

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F21E695FF000EC661B /* JRBookShelfViewController.swift */; };
+		302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F61E696CB100EC661B /* JRInternalBookModel.swift */; };
 		3043F6041E690A2300E9BA9E /* JRIgnoreFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3043F6031E690A2300E9BA9E /* JRIgnoreFile.swift */; };
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
@@ -28,7 +30,6 @@
 		C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B5F1E670C1800DF6E36 /* UIScreen+CZAddition.m */; };
 		C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B611E670C1800DF6E36 /* UIView+CZAddition.m */; };
 		C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */; };
-		C4151B721E670D4000DF6E36 /* JRBookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */; };
 		C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */; };
 		C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B751E670D5500DF6E36 /* JRForumViewController.swift */; };
 		C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		11D00006786C0AF0ADE8E850 /* Pods-SwiftDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.debug.xcconfig"; sourceTree = "<group>"; };
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
+		302302F21E695FF000EC661B /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
+		302302F61E696CB100EC661B /* JRInternalBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRInternalBookModel.swift; sourceTree = "<group>"; };
 		3043F6031E690A2300E9BA9E /* JRIgnoreFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRIgnoreFile.swift; sourceTree = "<group>"; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		C4151B621E670C1800DF6E36 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
 		C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		C4151B701E670C6500DF6E36 /* SwiftDemo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridge.h"; sourceTree = "<group>"; };
-		C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
 		C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShopViewController.swift; sourceTree = "<group>"; };
 		C4151B751E670D5500DF6E36 /* JRForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
 		C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPersonViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302302F01E695FF000EC661B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		302302F11E695FF000EC661B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				302302F21E695FF000EC661B /* JRBookShelfViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		302302F31E695FF000EC661B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				302302F61E696CB100EC661B /* JRInternalBookModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		302302F41E695FF000EC661B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		307B2C6E1E66D6E200A90FC5 = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +205,10 @@
 		C4151B391E67078800DF6E36 /* JRBookShelf(书架) */ = {
 			isa = PBXGroup;
 			children = (
-				C4151B711E670D4000DF6E36 /* JRBookShelfViewController.swift */,
+				302302F11E695FF000EC661B /* Controllers */,
+				302302F31E695FF000EC661B /* Models */,
+				302302F41E695FF000EC661B /* Views */,
+				302302F01E695FF000EC661B /* Cells */,
 			);
 			name = "JRBookShelf(书架)";
 			path = JRBookShelf;
@@ -315,6 +350,7 @@
 		307B2C6F1E66D6E200A90FC5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JR;
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "王潇";
@@ -412,6 +448,8 @@
 			files = (
 				C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */,
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
+				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
+				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
@@ -420,7 +458,6 @@
 				C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */,
 				C4151B401E67078800DF6E36 /* ViewController.swift in Sources */,
 				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
-				C4151B721E670D4000DF6E36 /* JRBookShelfViewController.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
 				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,

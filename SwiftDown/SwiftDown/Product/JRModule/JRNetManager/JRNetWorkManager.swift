@@ -49,9 +49,12 @@ extension JRNetWorkManager {
 		/// 注册token
 		let header: HTTPHeaders = registerUserToken()
 		
+		/// 处理请求参数
+		let param: [String:Any] = processParam(param: parameters!)
+		
 		/// 请求方法
 		Alamofire.request(url, method: method,
-		                  parameters: parameters,
+		                  parameters: param,
 		                  encoding: encoding,
 		                  headers: header).responseJSON { (response) in
 							print(response.result)
@@ -72,6 +75,13 @@ extension JRNetWorkManager {
 		return header
 	}
 	
+	/// 处理参数 添加公共上行参数
+	///
+	/// - Parameter param: 请求参数
+	/// - Returns: 返回处理后的参数【添加公共上行参数】
+	func processParam(param: [String : Any] = [:]) -> [String : Any] {
+		return JRNetWorkURL.getPublicParam(param: param)
+	}
 }
 
 // MARK: - 网络测试

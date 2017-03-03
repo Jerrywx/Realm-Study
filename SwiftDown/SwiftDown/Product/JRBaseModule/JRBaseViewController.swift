@@ -15,3 +15,4 @@ class JRBaseViewController: UIViewController {
 		view.backgroundColor = UIColor.cz_random()
     }
 }
+
