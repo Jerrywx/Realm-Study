@@ -38,7 +38,6 @@ extension JRInternalBookModel {
 			let result = jsonData["result"] as! [[String : AnyObject]]
 			let array = NSArray.yy_modelArray(with: JRInternalBookModel.self, json: result)
 			completion(array as? [JRInternalBookModel], true)
-			
 		}
 	}
 	

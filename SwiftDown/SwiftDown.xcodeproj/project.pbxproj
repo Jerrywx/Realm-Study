@@ -14,7 +14,6 @@
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
 		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
-		C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B421E67098000DF6E36 /* JRBaseViewController.swift */; };
 		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
 		C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B471E670A3300DF6E36 /* JRNavigationController.swift */; };
 		C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B4D1E670C1800DF6E36 /* NSArray+Log.m */; };
@@ -35,6 +34,8 @@
 		C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */; };
 		C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */; };
 		C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */; };
+		C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */; };
+		C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1091E6DB5C600F05C2E /* JRTableView.swift */; };
 		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,6 @@
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C4151B421E67098000DF6E36 /* JRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBaseViewController.swift; sourceTree = "<group>"; };
 		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
 		C4151B471E670A3300DF6E36 /* JRNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNavigationController.swift; sourceTree = "<group>"; };
 		C4151B4B1E670C1800DF6E36 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
@@ -85,6 +85,8 @@
 		C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkManager.swift; sourceTree = "<group>"; };
 		C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkURL.swift; sourceTree = "<group>"; };
 		C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRIgnoreFile.swift; sourceTree = "<group>"; };
+		C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBaseViewController.swift; sourceTree = "<group>"; };
+		C491D1091E6DB5C600F05C2E /* JRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTableView.swift; sourceTree = "<group>"; };
 		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -254,7 +256,8 @@
 		C4151B411E67096F00DF6E36 /* JRBaseModule(基类) */ = {
 			isa = PBXGroup;
 			children = (
-				C4151B421E67098000DF6E36 /* JRBaseViewController.swift */,
+				C491D1051E6DB5B100F05C2E /* Controllers */,
+				C491D1071E6DB5B100F05C2E /* Views */,
 			);
 			name = "JRBaseModule(基类)";
 			path = JRBaseModule;
@@ -319,6 +322,22 @@
 				C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */,
 			);
 			path = JRNetManager;
+			sourceTree = "<group>";
+		};
+		C491D1051E6DB5B100F05C2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C491D1071E6DB5B100F05C2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C491D1091E6DB5C600F05C2E /* JRTableView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,10 +465,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4151B431E67098000DF6E36 /* JRBaseViewController.swift in Sources */,
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
+				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
@@ -463,6 +482,7 @@
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,
 				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
 				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
+				C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */,
 				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,
 				C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */,
 				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
