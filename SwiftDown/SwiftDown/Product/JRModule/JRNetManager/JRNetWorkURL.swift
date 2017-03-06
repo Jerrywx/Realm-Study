@@ -20,12 +20,12 @@ extension JRNetWorkURL {
 	///
 	/// - Parameter param: 功能参数
 	/// - Returns: 请求上行参数
-	static func getPublicParam(param: [String : Any]) -> [String:Any] {
-		
+	static func getPublicParam(param: [String : Any]?) -> [String:Any] {
+
 		/// 获取基础参数
 		var mParam = publicUpwardConcatenation()
 		/// 合并参数
-		for (k, v) in param {
+		for (k, v) in param ?? [:]{
 			mParam.updateValue(v, forKey: k)
 		}
 		mParam["sig"] = getParamSign(param: mParam);

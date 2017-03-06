@@ -59,7 +59,15 @@ extension JRBookShelfViewController: UITableViewDataSource, UITableViewDelegate 
 		}
 		
 		/// 加载内置书
-		testNetWork()
+
+		JRInternalBookModel.loadInternalBook { (list: [JRInternalBookModel]?, isSuccess: Bool) in
+			guard let list = list else {
+				return;
+			}
+			
+			print(list)
+		}
+		
 	}
 }
 

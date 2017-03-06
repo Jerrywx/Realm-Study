@@ -50,7 +50,7 @@ extension JRNetWorkManager {
 		let header: HTTPHeaders = registerUserToken()
 		
 		/// 处理请求参数
-		let param: [String:Any] = processParam(param: parameters!)
+		let param: [String:Any] = processParam(param: parameters)
 		
 		/// 请求方法
 		Alamofire.request(url, method: method,
@@ -79,7 +79,7 @@ extension JRNetWorkManager {
 	///
 	/// - Parameter param: 请求参数
 	/// - Returns: 返回处理后的参数【添加公共上行参数】
-	func processParam(param: [String : Any] = [:]) -> [String : Any] {
+	func processParam(param: [String : Any]? = [:]) -> [String : Any] {
 		return JRNetWorkURL.getPublicParam(param: param)
 	}
 }

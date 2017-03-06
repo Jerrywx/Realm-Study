@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import YYModel
 
 class JRInternalBookModel: NSObject {
 	
+	var bookId: String?
+	var categoryName: String?
+	var name: String?
+	var authorId: String?
+	var authorImg: String?
+	var authorName: String?
 	
 	
 }
@@ -17,23 +24,42 @@ class JRInternalBookModel: NSObject {
 // MARK: - 数据加载
 extension JRInternalBookModel {
 	
-	func loadInternalBook() {
-		
+	/// 加载内置书
+	static func loadInternalBook(completion:@escaping (_ list: [JRInternalBookModel]?, _ isSuccess: Bool) -> ()) {
+		JRNetWorkManager.shared.myRequest(JRIgnoreFile.Url_InternalBook) { (json: AnyObject?, isSuccess: Bool) in
+			
+			/// 数据判断
+			guard let jsonData = json else {
+				completion(nil, false)
+				return
+			}
+			
+			/// 数据处理
+			let result = jsonData["result"] as! [[String : AnyObject]]
+			let array = NSArray.yy_modelArray(with: JRInternalBookModel.self, json: result)
+			completion(array as? [JRInternalBookModel], true)
+			
+		}
 	}
 	
-	
+	/// 内置书模型描述
+	override var description: String {
+		return yy_modelDescription()
+	}
 }
-
 
 /*
 {
+	bookId		= 472776;
+	categoryName = "\U90fd\U5e02\U5f02\U80fd";
+	name			= "\U8d85\U54c1\U900f\U89c6";
 	authorId	= 15951103;
 	authorImg	= "<null>";
 	authorName	= "\U674e\U95f2\U9c7c";
+
 	authorization = 4;
-	bookId		= 472776;
 	categoryId	= 1097;
-	categoryName = "\U90fd\U5e02\U5f02\U80fd";
+
 	chapterCount = 1768;
 	description = ;
 	female		= 0;
@@ -43,7 +69,7 @@ extension JRInternalBookModel {
 	latestChapterId		= 35975593;
 	latestChapterName	= "1767\U7ae0 \U89e3\U653e\U51b0\U4e4b\U661f\U5927\U76d1\U72f1";
 	latestChapterUpateDateStr = "4\U5c0f\U65f6\U524d";
-	name			= "\U8d85\U54c1\U900f\U89c6";
+
 	picUrl			= "htt";
 	serialStatus	= 0;
 	totalWord		= 5916952;
