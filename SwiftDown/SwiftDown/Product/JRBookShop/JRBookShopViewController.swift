@@ -10,7 +10,26 @@ import UIKit
 
 class JRBookShopViewController: JRBaseViewController {
 
+	/// UISCrollView
+	let scrollView: UIScrollView = UIScrollView()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		setupUI()
     }
+}
+
+// MARK: - 初始化UI
+extension JRBookShopViewController {
+	
+	/// 初始化UI
+	func setupUI() {
+		
+		scrollView.frame = view.bounds
+		view.addSubview(scrollView)
+		scrollView.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
+		
+	}
+	
 }
