@@ -75,12 +75,26 @@ extension JRBookShopViewController {
 		scrollView.contentSize		= CGSize(width: UIScreen.main.screenW * 4, height: height)
 		scrollView.isPagingEnabled	= true
 		view.addSubview(scrollView)
+		
+		/// 添加频道
+		addChannel()
 	}
-	
+
 	/// 添加频道
 	private func addChannel() {
 		
+		let urls = [JRIgnoreFile.Url_ShopFeatured,
+		            JRIgnoreFile.Url_ShopFree,
+		            JRIgnoreFile.Url_ShopRanking,
+		            JRIgnoreFile.Url_ShopStore]
+
+		let height = UIScreen.screen_H() - 64 - 49 - 40
 		
-		
+		for i in 0..<urls.count {
+			let webView: JRWebView = JRWebView(frame: CGRect(x: CGFloat(i) * UIScreen.main.screenW,
+			                                                 y: 0, width: UIScreen.main.screenW, height: height))
+			scrollView.addSubview(webView)
+			webView.loadWeb(urlString: urls[i])
+		}
 	}
 }

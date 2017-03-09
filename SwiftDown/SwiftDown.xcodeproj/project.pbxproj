@@ -13,6 +13,7 @@
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
 		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
+		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
 		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
 		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
@@ -51,6 +52,7 @@
 		307B2C841E66D6E300A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		30EEF6ED1E7140BD003064A3 /* JRWebKitModule */ = {
+			isa = PBXGroup;
+			children = (
+				30EEF6EE1E7141C5003064A3 /* JRWebView.swift */,
+			);
+			path = JRWebKitModule;
+			sourceTree = "<group>";
+		};
 		AE4D8014C61A20AE630FF63C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +257,7 @@
 		C4151B3C1E67078800DF6E36 /* JRModule(其他模块) */ = {
 			isa = PBXGroup;
 			children = (
+				30EEF6ED1E7140BD003064A3 /* JRWebKitModule */,
 				C42DB6A41E679F62008E277E /* JRNetManager */,
 				C4151B491E670BFC00DF6E36 /* JRTools(工具) */,
 			);
@@ -499,6 +510,7 @@
 				C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */,
 				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
 				C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */,
+				30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */,
 				C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */,
 				C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */,
 				C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */,
