@@ -12,6 +12,7 @@
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
+		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
 		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
 		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
@@ -49,6 +50,7 @@
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307B2C841E66D6E300A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 			name = SupportFile;
 			sourceTree = "<group>";
 		};
+		30EEF6EA1E7120A7003064A3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AE4D8014C61A20AE630FF63C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 		C4151B491E670BFC00DF6E36 /* JRTools(工具) */ = {
 			isa = PBXGroup;
 			children = (
+				30EEF6EA1E7120A7003064A3 /* Extension */,
 				C4151B4A1E670C1800DF6E36 /* Additions */,
 			);
 			name = "JRTools(工具)";
@@ -477,6 +488,7 @@
 				C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */,
 				C4151B401E67078800DF6E36 /* ViewController.swift in Sources */,
 				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
+				30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
 				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,

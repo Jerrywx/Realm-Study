@@ -15,7 +15,7 @@ class JRBookShopViewController: JRBaseViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		self.automaticallyAdjustsScrollViewInsets = false
 		setupUI()
     }
 }
@@ -24,11 +24,22 @@ class JRBookShopViewController: JRBaseViewController {
 extension JRBookShopViewController {
 	
 	/// 初始化UI
-	func setupUI() {
+	fileprivate func setupUI() {
+		let height = UIScreen.screen_H() - 64 - 49
+		let frame = CGRect(x: 0, y: 64,
+		                   width: UIScreen.scrren_W(), 
+		                   height: height)
 		
-		scrollView.frame = view.bounds
+		scrollView.frame = frame
+		scrollView.isPagingEnabled = true
+		scrollView.contentSize = CGSize(width: UIScreen.main.screenW * 4, height: height)
 		view.addSubview(scrollView)
-		scrollView.backgroundColor = #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)
+	}
+	
+	/// 添加频道
+	private func addChannel() {
+		
+		
 		
 	}
 	
