@@ -62,6 +62,15 @@ extension JRMainViewController {
 		let forumNav  = JRNavigationController(rootViewController: forum)
 		let personNav = JRNavigationController(rootViewController: person)
 		
-		self.viewControllers = [shelfNav, shopNav, forumNav, personNav]
+		
+		/// 
+		let swift = JRSwiftViewController()
+		swift.title = "Swift"
+		swift.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.cz_color(withHex: 0xdf3d3d)], for: .selected)
+		swift.tabBarItem.image = #imageLiteral(resourceName: "quanzi_xiabiaoqian")
+		swift.tabBarItem.selectedImage = #imageLiteral(resourceName: "quanzianxia_xiabiaoqian")
+		let swiftNav = JRNavigationController(rootViewController: swift)
+		
+		self.viewControllers = [shelfNav, shopNav, forumNav, personNav, swiftNav]
 	}
 }

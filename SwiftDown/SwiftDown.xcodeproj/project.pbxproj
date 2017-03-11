@@ -38,6 +38,7 @@
 		C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */; };
 		C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */; };
 		C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1091E6DB5C600F05C2E /* JRTableView.swift */; };
+		C4A63E891E74478200F7063D /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A63E881E74478200F7063D /* JRSwiftViewController.swift */; };
 		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRIgnoreFile.swift; sourceTree = "<group>"; };
 		C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBaseViewController.swift; sourceTree = "<group>"; };
 		C491D1091E6DB5C600F05C2E /* JRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTableView.swift; sourceTree = "<group>"; };
+		C4A63E881E74478200F7063D /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +222,7 @@
 				C4151B3B1E67078800DF6E36 /* JRForum(圈子) */,
 				C4151B3D1E67078800DF6E36 /* JRPerson(个人) */,
 				C4151B3C1E67078800DF6E36 /* JRModule(其他模块) */,
+				C4A63E871E74475C00F7063D /* JRSwiftModule */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -362,6 +365,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C4A63E871E74475C00F7063D /* JRSwiftModule */ = {
+			isa = PBXGroup;
+			children = (
+				C4A63E881E74478200F7063D /* JRSwiftViewController.swift */,
+			);
+			path = JRSwiftModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -488,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
+				C4A63E891E74478200F7063D /* JRSwiftViewController.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,

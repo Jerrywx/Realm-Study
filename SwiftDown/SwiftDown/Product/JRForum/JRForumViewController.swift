@@ -42,7 +42,6 @@ extension JRForumViewController: UIScrollViewDelegate {
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let index:UInt = UInt(scrollView.contentOffset.x / UIScreen.main.screenW)
-		print("======== \(index) --- \(scrollView.contentOffset.x)")
 		segmentControl.setSelectedSegmentIndex(index, animated: true)
 	}
 }
