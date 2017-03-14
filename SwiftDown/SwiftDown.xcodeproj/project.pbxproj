@@ -47,6 +47,7 @@
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
 		302302F21E695FF000EC661B /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
 		302302F61E696CB100EC661B /* JRInternalBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRInternalBookModel.swift; sourceTree = "<group>"; };
+		3041CA751E780441004A0BBA /* jr_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -369,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A63E881E74478200F7063D /* JRSwiftViewController.swift */,
+				3041CA751E780441004A0BBA /* jr_array.h */,
 			);
 			path = JRSwiftModule;
 			sourceTree = "<group>";

@@ -14,4 +14,13 @@ class JRSwiftViewController: JRBaseViewController {
         super.viewDidLoad()
 		
     }
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		
+		var array: Array = ["one", "two", "three", "four"]
+		
+		print(array.startIndex)
+		print(array.endIndex)
+		
+	}
 }
