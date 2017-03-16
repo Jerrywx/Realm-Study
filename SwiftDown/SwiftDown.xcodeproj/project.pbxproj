@@ -264,6 +264,7 @@
 				30EEF6ED1E7140BD003064A3 /* JRWebKitModule */,
 				C42DB6A41E679F62008E277E /* JRNetManager */,
 				C4151B491E670BFC00DF6E36 /* JRTools(工具) */,
+				C4F109281E7AE96A00758EC1 /* JRProgressHUD */,
 			);
 			name = "JRModule(其他模块)";
 			path = JRModule;
@@ -373,6 +374,13 @@
 				3041CA751E780441004A0BBA /* jr_array.h */,
 			);
 			path = JRSwiftModule;
+			sourceTree = "<group>";
+		};
+		C4F109281E7AE96A00758EC1 /* JRProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JRProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
