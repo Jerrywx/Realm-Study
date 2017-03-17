@@ -82,10 +82,20 @@ extension JRBookShopViewController {
 	/// 添加频道
 	private func addChannel() {
 		
-		let urls = [JRIgnoreFile.Url_ShopFeatured,
-		            JRIgnoreFile.Url_ShopFree,
-		            JRIgnoreFile.Url_ShopRanking,
-		            JRIgnoreFile.Url_ShopStore]
+		guard
+		let Url_ShopFeatured = JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_ShopFeatured),
+		let Url_ShopFree	= JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_ShopFree),
+		let Url_ShopRanking = JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_ShopRanking),
+		let Url_ShopStore	= JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_ShopStore)
+		else {
+			return
+		}
+		
+		
+		let urls = [Url_ShopFeatured,
+		            Url_ShopFree,
+		            Url_ShopRanking,
+		            Url_ShopStore]
 
 		let height = UIScreen.screen_H() - 64 - 49 - 40
 		

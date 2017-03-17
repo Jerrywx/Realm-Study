@@ -12,11 +12,10 @@ import UIKit
 
 class JRNetWorkURL: NSObject { }
 
-// MARK: - 公共上行参数
+// MARK: - 网络请求上行参数
 extension JRNetWorkURL {
 	
-	
-	/// 获取请求上行参数
+	/// 获取网络请求上行参数
 	///
 	/// - Parameter param: 功能参数
 	/// - Returns: 请求上行参数
@@ -39,7 +38,7 @@ extension JRNetWorkURL {
 		return mParam
 	}
 	
-	/// 获取公共伤上行基础参数
+	/// 获取公共上行参数
 	///
 	/// - Returns: 返回客户端基本信息
 	static func publicUpwardConcatenation() -> [String : Any] {
@@ -84,6 +83,83 @@ extension JRNetWorkURL {
 		return JRIgnoreFile.encryptSign(sign: sign)
 	}
 }
+
+// MARK: - webView加载参数
+extension JRNetWorkURL {
+	
+	/// 获取web上行参数
+	///
+	/// - Parameter urlString: web URL
+	/// - Returns: 返回添加上行参数后的 url
+	static func getWebPublicParam(urlString: String) -> String? {
+		
+		/// 根据字符串 创建 url
+		guard let url = URL(string: urlString) else {
+			return nil
+		}
+		
+		/// 截取url参数数组
+		let param: [String]? = url.query?.components(separatedBy: "&")
+		var params: [String : Any] = [String : Any]()
+		
+		/// 检测 参数 合法性
+		if (param != nil) {
+			for item in param! {
+				
+				let tmArray	= item.components(separatedBy: "=")
+				
+				if tmArray.count == 2 {
+					let key		= tmArray[0] as String
+					let value	= tmArray[1] as String
+					params[key] = value
+				}
+			}
+		}
+		
+		/// 获取 web上行参数
+//		let webParam = combineWithPublicParam(param: params)
+		let webParam = publicUpwardConcatenation()
+		
+		/// 参数排序部分
+		var newString = urlString
+		if (url.query == nil) {
+			newString += "?"
+		} else {
+			newString += "&"
+		}
+		
+		var array: [String] = [String]()
+		
+		for (key, value) in webParam {
+			array.append("\(key)=\(value)")
+		}
+	
+		newString += array.joined(separator: "&")
+		
+		return newString
+	}
+	
+	/// 拼接webView 参数 与 公共上行参数
+	///
+	/// - Parameter param: webView 参数
+	/// - Returns: web上行参数
+	static func combineWithPublicParam(param: [String : Any]) -> [String : Any] {
+		
+		/// 1. 获取公共上行参数
+		var publicParam = publicUpwardConcatenation()
+		
+		/// 2. 拼接参数
+		for (key, value) in param {
+			publicParam[key] = value
+		}
+		
+		/// 3. 返回 web上行参数
+		return publicParam
+	}
+	
+	
+}
+
 
 // MARK: - 加密方法
 // 注: 在 bridge 文件中引入 #import <CommonCrypto/CommonCrypto.h>

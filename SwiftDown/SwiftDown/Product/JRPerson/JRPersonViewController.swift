@@ -13,4 +13,9 @@ class JRPersonViewController: JRBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+	
+	///
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		print(JRNetWorkURL.getWebPublicParam(urlString: "http://app.zongheng.com/ios/index") ?? "//")
+	}
 }

@@ -25,6 +25,34 @@ class JRNetWorkManager: NSObject {
 // MARK: - 公共上行参数
 extension JRNetWorkManager {
 	
+	/// 注册token
+	///
+	/// - Parameter token: token
+	func registerUserToken(_ token: String = "") -> HTTPHeaders {
+		
+		/// 注册token
+		let token = "NjY6ZWVhOTJjYWM5OThiYWM0ZWQ1ZjRkYzY1NmM0Mzg2Mjk="
+		let tok = String(format: "Token token=\"%@\"", token)
+		let header: HTTPHeaders = ["Authorization" : tok, "zhauth":token]
+		/// 返回请求头设置
+		return header
+	}
+	
+	/// 处理参数 添加公共上行参数
+	///
+	/// - Parameter param: 请求参数
+	/// - Returns: 返回处理后的参数【添加公共上行参数】
+	func processParam(param: [String : Any]? = [:]) -> [String : Any] {
+		return JRNetWorkURL.getPublicParam(param: param)
+	}
+	
+	/// 获取webView公共上行参数
+	///
+	/// - Returns: 返回webView公共上行参数
+	func webViewParam() -> [String : Any] {
+		return [:];
+	}
+	
 }
 
 // MARK: - 网络工具
@@ -62,26 +90,6 @@ extension JRNetWorkManager {
 		}
 	}
 	
-	/// 注册token
-	///
-	/// - Parameter token: token
-	func registerUserToken(_ token: String = "") -> HTTPHeaders {
-		
-		/// 注册token
-		let token = "NjY6ZWVhOTJjYWM5OThiYWM0ZWQ1ZjRkYzY1NmM0Mzg2Mjk="
-		let tok = String(format: "Token token=\"%@\"", token)
-		let header: HTTPHeaders = ["Authorization" : tok, "zhauth":token]
-		/// 返回请求头设置
-		return header
-	}
-	
-	/// 处理参数 添加公共上行参数
-	///
-	/// - Parameter param: 请求参数
-	/// - Returns: 返回处理后的参数【添加公共上行参数】
-	func processParam(param: [String : Any]? = [:]) -> [String : Any] {
-		return JRNetWorkURL.getPublicParam(param: param)
-	}
 }
 
 // MARK: - 网络测试
