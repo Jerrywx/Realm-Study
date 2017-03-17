@@ -11,16 +11,19 @@ import MBProgressHUD
 
 class JRWebView: WKWebView {
 	
+	/// 代理对象
+	weak var delegate: JRWebViewDelegate?
+	
 	override init(frame: CGRect, configuration: WKWebViewConfiguration) {
 		super.init(frame: frame, configuration: configuration)
-		self.uiDelegate = self
-		self.navigationDelegate = self
+		uiDelegate			= self
+		navigationDelegate  = self
+		scrollView.decelerationRate = 0.998
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-
 }
 
 // MARK: - 公共方法
@@ -34,6 +37,13 @@ extension JRWebView {
 		let request: NSURLRequest = NSURLRequest(url: NSURL(string: urlString) as! URL)
 		///
 		load(request as URLRequest)
+	}
+	
+	/// webView js 调用 原生操作
+	///
+	/// - Parameter jscontent: js内容
+	func webViewNativeAction(jscontent: String) {
+		delegate?.openTestVC()
 	}
 }
 
@@ -68,9 +78,35 @@ extension JRWebView: WKNavigationDelegate {
 		MBProgressHUD.hide(for: webView, animated: true)
 	}
 	
-	func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+	/// 在发送请求之前，决定是否跳转
+	///
+	/// - Parameters:
+	///   - webView: 当前webView
+	///   - navigationAction: webView请求
+	///   - decisionHandler: weiView响应回调
+	func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 		
-		print(navigationResponse.response.url ?? "error")
+		/// 获取去请求 url
+		guard let requestUrl = navigationAction.request.url?.absoluteString else {
+			return
+		}
+		
+		/// 解析请求 url
+		if (requestUrl.hasPrefix(JRIgnoreFile.js_urlHeader)) {
+			webViewNativeAction(jscontent: requestUrl)
+			decisionHandler(.cancel);
+		} else {
+			decisionHandler(.allow);
+		}
+	}
+	
+	/// 在收到响应后，决定是否跳转
+	///
+	/// - Parameters:
+	///   - webView: 当前webView
+	///   - navigationResponse: webView响应
+	///   - decisionHandler: weiView响应回调
+	func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
 		decisionHandler(.allow);
 	}
 	
@@ -79,7 +115,14 @@ extension JRWebView: WKNavigationDelegate {
 // MARK: - WKUIDelegate
 extension JRWebView: WKUIDelegate {
 	
+}
+
+
+/// JRWebView 代理协议
+@objc protocol JRWebViewDelegate {
 	
+	/// 打开测试控制器
+	func openTestVC()
 	
 }
 

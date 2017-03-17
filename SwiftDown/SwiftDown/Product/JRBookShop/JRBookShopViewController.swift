@@ -102,8 +102,18 @@ extension JRBookShopViewController {
 		for i in 0..<urls.count {
 			let webView: JRWebView = JRWebView(frame: CGRect(x: CGFloat(i) * UIScreen.main.screenW,
 			                                                 y: 0, width: UIScreen.main.screenW, height: height))
+			webView.delegate = self
 			scrollView.addSubview(webView)
 			webView.loadWeb(urlString: urls[i])
 		}
+	}
+}
+
+// MARK: - JRWebViewDelegate
+extension JRBookShopViewController: JRWebViewDelegate {
+	
+	func openTestVC() {
+		let testVC = JRTestViewController()
+		navigationController?.pushViewController(testVC, animated: true)
 	}
 }
