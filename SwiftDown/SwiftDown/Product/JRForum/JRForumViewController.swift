@@ -13,16 +13,37 @@ class JRForumViewController: JRBaseViewController {
 
 	/// tableView
 	lazy var scrollView = UIScrollView()
-	///
-	let segmentControl: HMSegmentedControl = HMSegmentedControl()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.automaticallyAdjustsScrollViewInsets = false
-		
 		setupUI()
     }
+	
+
+	
+	/// MARK: - Lazy Loading
+	/// 选择器 ["热帖", "圈子"]
+	lazy var segmentControl: HMSegmentedControl = {
+		print("懒加载")
+		let segmentControl = HMSegmentedControl()
+		
+		segmentControl.frame			= CGRect(x: 0, y: 64, width: UIScreen.main.screenW, height: 40)
+		segmentControl.backgroundColor	= #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+		segmentControl.sectionTitles	= ["热帖", "圈子"]
+		segmentControl.titleTextAttributes			= [NSFontAttributeName : UIFont.systemFont(ofSize: 14)]
+		segmentControl.selectedTitleTextAttributes	= [NSFontAttributeName : UIFont.systemFont(ofSize: 16),
+		                                          	   NSForegroundColorAttributeName:#colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)]
+		segmentControl.segmentWidthStyle		= .fixed
+		segmentControl.selectionIndicatorColor	= #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+		segmentControl.selectionIndicatorHeight = 3;
+		segmentControl.selectionIndicatorLocation = .down
+		segmentControl.addTarget(self, action: #selector(segmentAct(sender:)), for: .valueChanged)
+		
+		return segmentControl
+	}()
+
 }
 
 // MARK: - Action Methond
@@ -61,18 +82,7 @@ extension JRForumViewController {
 		scrollView.isPagingEnabled = true
 		view.addSubview(scrollView)
 		
-		/// 
-		segmentControl.frame = CGRect(x: 0, y: 64, width: UIScreen.main.screenW, height: 40)
-		segmentControl.backgroundColor	= #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-		segmentControl.sectionTitles	= ["热帖", "圈子"]
-		segmentControl.titleTextAttributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 14)]
-		segmentControl.selectedTitleTextAttributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 16),
-		                                              NSForegroundColorAttributeName:#colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)]
-		segmentControl.selectionIndicatorLocation = .down
-		segmentControl.segmentWidthStyle = .fixed
-		segmentControl.selectionIndicatorHeight = 3;
-		segmentControl.selectionIndicatorColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-		segmentControl.addTarget(self, action: #selector(segmentAct(sender:)), for: .valueChanged)
+		///
 		view.addSubview(segmentControl)
 		
 		addWebView()
@@ -85,11 +95,28 @@ extension JRForumViewController {
 		let webView: JRWebView = JRWebView(frame: CGRect(x: 0,
 		                                                 y: 0, width: UIScreen.main.screenW, height: h))
 		scrollView.addSubview(webView)
-		webView.loadWeb(urlString: JRIgnoreFile.Url_KthreadIndex)
+		webView.loadWeb(urlString: JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_KthreadIndex)!)
+		
 		
 		let webView2: JRWebView = JRWebView(frame: CGRect(x: UIScreen.main.screenW,
 		                                                  y: 0, width: UIScreen.main.screenW, height: h))
 		scrollView.addSubview(webView2)
-		webView2.loadWeb(urlString: JRIgnoreFile.Url_kForumIndex)
+		webView2.loadWeb(urlString: JRNetWorkURL.getWebPublicParam(urlString: JRIgnoreFile.Url_kForumIndex)!)
+		
+		webView.delegate = self
+		webView2.delegate = self;
 	}
 }
+
+// MARK: - JRWebViewDelegate
+extension JRForumViewController: JRWebViewDelegate {
+	
+	func openTestVC(js_Content: String) {
+		let testVC = JRTestViewController()
+		testVC.label.text = js_Content
+		navigationController?.pushViewController(testVC, animated: true)
+	}
+}
+
+
+

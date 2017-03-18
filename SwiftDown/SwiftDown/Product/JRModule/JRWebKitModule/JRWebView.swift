@@ -43,7 +43,8 @@ extension JRWebView {
 	///
 	/// - Parameter jscontent: js内容
 	func webViewNativeAction(jscontent: String) {
-		delegate?.openTestVC()
+		/// URL 解码
+		delegate?.openTestVC(js_Content: jscontent.removingPercentEncoding!)
 	}
 }
 
@@ -122,7 +123,7 @@ extension JRWebView: WKUIDelegate {
 @objc protocol JRWebViewDelegate {
 	
 	/// 打开测试控制器
-	func openTestVC()
+	func openTestVC(js_Content: String)
 	
 }
 

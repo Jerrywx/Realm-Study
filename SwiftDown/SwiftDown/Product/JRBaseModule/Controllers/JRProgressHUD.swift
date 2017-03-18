@@ -48,7 +48,7 @@ extension JRProgressHUD {
 	
 }
 
-// MARK: - Toast HID
+// MARK: - Toast / Toast + Loading  HD
 extension JRProgressHUD {
 	
 	/// 显示 Toast

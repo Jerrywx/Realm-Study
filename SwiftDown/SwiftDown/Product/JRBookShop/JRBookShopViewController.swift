@@ -111,9 +111,9 @@ extension JRBookShopViewController {
 // MARK: - JRWebViewDelegate
 extension JRBookShopViewController: JRWebViewDelegate {
 	
-	func openTestVC() {
+	func openTestVC(js_Content: String) {
 		let testVC = JRTestViewController()
+		testVC.label.text = js_Content
 		navigationController?.pushViewController(testVC, animated: true)
-		JRProgressHUD.shwoToast(message: "This is a Toast")
 	}
 }
