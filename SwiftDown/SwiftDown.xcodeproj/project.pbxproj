@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F21E695FF000EC661B /* JRBookShelfViewController.swift */; };
 		302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F61E696CB100EC661B /* JRInternalBookModel.swift */; };
+		304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */; };
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		302302F21E695FF000EC661B /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
 		302302F61E696CB100EC661B /* JRInternalBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRInternalBookModel.swift; sourceTree = "<group>"; };
 		3041CA751E780441004A0BBA /* jr_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
+		304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JRProgressHUD.swift; path = SwiftDown/Product/JRBaseModule/Controllers/JRProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		C4F109281E7AE96A00758EC1 /* JRProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */,
 			);
 			path = JRProgressHUD;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
+				304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,

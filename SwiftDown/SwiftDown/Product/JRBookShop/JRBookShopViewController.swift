@@ -91,7 +91,6 @@ extension JRBookShopViewController {
 			return
 		}
 		
-		
 		let urls = [Url_ShopFeatured,
 		            Url_ShopFree,
 		            Url_ShopRanking,
@@ -115,5 +114,6 @@ extension JRBookShopViewController: JRWebViewDelegate {
 	func openTestVC() {
 		let testVC = JRTestViewController()
 		navigationController?.pushViewController(testVC, animated: true)
+		JRProgressHUD.shwoToast(message: "This is a Toast")
 	}
 }

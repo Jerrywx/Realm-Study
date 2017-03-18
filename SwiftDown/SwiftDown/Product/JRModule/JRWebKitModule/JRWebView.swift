@@ -56,7 +56,7 @@ extension JRWebView: WKNavigationDelegate {
 	///   - webView: 当前webView
 	///   - navigation: webView 导航
 	func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-		MBProgressHUD.showAdded(to: webView, animated: true)
+		JRProgressHUD.showLoading(toView: webView)
 	}
 	
 	/// webView 加载完成
@@ -65,7 +65,7 @@ extension JRWebView: WKNavigationDelegate {
 	///   - webView: 当前webView
 	///   - navigation: webView 导航
 	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-		MBProgressHUD.hide(for: webView, animated: true)
+		JRProgressHUD.hideLoading(fromView: webView)
 	}
 	
 	/// webView 加载失败
@@ -75,7 +75,7 @@ extension JRWebView: WKNavigationDelegate {
 	///   - navigation: webview 导航
 	///   - error: 错误原因
 	func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-		MBProgressHUD.hide(for: webView, animated: true)
+		JRProgressHUD.hideLoading(fromView: webView)
 	}
 	
 	/// 在发送请求之前，决定是否跳转
