@@ -16,6 +16,7 @@
 		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
+		34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
 		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
 		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
@@ -40,7 +41,6 @@
 		C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */; };
 		C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */; };
 		C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C491D1091E6DB5C600F05C2E /* JRTableView.swift */; };
-		C4A63E891E74478200F7063D /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A63E881E74478200F7063D /* JRSwiftViewController.swift */; };
 		FEB1906C37EB6588CD3C6336 /* Pods_SwiftDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,6 @@
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
 		302302F21E695FF000EC661B /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
 		302302F61E696CB100EC661B /* JRInternalBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRInternalBookModel.swift; sourceTree = "<group>"; };
-		3041CA751E780441004A0BBA /* jr_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JRProgressHUD.swift; path = SwiftDown/Product/JRBaseModule/Controllers/JRProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,8 @@
 		30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
+		34FCA11A1E892004009AA44E /* jr_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
+		34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRIgnoreFile.swift; sourceTree = "<group>"; };
 		C491D1061E6DB5B100F05C2E /* JRBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBaseViewController.swift; sourceTree = "<group>"; };
 		C491D1091E6DB5C600F05C2E /* JRTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTableView.swift; sourceTree = "<group>"; };
-		C4A63E881E74478200F7063D /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		F9863DC06F95361838B18A84 /* Pods_SwiftDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,6 +196,15 @@
 				30EEF6EE1E7141C5003064A3 /* JRWebView.swift */,
 			);
 			path = JRWebKitModule;
+			sourceTree = "<group>";
+		};
+		34FCA1191E892004009AA44E /* SwiftMainController */ = {
+			isa = PBXGroup;
+			children = (
+				34FCA11A1E892004009AA44E /* jr_array.h */,
+				34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */,
+			);
+			path = SwiftMainController;
 			sourceTree = "<group>";
 		};
 		AE4D8014C61A20AE630FF63C /* Pods */ = {
@@ -375,8 +384,7 @@
 		C4A63E871E74475C00F7063D /* JRSwiftModule */ = {
 			isa = PBXGroup;
 			children = (
-				C4A63E881E74478200F7063D /* JRSwiftViewController.swift */,
-				3041CA751E780441004A0BBA /* jr_array.h */,
+				34FCA1191E892004009AA44E /* SwiftMainController */,
 			);
 			path = JRSwiftModule;
 			sourceTree = "<group>";
@@ -515,13 +523,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
-				C4A63E891E74478200F7063D /* JRSwiftViewController.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
 				304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */,
+				34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
