@@ -17,6 +17,7 @@
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
 		34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */; };
+		34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
 		C4151B401E67078800DF6E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B3E1E67078800DF6E36 /* ViewController.swift */; };
 		C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */; };
@@ -60,6 +61,7 @@
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
 		34FCA11A1E892004009AA44E /* jr_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
+		34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCollectionType.swift; sourceTree = "<group>"; };
 		C4151B381E67078800DF6E36 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4151B3E1E67078800DF6E36 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4151B451E6709EE00DF6E36 /* JRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRMainViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,14 @@
 				34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */,
 			);
 			path = SwiftMainController;
+			sourceTree = "<group>";
+		};
+		34FCA11D1E8921D2009AA44E /* SwiftCollectionType */ = {
+			isa = PBXGroup;
+			children = (
+				34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */,
+			);
+			path = SwiftCollectionType;
 			sourceTree = "<group>";
 		};
 		AE4D8014C61A20AE630FF63C /* Pods */ = {
@@ -385,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				34FCA1191E892004009AA44E /* SwiftMainController */,
+				34FCA11D1E8921D2009AA44E /* SwiftCollectionType */,
 			);
 			path = JRSwiftModule;
 			sourceTree = "<group>";
@@ -537,6 +548,7 @@
 				C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */,
 				C4151B401E67078800DF6E36 /* ViewController.swift in Sources */,
 				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
+				34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */,
 				30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
 				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
