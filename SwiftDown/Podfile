@@ -13,7 +13,7 @@ platform :ios, '8.0'
   pod 'pop'					, '1.0.9'
   pod 'YYImage'				, '1.0.4'
   pod 'Alamofire'			, '~> 4.3.0'
-  pod 'ReactiveCocoa'		,  '~> 5.0.0'
+  pod 'ReactiveCocoa'		, '5.0.1'
   pod 'HMSegmentedControl'	, '~> 1.5.3'
 
 end

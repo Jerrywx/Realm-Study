@@ -14,6 +14,12 @@ class JRBookShelfViewController: JRBaseViewController {
 
 	/// tableView
 	var tableView: JRTableView?
+	/// layout
+	var layout: UICollectionViewFlowLayout?
+	var layout2: UICollectionViewFlowLayout?
+	/// UICollectionView
+	var collectionView: UICollectionView?
+	/// 数据模型
 	var listModel: [JRInternalBookModel]?
 
 	override func viewDidLoad() {
@@ -39,22 +45,103 @@ class JRBookShelfViewController: JRBaseViewController {
 				return;
 			}
 			self.listModel = list
-			self.tableView?.reloadData()
+//			self.tableView?.reloadData()
+			self.collectionView?.reloadData()
+		}
+	}
+}
+
+// MARK: - 初始化界面
+extension JRBookShelfViewController {
+	
+	/// 初始化界面
+	fileprivate func setupUI() {
+		
+//		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+		
+		/// UITableView
+		tableView = JRTableView(frame: view.bounds, style: .grouped)
+		tableView?.rowHeight  = 66
+		tableView?.delegate   = self
+		tableView?.dataSource = self
+		tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "selfCell")
+//		view.addSubview(tableView!)
+		
+		/// layout
+		layout = UICollectionViewFlowLayout()
+		layout?.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 111)
+		layout?.minimumLineSpacing = 0.5
+		layout?.minimumInteritemSpacing = 0
+		
+		layout2 = UICollectionViewFlowLayout()
+		layout2?.itemSize = CGSize(width: 85, height: 168)
+		layout2?.minimumLineSpacing = 20
+		layout2?.minimumInteritemSpacing = 20
+		
+		
+		/// UICollectionView
+		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout!)
+		collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		collectionView?.delegate	= self
+		collectionView?.dataSource	= self
+		collectionView?.register(JRBookShelfCell.self, forCellWithReuseIdentifier: "book")
+		view.addSubview(collectionView!)
+		collectionView?.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+		
+		
+		/// 右侧切换按钮
+		let rightButton = UIBarButtonItem(title: "+", 
+		                                  style: .plain, 
+		                                  target: self, 
+		                                  action: #selector(changeView(sender:)))
+		navigationItem.rightBarButtonItem = rightButton
+	}
+	
+	/// 切换视图
+	func changeView(sender: UIBarButtonItem) {
+		print("切换视图 \(sender.tag)")
+		if sender.tag == 0 {
+			sender.tag = 1
+			collectionView?.setCollectionViewLayout(layout2!, animated: true)
+		} else {
+			sender.tag = 0
+			collectionView?.setCollectionViewLayout(layout!, animated: true)
 		}
 	}
 }
 
 
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+	@available(iOS 6.0, *)
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		guard let models = listModel else {
+			return 0
+		}
+		return models.count
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "book", for: indexPath)
+
+		return cell
+	}
+	
+}
+
+
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension JRBookShelfViewController: UITableViewDataSource, UITableViewDelegate {
-
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		guard let models = listModel else {
 			return 0
 		}
 		return models.count
 	}
-
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "selfCell")
@@ -76,27 +163,9 @@ extension JRBookShelfViewController: UITableViewDataSource, UITableViewDelegate 
 		tableView.deselectRow(at: indexPath, animated: true)
 		
 		/// Lodaing
-//		let delay = DispatchTime.now() + DispatchTimeInterval.seconds(4)
-//		DispatchQueue.main.asyncAfter(deadline: delay) {
-//		}
-	}
-}
-
-
-// MARK: - 初始化界面
-extension JRBookShelfViewController {
-	
-	/// 初始化界面
-	fileprivate func setupUI() {
-		
-		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-		
-		tableView = JRTableView(frame: view.bounds, style: .grouped)
-		tableView?.rowHeight  = 66
-		tableView?.delegate   = self
-		tableView?.dataSource = self
-		tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "selfCell")
-		view.addSubview(tableView!)
+		//		let delay = DispatchTime.now() + DispatchTimeInterval.seconds(4)
+		//		DispatchQueue.main.asyncAfter(deadline: delay) {
+		//		}
 	}
 }
 
@@ -128,4 +197,8 @@ extension JRBookShelfViewController {
 		}
 	}
 }
+
+
+
+
 

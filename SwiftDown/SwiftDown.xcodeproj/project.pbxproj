@@ -16,6 +16,7 @@
 		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
+		343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */; };
 		34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */; };
 		34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
+		343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfCell.swift; sourceTree = "<group>"; };
 		34FCA11A1E892004009AA44E /* jr_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCollectionType.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		302302F41E695FF000EC661B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */,
 				C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */,
 				C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */,
+				343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */,
 				C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,7 +696,7 @@
 				INFOPLIST_FILE = SwiftDown/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDown/SwiftDemo-Bridge.h";
 				SWIFT_VERSION = 3.0;
@@ -708,7 +712,7 @@
 				INFOPLIST_FILE = SwiftDown/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDown/SwiftDemo-Bridge.h";
 				SWIFT_VERSION = 3.0;
