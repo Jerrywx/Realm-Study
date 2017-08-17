@@ -45,6 +45,9 @@ class JRBookShelfViewController: JRBaseViewController {
 				return;
 			}
 			self.listModel = list
+//			self.listModel?.append(contentsOf: list)
+//			self.listModel?.append(contentsOf: list)
+			
 //			self.tableView?.reloadData()
 			self.collectionView?.reloadData()
 		}
@@ -85,6 +88,7 @@ extension JRBookShelfViewController {
 		collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 		collectionView?.delegate	= self
 		collectionView?.dataSource	= self
+		collectionView?.alwaysBounceVertical = true
 		collectionView?.register(JRBookShelfCell.self, forCellWithReuseIdentifier: "book")
 		view.addSubview(collectionView!)
 		collectionView?.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -124,8 +128,10 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "book", for: indexPath)
-
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "book", for: indexPath) as! JRBookShelfCell
+		
+		cell.layout = layout2
+		
 		return cell
 	}
 	

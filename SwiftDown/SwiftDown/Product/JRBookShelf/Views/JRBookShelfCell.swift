@@ -27,6 +27,38 @@ class JRBookShelfCell: UICollectionViewCell {
 	let line = UIView()
 	
 	
+	var layout: UICollectionViewLayout? {
+		didSet {
+			if layout == nil {
+				return
+			}
+			
+//			let newL = layout as! UICollectionViewFlowLayout
+//			
+//			let frame = CGRect(x: 0, y: 15,
+//			                   width: newL.itemSize.width,
+//			                   height: newL.itemSize.width / 54 * 72)
+//			
+//			/// Item
+//			if newL.minimumInteritemSpacing == 20 {
+//				
+//				
+//				bookName2?.frame = CGRect(x: 0, y: 15 + newL.itemSize.width / 54 * 72 + 2,
+//				                          width: newL.itemSize.width, height: 14)
+//				UIView.animate(withDuration: 0.3, animations: {
+//					
+//					self.itemLayout(x: newL.itemSize.width, frame: frame)
+//				})
+//				
+//			} else {
+//				/// Cell
+//				UIView.animate(withDuration: 0.3, animations: {
+//					self.lineLayout()
+//				})
+//			}
+		}
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupUI()
@@ -97,6 +129,9 @@ extension JRBookShelfCell {
 		contentView.addSubview(line)
 		
 		imageView?.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+		
+		
+		
 	}
 	
 	
@@ -115,45 +150,58 @@ extension JRBookShelfCell {
 			bookName2?.frame = CGRect(x: 0, y: 15 + newL.itemSize.width / 54 * 72 + 2,
 			                          width: newL.itemSize.width, height: 14)
 			UIView.animate(withDuration: 0.3, animations: {
-				self.imageView?.frame = frame
 				
-				self.tipImage?.frame = CGRect(x: newL.itemSize.width - 5,
-				                              y: 10,
-				                              width: 10, height: 10)
-				
-				self.line.alpha = 0
-				self.bookName?.alpha = 0
-				self.bookName2?.alpha = 1
-				self.updateTip?.alpha = 0
-				self.updateTime?.alpha = 0
-				self.readLog?.alpha = 0
-//				self.bookName2?.frame = CGRect(x: 0, y: 15 + newL.itemSize.width / 54 * 72 + 3,
-//				                          width: newL.itemSize.width, height: 14)
+				self.itemLayout(x: newL.itemSize.width, frame: frame)
 			})
 			
 		} else {
 			/// Cell
-			UIView.animate(withDuration: 0.3, animations: { 
-				self.imageView?.frame = CGRect(x: 20, y: (111 - 72) * 0.5, width: 54, height: 72)
-				self.tipImage?.frame = CGRect(x: 94, y: 27, width: 10, height: 10)
-				self.line.alpha = 1
-				self.bookName?.alpha = 1
-				self.updateTip?.alpha = 1
-				self.bookName2?.alpha = 0
-				self.updateTime?.alpha = 1
-				self.readLog?.alpha = 1
-//				self.bookName2?.frame = CGRect(x: 0, y: 15 + newL.itemSize.width / 54 * 72 + 2,
-//				                          width: newL.itemSize.width, height: 0)
+			UIView.animate(withDuration: 0.3, animations: {
+				self.lineLayout()
 			})
 		}
 	}
 	
+	/// -----
+	func lineLayout() {
+		self.imageView?.frame = CGRect(x: 20, y: (111 - 72) * 0.5, width: 54, height: 72)
+		self.tipImage?.frame = CGRect(x: 94, y: 27, width: 10, height: 10)
+		self.line.alpha = 1
+		self.bookName?.alpha = 1
+		self.updateTip?.alpha = 1
+		self.bookName2?.alpha = 0
+		self.updateTime?.alpha = 1
+		self.readLog?.alpha = 1
+	}
+	
+	/// ||||
+	func itemLayout(x: CGFloat, frame: CGRect) {
+		self.imageView?.frame = frame
+		
+		self.tipImage?.frame = CGRect(x: x - 5,
+		                              y: 10,
+		                              width: 10, height: 10)
+		
+		self.line.alpha = 0
+		self.bookName?.alpha = 0
+		self.bookName2?.alpha = 1
+		self.updateTip?.alpha = 0
+		self.updateTime?.alpha = 0
+		self.readLog?.alpha = 0
+	}
+	
+	
 	override func didTransition(from oldLayout: UICollectionViewLayout, to newLayout: UICollectionViewLayout) {
+//		layout = newLayout
 	}
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		print("----------- \(String(describing: bookName?.alpha))")
+//		print("----------- \(String(describing: bookName?.alpha))")
+//		print("-=============================")
+		
+		
+		
 	}
 }
 
