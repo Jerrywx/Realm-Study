@@ -18,6 +18,7 @@ class JRInternalBookModel: NSObject {
 	var authorImg: String?
 	var authorName: String?
 	
+	var picUrl: String?
 	
 }
 

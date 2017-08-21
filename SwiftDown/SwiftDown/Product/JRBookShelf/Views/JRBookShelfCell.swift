@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class JRBookShelfCell: UICollectionViewCell {
 	
@@ -25,6 +26,24 @@ class JRBookShelfCell: UICollectionViewCell {
 	var readLog: UILabel?
 	/// 分隔线
 	let line = UIView()
+	
+	
+	var bookModel: JRInternalBookModel? {
+		didSet {
+			
+			guard
+				let model: JRInternalBookModel = bookModel
+			else {
+				return
+			}
+			
+			bookName?.text = model.name
+			bookName2?.text = model.name
+			
+			imageView?.sd_setImage(with: NSURL(string: model.picUrl!)! as URL, completed: nil)
+			
+		}
+	}
 	
 	
 	var layout: UICollectionViewLayout? {
@@ -147,7 +166,7 @@ extension JRBookShelfCell {
 		if newL.minimumInteritemSpacing == 20 {
 			
 			
-			bookName2?.frame = CGRect(x: 0, y: 15 + newL.itemSize.width / 54 * 72 + 2,
+			bookName2?.frame = CGRect(x: 0, y: 20 + newL.itemSize.width / 54 * 72 + 2,
 			                          width: newL.itemSize.width, height: 14)
 			UIView.animate(withDuration: 0.3, animations: {
 				

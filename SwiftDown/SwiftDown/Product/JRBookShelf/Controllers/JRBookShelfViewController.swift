@@ -74,15 +74,14 @@ extension JRBookShelfViewController {
 		/// layout
 		layout = UICollectionViewFlowLayout()
 		layout?.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 111)
-		layout?.minimumLineSpacing = 0.5
+		layout?.minimumLineSpacing = 0
 		layout?.minimumInteritemSpacing = 0
 		
 		layout2 = UICollectionViewFlowLayout()
 		layout2?.itemSize = CGSize(width: 85, height: 168)
 		layout2?.minimumLineSpacing = 20
 		layout2?.minimumInteritemSpacing = 20
-		
-		
+	
 		/// UICollectionView
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout!)
 		collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -93,7 +92,10 @@ extension JRBookShelfViewController {
 		view.addSubview(collectionView!)
 		collectionView?.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 		
-		
+		/// 添加长按手势
+		let longPressGresture = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(longGesture:)))
+		collectionView?.addGestureRecognizer(longPressGresture)
+
 		/// 右侧切换按钮
 		let rightButton = UIBarButtonItem(title: "+", 
 		                                  style: .plain, 
@@ -113,6 +115,86 @@ extension JRBookShelfViewController {
 			collectionView?.setCollectionViewLayout(layout!, animated: true)
 		}
 	}
+	
+	/// 长按操作
+	func longPressAction(longGesture: UILongPressGestureRecognizer) {
+		
+		let p = longGesture.location(in: collectionView)
+		
+//		guard
+//		let selectIndexPath = collectionView?.indexPathForItem(at: p),
+//		let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
+//		else {
+//			collectionView?.endInteractiveMovement()
+//			return
+//		}
+		
+		
+		
+//		let p = longGesture.location(in: collectionView)
+//		
+//		if (collectionView?.frame.contains(p))! {
+//			print("-------------------------------------------")
+//		} else {
+//			print("===========================================")
+//		}
+//
+//		let selectIndexPath = collectionView?.indexPathForItem(at: longGesture.location(in: collectionView))
+//		let cell: JRBookShelfCell = (collectionView?.cellForItem(at: selectIndexPath!) as? JRBookShelfCell)!
+		
+		
+//		guard
+//			let selectIndexPath = collectionView?.indexPathForItem(at: longGesture.location(in: collectionView)),
+//			let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
+//		else {
+////			collectionView?.cancelInteractiveMovement()
+//			collectionView?.endInteractiveMovement()
+//			return
+//		}
+		
+		switch longGesture.state {
+			case .began:
+				
+				guard
+					let selectIndexPath = collectionView?.indexPathForItem(at: p),
+					let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
+					else {
+						collectionView?.endInteractiveMovement()
+						return
+				}
+				
+				collectionView?.bringSubview(toFront: cell)
+				collectionView?.beginInteractiveMovementForItem(at: selectIndexPath)
+				UIView.animate(withDuration: 0.2, animations: { 
+					cell.transform = cell.transform.scaledBy(x: 1.1, y: 1.1)
+				})
+			break
+			
+			case .changed:
+				
+//				guard
+//					let selectIndexPath = collectionView?.indexPathForItem(at: p),
+//					let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
+//				else {
+//						collectionView?.endInteractiveMovement()
+//						return
+//				}
+				
+				UIView.animate(withDuration: 0.2, animations: {
+//					cell.transform = cell.transform.scaledBy(x: 1.0, y: 1.0)
+					self.collectionView?.updateInteractiveMovementTargetPosition(longGesture.location(in: longGesture.view))
+				})
+				
+			break
+			
+			case .ended:
+				collectionView?.endInteractiveMovement()
+			break
+			default:
+				collectionView?.cancelInteractiveMovement()
+				break
+		}
+	}
 }
 
 
@@ -130,9 +212,33 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "book", for: indexPath) as! JRBookShelfCell
 		
-		cell.layout = layout2
+//		cell.layout = layout2
+		let model = listModel?[indexPath.row]
+		cell.bookModel = model
 		
 		return cell
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+	
+		guard
+		let models = listModel
+		else {
+			return
+		}
+		let model = models[indexPath.row]
+		print("========= \(model.name!)")
+	}
+	
+	
+	/// 是否可移动
+	func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		print(sourceIndexPath)
+		print(destinationIndexPath)
 	}
 	
 }
