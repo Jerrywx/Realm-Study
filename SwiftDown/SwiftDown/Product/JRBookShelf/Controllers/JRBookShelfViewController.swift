@@ -45,7 +45,7 @@ class JRBookShelfViewController: JRBaseViewController {
 				return;
 			}
 			self.listModel = list
-//			self.listModel?.append(contentsOf: list)
+			self.listModel?.append(contentsOf: list)
 //			self.listModel?.append(contentsOf: list)
 			
 //			self.tableView?.reloadData()
@@ -120,38 +120,7 @@ extension JRBookShelfViewController {
 	func longPressAction(longGesture: UILongPressGestureRecognizer) {
 		
 		let p = longGesture.location(in: collectionView)
-		
-//		guard
-//		let selectIndexPath = collectionView?.indexPathForItem(at: p),
-//		let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
-//		else {
-//			collectionView?.endInteractiveMovement()
-//			return
-//		}
-		
-		
-		
-//		let p = longGesture.location(in: collectionView)
-//		
-//		if (collectionView?.frame.contains(p))! {
-//			print("-------------------------------------------")
-//		} else {
-//			print("===========================================")
-//		}
-//
-//		let selectIndexPath = collectionView?.indexPathForItem(at: longGesture.location(in: collectionView))
-//		let cell: JRBookShelfCell = (collectionView?.cellForItem(at: selectIndexPath!) as? JRBookShelfCell)!
-		
-		
-//		guard
-//			let selectIndexPath = collectionView?.indexPathForItem(at: longGesture.location(in: collectionView)),
-//			let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
-//		else {
-////			collectionView?.cancelInteractiveMovement()
-//			collectionView?.endInteractiveMovement()
-//			return
-//		}
-		
+	
 		switch longGesture.state {
 			case .began:
 				
@@ -237,8 +206,14 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		print(sourceIndexPath)
-		print(destinationIndexPath)
+		print("AAAAAA: \(sourceIndexPath)")
+		print("BBBBBB: \(destinationIndexPath)")
+		
+		let model = listModel?[sourceIndexPath.row]
+		listModel?.remove(at: sourceIndexPath.row)
+		listModel?.insert(model!, at: destinationIndexPath.row)
+//		listModel?[sourceIndexPath.row] = (listModel?[destinationIndexPath.row])!
+//		listModel?[destinationIndexPath.row] = model!
 	}
 	
 }
