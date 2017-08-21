@@ -205,15 +205,11 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		return true
 	}
 	
+	/// 移动排序
 	func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		print("AAAAAA: \(sourceIndexPath)")
-		print("BBBBBB: \(destinationIndexPath)")
-		
 		let model = listModel?[sourceIndexPath.row]
 		listModel?.remove(at: sourceIndexPath.row)
 		listModel?.insert(model!, at: destinationIndexPath.row)
-//		listModel?[sourceIndexPath.row] = (listModel?[destinationIndexPath.row])!
-//		listModel?[destinationIndexPath.row] = model!
 	}
 	
 }
