@@ -19,6 +19,11 @@ class JRBookShelfViewController: JRBaseViewController {
 	var collectionView: UICollectionView?
 	/// 数据模型
 	var listModel: [JRInternalBookModel]?
+	
+	/// 转场代理
+	let transition = JRBookCoverTransition()
+	/// 转场位置
+	var presentingFrame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,6 @@ class JRBookShelfViewController: JRBaseViewController {
 			}
 			self.listModel = list
 			self.listModel?.append(contentsOf: list)
-//			self.listModel?.append(contentsOf: list)
 
 			self.collectionView?.reloadData()
 		}
@@ -176,11 +180,9 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 			return
 		}
 		let model = models[indexPath.row]
-		print("========= \(model.name!)")
-		
-		let bookVC = JRBookCoverController()
-		bookVC.bookName = model.name
-		navigationController?.pushViewController(bookVC, animated: true)
+
+		/// 打开书架书籍
+		openBookCover(model, indexPath: indexPath)
 	}
 
 	/// 是否可移动
@@ -195,6 +197,41 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		listModel?.insert(model!, at: destinationIndexPath.row)
 	}
 	
+}
+
+// MARK: - 书架操作事件
+extension JRBookShelfViewController {
+	
+	/// 点击书架书籍打开书封页面
+	///
+	/// - Parameter bookModel: 书籍模型
+	fileprivate func openBookCover(_ bookModel: JRInternalBookModel, indexPath: IndexPath) {
+		
+		/// 获取封面坐标
+		let cell = collectionView?.cellForItem(at: indexPath) as! JRBookShelfCell
+		let imgView = cell.imageView
+		
+		let frame: CGRect = cell.convert((imgView?.frame)!, to: self.view) as CGRect
+//		presentingFrame = frame
+//		print("========= \(bookModel.name!) -- \(frame)")
+		
+		
+		let bookVC = JRBookCoverController()
+		bookVC.bookName					= bookModel.name
+		transition.fromFrame			= frame
+		bookVC.presentingFrame			= frame
+		bookVC.bookImage				= cell.imageView?.image
+		bookVC.transitioningDelegate	= transition
+		bookVC.modalPresentationStyle	= .custom
+		present(bookVC, animated: true, completion: nil)
+//		navigationController?.pushViewController(bookVC, animated: true)
+
+		/// 测试
+//		let view = UIView(frame: frame)
+//		view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+//		self.view.addSubview(view)
+		
+	}
 }
 
 
