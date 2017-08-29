@@ -17,6 +17,7 @@
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
 		343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */; };
+		3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */; };
 		34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */; };
 		34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
 		343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfCell.swift; sourceTree = "<group>"; };
+		3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverController.swift; sourceTree = "<group>"; };
 		34FCA11A1E892004009AA44E /* jr_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCollectionType.swift; sourceTree = "<group>"; };
@@ -203,6 +205,46 @@
 			path = JRWebKitModule;
 			sourceTree = "<group>";
 		};
+		3479A7BC1F55063900E373B8 /* JRBookCoverModule */ = {
+			isa = PBXGroup;
+			children = (
+				3479A7C01F5506D300E373B8 /* Controllers */,
+				3479A7BF1F5506D300E373B8 /* Cells */,
+				3479A7C21F5506D300E373B8 /* Models */,
+				3479A7C31F5506D300E373B8 /* Views */,
+			);
+			path = JRBookCoverModule;
+			sourceTree = "<group>";
+		};
+		3479A7BF1F5506D300E373B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3479A7C01F5506D300E373B8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3479A7C21F5506D300E373B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3479A7C31F5506D300E373B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		34FCA1191E892004009AA44E /* SwiftMainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +311,7 @@
 		C4151B3A1E67078800DF6E36 /* JRBookShop(书城) */ = {
 			isa = PBXGroup;
 			children = (
+				3479A7BC1F55063900E373B8 /* JRBookCoverModule */,
 				C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */,
 			);
 			name = "JRBookShop(书城)";
@@ -544,6 +587,7 @@
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
 				304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */,
 				34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */,
+				3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,

@@ -12,8 +12,6 @@ import MBProgressHUD
 
 class JRBookShelfViewController: JRBaseViewController {
 
-	/// tableView
-	var tableView: JRTableView?
 	/// layout
 	var layout: UICollectionViewFlowLayout?
 	var layout2: UICollectionViewFlowLayout?
@@ -47,8 +45,7 @@ class JRBookShelfViewController: JRBaseViewController {
 			self.listModel = list
 			self.listModel?.append(contentsOf: list)
 //			self.listModel?.append(contentsOf: list)
-			
-//			self.tableView?.reloadData()
+
 			self.collectionView?.reloadData()
 		}
 	}
@@ -60,16 +57,8 @@ extension JRBookShelfViewController {
 	/// 初始化界面
 	fileprivate func setupUI() {
 		
-//		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-		view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-		
-		/// UITableView
-		tableView = JRTableView(frame: view.bounds, style: .grouped)
-		tableView?.rowHeight  = 66
-		tableView?.delegate   = self
-		tableView?.dataSource = self
-		tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "selfCell")
-//		view.addSubview(tableView!)
+		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//		view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
 		
 		/// layout
 		layout = UICollectionViewFlowLayout()
@@ -140,17 +129,8 @@ extension JRBookShelfViewController {
 			break
 			
 			case .changed:
-				
-//				guard
-//					let selectIndexPath = collectionView?.indexPathForItem(at: p),
-//					let cell: JRBookShelfCell = collectionView?.cellForItem(at: selectIndexPath) as? JRBookShelfCell
-//				else {
-//						collectionView?.endInteractiveMovement()
-//						return
-//				}
-				
+
 				UIView.animate(withDuration: 0.2, animations: {
-//					cell.transform = cell.transform.scaledBy(x: 1.0, y: 1.0)
 					self.collectionView?.updateInteractiveMovementTargetPosition(longGesture.location(in: longGesture.view))
 				})
 				
@@ -212,44 +192,6 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		listModel?.insert(model!, at: destinationIndexPath.row)
 	}
 	
-}
-
-
-// MARK: - UITableViewDataSource, UITableViewDelegate
-extension JRBookShelfViewController: UITableViewDataSource, UITableViewDelegate {
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		guard let models = listModel else {
-			return 0
-		}
-		return models.count
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "selfCell")
-		
-		guard let models = listModel else {
-			return cell!
-		}
-		
-		let model: JRInternalBookModel = models[indexPath.row]
-		
-		cell?.textLabel?.text = model.name
-		
-		return cell!
-	}
-	
-	/// UITableViewDelegate
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
-		tableView.deselectRow(at: indexPath, animated: true)
-		
-		/// Lodaing
-		//		let delay = DispatchTime.now() + DispatchTimeInterval.seconds(4)
-		//		DispatchQueue.main.asyncAfter(deadline: delay) {
-		//		}
-	}
 }
 
 
