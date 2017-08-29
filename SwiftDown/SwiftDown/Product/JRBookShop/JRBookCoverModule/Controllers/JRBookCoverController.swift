@@ -10,6 +10,12 @@ import UIKit
 
 class JRBookCoverController: JRBaseViewController {
 
+	var bookName: String? {
+		didSet {
+			title = bookName
+		}
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +29,7 @@ extension JRBookCoverController {
 	/// 初始化界面
 	func setupUI() {
 		
-		title = "书封页"
+		title = bookName
 		
 		
 		

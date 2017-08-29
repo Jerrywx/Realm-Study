@@ -177,9 +177,12 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		}
 		let model = models[indexPath.row]
 		print("========= \(model.name!)")
+		
+		let bookVC = JRBookCoverController()
+		bookVC.bookName = model.name
+		navigationController?.pushViewController(bookVC, animated: true)
 	}
-	
-	
+
 	/// 是否可移动
 	func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
 		return true
