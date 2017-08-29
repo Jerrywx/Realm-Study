@@ -212,25 +212,18 @@ extension JRBookShelfViewController {
 		let imgView = cell.imageView
 		
 		let frame: CGRect = cell.convert((imgView?.frame)!, to: self.view) as CGRect
-//		presentingFrame = frame
-//		print("========= \(bookModel.name!) -- \(frame)")
-		
 		
 		let bookVC = JRBookCoverController()
 		bookVC.bookName					= bookModel.name
 		transition.fromFrame			= frame
 		bookVC.presentingFrame			= frame
 		bookVC.bookImage				= cell.imageView?.image
+		transition.imgView				= cell.imageView
 		bookVC.transitioningDelegate	= transition
 		bookVC.modalPresentationStyle	= .custom
 		present(bookVC, animated: true, completion: nil)
 //		navigationController?.pushViewController(bookVC, animated: true)
 
-		/// 测试
-//		let view = UIView(frame: frame)
-//		view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-//		self.view.addSubview(view)
-		
 	}
 }
 

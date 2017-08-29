@@ -19,10 +19,17 @@ class JRBookCoverPresentation: UIPresentationController {
 		_ = presentedViewController.transitionCoordinator?.animate(alongsideTransition: { _ in
 
 			var f = presentedVC.bookImageView?.frame
-			f?.origin.x = 0
-			f?.origin.y = 0
-			f?.size.width = UIScreen.main.bounds.size.width
-			f?.size.height = UIScreen.main.bounds.size.height
+//			f?.origin.x = 0
+//			f?.origin.y = 0
+//			f?.size.width = UIScreen.main.bounds.size.width
+//			f?.size.height = UIScreen.main.bounds.size.height
+			
+			let width: CGFloat = 120.0
+			f?.origin.x = (UIScreen.main.bounds.size.width - width) * 0.5
+			f?.origin.y = 40
+			f?.size.width = width
+			f?.size.height = (width / (presentedVC.bookImageView?.frame.width)!) * (presentedVC.bookImageView?.frame.height)!
+			
 			presentedVC.bookImageView?.frame = f!
 		}, completion: nil)
 		
