@@ -41,7 +41,7 @@ class JRBookCoverTransitionAnimated: NSObject ,UIViewControllerAnimatedTransitio
 			
 			toView?.backgroundColor = UIColor.clear
 			
-			toView?.frame = fromFrame ?? CGRect.zero
+//			toView?.frame = fromFrame ?? CGRect.zero
 			UIView.animate(withDuration: duration, animations: {
 				toView?.frame = CGRect(x: 0, y: 0, width: width, height: height)
 				toView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

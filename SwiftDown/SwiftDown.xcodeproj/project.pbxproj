@@ -211,15 +211,16 @@
 			path = JRWebKitModule;
 			sourceTree = "<group>";
 		};
-		3479A7BC1F55063900E373B8 /* JRBookCoverModule */ = {
+		3479A7BC1F55063900E373B8 /* JRBookCoverModule(书封) */ = {
 			isa = PBXGroup;
 			children = (
-				348D3B2E1F554B65007DD89E /* Transition */,
 				3479A7C01F5506D300E373B8 /* Controllers */,
+				348D3B2E1F554B65007DD89E /* Transition */,
 				3479A7BF1F5506D300E373B8 /* Cells */,
 				3479A7C21F5506D300E373B8 /* Models */,
 				3479A7C31F5506D300E373B8 /* Views */,
 			);
+			name = "JRBookCoverModule(书封)";
 			path = JRBookCoverModule;
 			sourceTree = "<group>";
 		};
@@ -328,7 +329,7 @@
 		C4151B3A1E67078800DF6E36 /* JRBookShop(书城) */ = {
 			isa = PBXGroup;
 			children = (
-				3479A7BC1F55063900E373B8 /* JRBookCoverModule */,
+				3479A7BC1F55063900E373B8 /* JRBookCoverModule(书封) */,
 				C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */,
 			);
 			name = "JRBookShop(书城)";

@@ -48,7 +48,7 @@ class JRBookShelfViewController: JRBaseViewController {
 				return;
 			}
 			self.listModel = list
-			self.listModel?.append(contentsOf: list)
+//			self.listModel?.append(contentsOf: list)
 
 			self.collectionView?.reloadData()
 		}

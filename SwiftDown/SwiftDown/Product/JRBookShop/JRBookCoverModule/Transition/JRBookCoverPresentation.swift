@@ -24,11 +24,11 @@ class JRBookCoverPresentation: UIPresentationController {
 //			f?.size.width = UIScreen.main.bounds.size.width
 //			f?.size.height = UIScreen.main.bounds.size.height
 			
-			let width: CGFloat = 120.0
+			let width: CGFloat = 135.0
 			f?.origin.x = (UIScreen.main.bounds.size.width - width) * 0.5
-			f?.origin.y = 40
+			f?.origin.y = 72
 			f?.size.width = width
-			f?.size.height = (width / (presentedVC.bookImageView?.frame.width)!) * (presentedVC.bookImageView?.frame.height)!
+			f?.size.height = (width / 3) * 4//(width / (presentedVC.bookImageView?.frame.width)!) * (presentedVC.bookImageView?.frame.height)!
 			
 			presentedVC.bookImageView?.frame = f!
 		}, completion: nil)
@@ -51,7 +51,6 @@ class JRBookCoverPresentation: UIPresentationController {
 	}
 	
 	override func dismissalTransitionDidEnd(_ completed: Bool) {
-		print("dismissalTransitionDidEnd");
 		if imgView != nil {
 			imgView?.isHidden = false
 		}
