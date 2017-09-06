@@ -18,6 +18,8 @@
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
 		343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */; };
 		3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */; };
+		347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D151F5F95DE0099E20D /* JRTestView.swift */; };
+		347A1D181F5F9D370099E20D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */; };
 		348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B2F1F554B80007DD89E /* JRBookCoverTransition.swift */; };
 		348D3B321F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B311F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift */; };
 		348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */; };
@@ -68,6 +70,8 @@
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
 		343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfCell.swift; sourceTree = "<group>"; };
 		3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverController.swift; sourceTree = "<group>"; };
+		347A1D151F5F95DE0099E20D /* JRTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestView.swift; sourceTree = "<group>"; };
+		347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		348D3B2F1F554B80007DD89E /* JRBookCoverTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverTransition.swift; sourceTree = "<group>"; };
 		348D3B311F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverTransitionAnimated.swift; sourceTree = "<group>"; };
 		348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverPresentation.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */,
+				347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			children = (
 				34FCA11A1E892004009AA44E /* jr_array.h */,
 				34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */,
+				347A1D151F5F95DE0099E20D /* JRTestView.swift */,
 			);
 			path = SwiftMainController;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
 				348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
+				347A1D181F5F9D370099E20D /* Dictionary+Extension.swift in Sources */,
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
@@ -637,6 +644,7 @@
 				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,
 				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
+				347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */,
 				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
 				C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */,
 				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,

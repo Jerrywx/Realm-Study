@@ -34,7 +34,7 @@ extension JRWebView {
 	/// - Parameter url: url
 	func loadWeb(urlString: String) {
 		///
-		let request: NSURLRequest = NSURLRequest(url: NSURL(string: urlString) as! URL)
+		let request: NSURLRequest = NSURLRequest(url: NSURL(string: urlString)! as URL)
 		///
 		load(request as URLRequest)
 	}
@@ -44,8 +44,74 @@ extension JRWebView {
 	/// - Parameter jscontent: js内容
 	func webViewNativeAction(jscontent: String) {
 		/// URL 解码
-		delegate?.openTestVC(js_Content: jscontent.removingPercentEncoding!)
+//		delegate?.openTestVC(js_Content: jscontent.removingPercentEncoding!)
+		jsOperation(jsString: jscontent.removingPercentEncoding!)
 	}
+	
+	/// js 操作处理
+	func jsOperation(jsString: String) {
+		
+		/// 解析 url
+		/*
+			zh://client/{
+							"apiName":"native_call",
+							"handlerId":"2870C128-8878-45E3-AC06-5E6B33A3ECFC",
+							"params":{
+										"appFunc":"goto_circle_detail",
+										"data":{
+													"forumId":"148885"
+												}
+									}
+						}
+		*/
+		
+		/// 截取内容部分
+		let string = jsString.replacingOccurrences(of: "zh://client/", with: "")
+		
+		/// 字符串转字典
+		let dic:[String : Any]? = Dictionary<String, Any>.dictionaryWith(string: string)
+		
+		
+		
+		guard
+			let param: [String : Any] = dic?["params"] as? Dictionary
+		else {
+			return
+		}
+		
+		
+		print("======= \(param)")
+		
+		
+		guard
+		let funcName: String = param["appFunc"] as? String
+		else {
+			return
+		}
+		
+		print("------- \(funcName)")
+		
+		switch funcName {
+			case "goto_comment_detail":
+				print("---- 打开帖子")
+			break
+			
+			case "goto_circle_detail":
+				print("---- 打开圈子")
+			break
+			
+			case "jump_book_cover":
+				print("---- 打开书封")
+			break
+			
+			
+			default:
+				print("---- 无操作")
+		}
+		
+		
+	}
+	
 }
 
 // MARK: - WKNavigationDelegate
@@ -125,6 +191,26 @@ extension JRWebView: WKUIDelegate {
 	/// 打开测试控制器
 	func openTestVC(js_Content: String)
 	
+	
+	//// 打开圈子
+//	func openThread(jsString) {
+//	
+//	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

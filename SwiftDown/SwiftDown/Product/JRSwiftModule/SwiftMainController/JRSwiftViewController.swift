@@ -10,6 +10,8 @@ import UIKit
 
 class JRSwiftViewController: JRBaseViewController {
 
+	let testView = JRTestView()
+	
 	///
 	let tableView = UITableView()
 	var dataSource: [String]?

@@ -165,53 +165,15 @@ extension JRBookCoverController: UITableViewDataSource, UITableViewDelegate {
 		               options: UIViewAnimationOptions(rawValue: 0), animations: {
 			cell.contentView.transform = CGAffineTransform.identity
 		}, completion: nil)
-		
-		
-//		UIView.animate(withDuration: 1.5,
-//					   delay: TimeInterval(delay),
-//					   usingSpringWithDamping: 0.0,
-//					   initialSpringVelocity: 0,
-//					   options: UIViewAnimationOptions(rawValue: 0),
-//					   animations: {
-//
-//			cell.contentView.transform = CGAffineTransform.identity;
-//
-//		}, completion: nil)
-		
-//		UIView.animate(withDuration: 1, 
-//		               delay: TimeInterval(delay),
-//		               usingSpringWithDamping: 0.0,
-//		               initialSpringVelocity: 0, 
-//		               options: UIViewAnimationOptions(rawValue: 0), 
-//		               animations: {
-//						
-//			cell.contentView.transform = CGAffineTransform.identity;
-//						
-//		}, completion: nil)
-		
-		
-		
-//		[UIView animateWithDuration:1. delay:initialDelay + ((indexPath.row) * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
-//			cardCell.contentView.transform = CGAffineTransformIdentity;
-//			} completion:NULL];
-		
-//		if (isShowAnimation) {
-//			UITableViewCell *cardCell = (UITableViewCell *)cell;
-//			
-//			cardCell.contentView.transform =  CGAffineTransformMakeTranslation(SCREEN_WIDTH, 0);
-//			[UIView animateWithDuration:1. delay:initialDelay + ((indexPath.row) * stutter) usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
-//				cardCell.contentView.transform = CGAffineTransformIdentity;
-//				} completion:NULL];
-//			
-//			if (indexPath.row == 10) {
-//				isShowAnimation = NO;
-//			}
-//		}
-		
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
 	}
 	
-	
+	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+		
+	}
 	
 }
 
