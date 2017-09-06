@@ -1,5 +1,5 @@
 //
-//  JRForumViewController.swift
+//  JRForumMainController.swift
 //  SwiftDown
 //
 //  Created by 王潇 on 2017/3/1.
@@ -9,7 +9,7 @@
 import UIKit
 import HMSegmentedControl
 
-class JRForumViewController: JRBaseViewController {
+class JRForumMainController: JRBaseViewController {
 
 	/// tableView
 	lazy var scrollView = UIScrollView()
@@ -26,7 +26,7 @@ class JRForumViewController: JRBaseViewController {
 	/// MARK: - Lazy Loading
 	/// 选择器 ["热帖", "圈子"]
 	lazy var segmentControl: HMSegmentedControl = {
-		print("懒加载")
+		
 		let segmentControl = HMSegmentedControl()
 		
 		segmentControl.frame			= CGRect(x: 0, y: 64, width: UIScreen.main.screenW, height: 40)
@@ -47,7 +47,7 @@ class JRForumViewController: JRBaseViewController {
 }
 
 // MARK: - Action Methond
-extension JRForumViewController {
+extension JRForumMainController {
 	
 	func segmentAct(sender: HMSegmentedControl) {
 		print(sender.selectedSegmentIndex)
@@ -59,7 +59,7 @@ extension JRForumViewController {
 }
 
 // MARK: - UIScrollViewDelegate
-extension JRForumViewController: UIScrollViewDelegate {
+extension JRForumMainController: UIScrollViewDelegate {
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let index:UInt = UInt(scrollView.contentOffset.x / UIScreen.main.screenW)
@@ -68,11 +68,11 @@ extension JRForumViewController: UIScrollViewDelegate {
 }
 
 // MARK: - 初始化界面
-extension JRForumViewController {
+extension JRForumMainController {
 	
 	/// 初始化UI
 	fileprivate func setupUI() {
-		
+
 		///
 		let h = UIScreen.main.screenH - 64 - 40 - 49
 		let w = UIScreen.main.screenW
@@ -109,12 +109,34 @@ extension JRForumViewController {
 }
 
 // MARK: - JRWebViewDelegate
-extension JRForumViewController: JRWebViewDelegate {
+extension JRForumMainController: JRWebViewDelegate {
+	/// 使用WebView方式打开
+	///
+	/// - Parameter urlString: url字符串
+	func openWithWebView(urlString: String) {
+		
+	}
+
 	
 	func openTestVC(js_Content: String) {
 		let testVC = JRTestViewController()
 		testVC.label.text = js_Content
 		navigationController?.pushViewController(testVC, animated: true)
+	}
+
+	func openWithBookCover(bookID: String) {
+		let bookVC = JRBookCoverController()
+		navigationController?.pushViewController(bookVC, animated: true)
+	}
+	
+	func openWithThread(forumId: String, threadId: String) {
+		let threadVC = JRThreadViewController()
+		navigationController?.pushViewController(threadVC, animated: true)
+	}
+	
+	func openWithForum(forumId: String) {
+		let forumVC = JRForumViewController()
+		navigationController?.pushViewController(forumVC, animated: true)
 	}
 }
 

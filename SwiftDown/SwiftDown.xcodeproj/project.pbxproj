@@ -20,6 +20,11 @@
 		3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */; };
 		347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D151F5F95DE0099E20D /* JRTestView.swift */; };
 		347A1D181F5F9D370099E20D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */; };
+		347A1D1A1F5FD61C0099E20D /* JRWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D191F5FD61C0099E20D /* JRWebViewViewController.swift */; };
+		347A1D201F5FE0CB0099E20D /* JRThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D1F1F5FE0CB0099E20D /* JRThreadViewController.swift */; };
+		347A1D231F5FE1E20099E20D /* JRForumMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D221F5FE1E20099E20D /* JRForumMainController.swift */; };
+		347A1D251F5FE2450099E20D /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D241F5FE2450099E20D /* JRForumViewController.swift */; };
+		347A1D291F5FEBD00099E20D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D281F5FEBD00099E20D /* UIView+Extension.swift */; };
 		348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B2F1F554B80007DD89E /* JRBookCoverTransition.swift */; };
 		348D3B321F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B311F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift */; };
 		348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */; };
@@ -44,7 +49,6 @@
 		C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B611E670C1800DF6E36 /* UIView+CZAddition.m */; };
 		C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */; };
 		C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */; };
-		C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B751E670D5500DF6E36 /* JRForumViewController.swift */; };
 		C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */; };
 		C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */; };
 		C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */; };
@@ -72,6 +76,11 @@
 		3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverController.swift; sourceTree = "<group>"; };
 		347A1D151F5F95DE0099E20D /* JRTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestView.swift; sourceTree = "<group>"; };
 		347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		347A1D191F5FD61C0099E20D /* JRWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebViewViewController.swift; sourceTree = "<group>"; };
+		347A1D1F1F5FE0CB0099E20D /* JRThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRThreadViewController.swift; sourceTree = "<group>"; };
+		347A1D221F5FE1E20099E20D /* JRForumMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumMainController.swift; sourceTree = "<group>"; };
+		347A1D241F5FE2450099E20D /* JRForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
+		347A1D281F5FEBD00099E20D /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		348D3B2F1F554B80007DD89E /* JRBookCoverTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverTransition.swift; sourceTree = "<group>"; };
 		348D3B311F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverTransitionAnimated.swift; sourceTree = "<group>"; };
 		348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverPresentation.swift; sourceTree = "<group>"; };
@@ -111,7 +120,6 @@
 		C4151B631E670C1800DF6E36 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		C4151B701E670C6500DF6E36 /* SwiftDemo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridge.h"; sourceTree = "<group>"; };
 		C4151B731E670D4D00DF6E36 /* JRBookShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShopViewController.swift; sourceTree = "<group>"; };
-		C4151B751E670D5500DF6E36 /* JRForumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
 		C4151B771E670D8300DF6E36 /* JRPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPersonViewController.swift; sourceTree = "<group>"; };
 		C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkManager.swift; sourceTree = "<group>"; };
 		C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRNetWorkURL.swift; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 			children = (
 				30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */,
 				347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */,
+				347A1D281F5FEBD00099E20D /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				30EEF6EE1E7141C5003064A3 /* JRWebView.swift */,
+				347A1D191F5FD61C0099E20D /* JRWebViewViewController.swift */,
 			);
 			path = JRWebKitModule;
 			sourceTree = "<group>";
@@ -261,6 +271,30 @@
 				349E98BD1F5CF37A0059F483 /* JRBookCoverHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		347A1D1B1F5FE0AE0099E20D /* JRForumModule */ = {
+			isa = PBXGroup;
+			children = (
+				347A1D241F5FE2450099E20D /* JRForumViewController.swift */,
+			);
+			path = JRForumModule;
+			sourceTree = "<group>";
+		};
+		347A1D1D1F5FE0AE0099E20D /* JRThreadModule */ = {
+			isa = PBXGroup;
+			children = (
+				347A1D1F1F5FE0CB0099E20D /* JRThreadViewController.swift */,
+			);
+			path = JRThreadModule;
+			sourceTree = "<group>";
+		};
+		347A1D211F5FE1E20099E20D /* JRForumMain */ = {
+			isa = PBXGroup;
+			children = (
+				347A1D221F5FE1E20099E20D /* JRForumMainController.swift */,
+			);
+			path = JRForumMain;
 			sourceTree = "<group>";
 		};
 		348D3B2E1F554B65007DD89E /* Transition */ = {
@@ -358,7 +392,9 @@
 		C4151B3B1E67078800DF6E36 /* JRForum(圈子) */ = {
 			isa = PBXGroup;
 			children = (
-				C4151B751E670D5500DF6E36 /* JRForumViewController.swift */,
+				347A1D211F5FE1E20099E20D /* JRForumMain */,
+				347A1D1B1F5FE0AE0099E20D /* JRForumModule */,
+				347A1D1D1F5FE0AE0099E20D /* JRThreadModule */,
 			);
 			name = "JRForum(圈子)";
 			path = JRForum;
@@ -620,8 +656,11 @@
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
 				348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
+				347A1D291F5FEBD00099E20D /* UIView+Extension.swift in Sources */,
 				347A1D181F5F9D370099E20D /* Dictionary+Extension.swift in Sources */,
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
+				347A1D231F5FE1E20099E20D /* JRForumMainController.swift in Sources */,
+				347A1D251F5FE2450099E20D /* JRForumViewController.swift in Sources */,
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
@@ -631,6 +670,7 @@
 				3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				349E98BC1F5CF14B0059F483 /* JRScreen.swift in Sources */,
+				347A1D1A1F5FD61C0099E20D /* JRWebViewViewController.swift in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
 				C4151B671E670C1800DF6E36 /* NSString+CZBase64.m in Sources */,
@@ -641,11 +681,11 @@
 				348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */,
 				30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
-				C4151B761E670D5500DF6E36 /* JRForumViewController.swift in Sources */,
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,
 				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
 				347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */,
 				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
+				347A1D201F5FE0CB0099E20D /* JRThreadViewController.swift in Sources */,
 				C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */,
 				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,
 				C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */,
@@ -783,7 +823,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 58VU78V7N6;
 				INFOPLIST_FILE = SwiftDown/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -799,7 +839,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 58VU78V7N6;
 				INFOPLIST_FILE = SwiftDown/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youranmuye0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

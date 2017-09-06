@@ -110,10 +110,38 @@ extension JRBookShopViewController {
 
 // MARK: - JRWebViewDelegate
 extension JRBookShopViewController: JRWebViewDelegate {
-	
+
+	/// 打开测试控制器
+	///
+	/// - Parameter js_Content: js字符串
 	func openTestVC(js_Content: String) {
 		let testVC = JRTestViewController()
 		testVC.label.text = js_Content
 		navigationController?.pushViewController(testVC, animated: true)
 	}
+	
+	/// 使用WebView方式打开
+	///
+	/// - Parameter urlString: url字符串
+	func openWithWebView(urlString: String) {
+		let webVC = JRWebViewViewController()
+		webVC.urlString = urlString
+		navigationController?.pushViewController(webVC, animated: true)
+	}
+
+	func openWithBookCover(bookID: String) {
+		let bookVC = JRBookCoverController()
+		navigationController?.pushViewController(bookVC, animated: true)
+	}
+	
+	func openWithThread(forumId: String, threadId: String) {
+		let threadVC = JRThreadViewController()
+		navigationController?.pushViewController(threadVC, animated: true)
+	}
+	
+	func openWithForum(forumId: String) {
+		let forumVC = JRForumViewController()
+		navigationController?.pushViewController(forumVC, animated: true)
+	}
+	
 }

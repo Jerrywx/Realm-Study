@@ -87,6 +87,9 @@ extension JRBookCoverController {
 		view.addSubview(tableView!)
 		
 		
+		if presentingFrame == nil {
+			presentingFrame = CGRect.zero
+		}
 		
 		/// 书封图片
 		bookImageView = UIImageView(frame: presentingFrame!)

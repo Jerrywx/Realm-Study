@@ -156,8 +156,6 @@ extension JRNetWorkURL {
 		/// 3. 返回 web上行参数
 		return publicParam
 	}
-	
-	
 }
 
 

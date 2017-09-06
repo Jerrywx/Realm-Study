@@ -31,7 +31,7 @@ extension JRMainViewController {
 		
 		let shelf = JRBookShelfViewController()
 		let shop  = JRBookShopViewController()
-		let forum = JRForumViewController()
+		let forum = JRForumMainController()
 		let person = JRPersonViewController()
 		
 		shelf.title  = "书架"

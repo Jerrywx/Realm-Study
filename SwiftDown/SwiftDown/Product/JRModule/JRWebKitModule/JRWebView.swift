@@ -44,7 +44,7 @@ extension JRWebView {
 	/// - Parameter jscontent: js内容
 	func webViewNativeAction(jscontent: String) {
 		/// URL 解码
-//		delegate?.openTestVC(js_Content: jscontent.removingPercentEncoding!)
+//		delegate?.openTestVC!(js_Content: jscontent.removingPercentEncoding!)
 		jsOperation(jsString: jscontent.removingPercentEncoding!)
 	}
 	
@@ -52,19 +52,6 @@ extension JRWebView {
 	func jsOperation(jsString: String) {
 		
 		/// 解析 url
-		/*
-			zh://client/{
-							"apiName":"native_call",
-							"handlerId":"2870C128-8878-45E3-AC06-5E6B33A3ECFC",
-							"params":{
-										"appFunc":"goto_circle_detail",
-										"data":{
-													"forumId":"148885"
-												}
-									}
-						}
-		*/
-		
 		/// 截取内容部分
 		let string = jsString.replacingOccurrences(of: "zh://client/", with: "")
 		
@@ -78,9 +65,18 @@ extension JRWebView {
 		else {
 			return
 		}
-		
-		
+
 		print("======= \(param)")
+		
+		/// 判断是否是  webView
+		if string.contains("common_webview") {
+			/// 使用webView 方式打开
+			let urlString = param["url"] as! String
+			
+			delegate?.openWithWebView!(urlString: urlString)
+			
+			return
+		}
 		
 		
 		guard
@@ -89,29 +85,26 @@ extension JRWebView {
 			return
 		}
 		
-		print("------- \(funcName)")
-		
 		switch funcName {
 			case "goto_comment_detail":
 				print("---- 打开帖子")
+				delegate?.openWithThread!(forumId: "", threadId: "")
 			break
 			
 			case "goto_circle_detail":
 				print("---- 打开圈子")
+				delegate?.openWithForum!(forumId: "")
 			break
 			
 			case "jump_book_cover":
 				print("---- 打开书封")
+				delegate?.openWithBookCover!(bookID: "")
 			break
-			
 			
 			default:
 				print("---- 无操作")
 		}
-		
-		
 	}
-	
 }
 
 // MARK: - WKNavigationDelegate
@@ -189,14 +182,31 @@ extension JRWebView: WKUIDelegate {
 @objc protocol JRWebViewDelegate {
 	
 	/// 打开测试控制器
-	func openTestVC(js_Content: String)
+	///
+	/// - Parameter js_Content: js字符串
+	@objc optional func openTestVC(js_Content: String)
 	
+	/// 使用WebView方式打开
+	///
+	/// - Parameter urlString: url字符串
+	@objc optional func openWithWebView(urlString:String)
 	
-	//// 打开圈子
-//	func openThread(jsString) {
-//	
-//	}
+	/// 打开帖子
+	///
+	/// - Parameters:
+	///   - forumId:  圈子ID
+	///   - threadId: 帖子ID
+	@objc optional func openWithThread(forumId: String, threadId: String)
 	
+	/// 打开圈子
+	///
+	/// - Parameter forumId: 圈子ID
+	@objc optional func openWithForum(forumId: String)
+	
+	/// 打开书封页面
+	///
+	/// - Parameter bookID: 书籍ID
+	@objc optional func openWithBookCover(bookID: String)
 	
 }
 
