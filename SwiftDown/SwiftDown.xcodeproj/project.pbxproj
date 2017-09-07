@@ -30,6 +30,12 @@
 		348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */; };
 		349E98BC1F5CF14B0059F483 /* JRScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E98BB1F5CF14B0059F483 /* JRScreen.swift */; };
 		349E98BE1F5CF37A0059F483 /* JRBookCoverHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E98BD1F5CF37A0059F483 /* JRBookCoverHeader.swift */; };
+		34F5EC091F611B6C0091FC81 /* JRForumHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */; };
+		34F5EC0B1F611F840091FC81 /* JRForumSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */; };
+		34F5EC0D1F6141350091FC81 /* JRForumContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC0C1F6141350091FC81 /* JRForumContentCell.swift */; };
+		34F5EC0F1F6146050091FC81 /* JRForumTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC0E1F6146050091FC81 /* JRForumTopViewController.swift */; };
+		34F5EC111F6146150091FC81 /* JRForumAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC101F6146150091FC81 /* JRForumAllViewController.swift */; };
+		34F5EC131F6146380091FC81 /* JRForumPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC121F6146380091FC81 /* JRForumPicViewController.swift */; };
 		34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */; };
 		34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */; };
 		C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4151B381E67078800DF6E36 /* AppDelegate.swift */; };
@@ -86,6 +92,12 @@
 		348D3B331F554C4A007DD89E /* JRBookCoverPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverPresentation.swift; sourceTree = "<group>"; };
 		349E98BB1F5CF14B0059F483 /* JRScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRScreen.swift; sourceTree = "<group>"; };
 		349E98BD1F5CF37A0059F483 /* JRBookCoverHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverHeader.swift; sourceTree = "<group>"; };
+		34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumHeader.swift; sourceTree = "<group>"; };
+		34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumSegment.swift; sourceTree = "<group>"; };
+		34F5EC0C1F6141350091FC81 /* JRForumContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumContentCell.swift; sourceTree = "<group>"; };
+		34F5EC0E1F6146050091FC81 /* JRForumTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumTopViewController.swift; sourceTree = "<group>"; };
+		34F5EC101F6146150091FC81 /* JRForumAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumAllViewController.swift; sourceTree = "<group>"; };
+		34F5EC121F6146380091FC81 /* JRForumPicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumPicViewController.swift; sourceTree = "<group>"; };
 		34FCA11A1E892004009AA44E /* jr_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jr_array.h; sourceTree = "<group>"; };
 		34FCA11B1E892004009AA44E /* JRSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSwiftViewController.swift; sourceTree = "<group>"; };
 		34FCA11E1E8921F8009AA44E /* SwiftCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCollectionType.swift; sourceTree = "<group>"; };
@@ -273,27 +285,36 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		347A1D1B1F5FE0AE0099E20D /* JRForumModule */ = {
+		347A1D1B1F5FE0AE0099E20D /* JRForumModule(圈子) */ = {
 			isa = PBXGroup;
 			children = (
 				347A1D241F5FE2450099E20D /* JRForumViewController.swift */,
+				34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */,
+				34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */,
+				34F5EC0C1F6141350091FC81 /* JRForumContentCell.swift */,
+				34F5EC0E1F6146050091FC81 /* JRForumTopViewController.swift */,
+				34F5EC101F6146150091FC81 /* JRForumAllViewController.swift */,
+				34F5EC121F6146380091FC81 /* JRForumPicViewController.swift */,
 			);
+			name = "JRForumModule(圈子)";
 			path = JRForumModule;
 			sourceTree = "<group>";
 		};
-		347A1D1D1F5FE0AE0099E20D /* JRThreadModule */ = {
+		347A1D1D1F5FE0AE0099E20D /* JRThreadModule(帖子) */ = {
 			isa = PBXGroup;
 			children = (
 				347A1D1F1F5FE0CB0099E20D /* JRThreadViewController.swift */,
 			);
+			name = "JRThreadModule(帖子)";
 			path = JRThreadModule;
 			sourceTree = "<group>";
 		};
-		347A1D211F5FE1E20099E20D /* JRForumMain */ = {
+		347A1D211F5FE1E20099E20D /* JRForumMain(首页) */ = {
 			isa = PBXGroup;
 			children = (
 				347A1D221F5FE1E20099E20D /* JRForumMainController.swift */,
 			);
+			name = "JRForumMain(首页)";
 			path = JRForumMain;
 			sourceTree = "<group>";
 		};
@@ -401,9 +422,9 @@
 		C4151B3B1E67078800DF6E36 /* JRForum(圈子) */ = {
 			isa = PBXGroup;
 			children = (
-				347A1D211F5FE1E20099E20D /* JRForumMain */,
-				347A1D1B1F5FE0AE0099E20D /* JRForumModule */,
-				347A1D1D1F5FE0AE0099E20D /* JRThreadModule */,
+				347A1D211F5FE1E20099E20D /* JRForumMain(首页) */,
+				347A1D1B1F5FE0AE0099E20D /* JRForumModule(圈子) */,
+				347A1D1D1F5FE0AE0099E20D /* JRThreadModule(帖子) */,
 			);
 			name = "JRForum(圈子)";
 			path = JRForum;
@@ -678,7 +699,9 @@
 				34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */,
 				3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
+				34F5EC111F6146150091FC81 /* JRForumAllViewController.swift in Sources */,
 				349E98BC1F5CF14B0059F483 /* JRScreen.swift in Sources */,
+				34F5EC0F1F6146050091FC81 /* JRForumTopViewController.swift in Sources */,
 				347A1D1A1F5FD61C0099E20D /* JRWebViewViewController.swift in Sources */,
 				C4151B6C1E670C1800DF6E36 /* UILabel+CZAddition.m in Sources */,
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
@@ -690,20 +713,24 @@
 				348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */,
 				30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
+				34F5EC091F611B6C0091FC81 /* JRForumHeader.swift in Sources */,
 				C42DB6A61E679F78008E277E /* JRNetWorkManager.swift in Sources */,
 				C4151B641E670C1800DF6E36 /* NSArray+Log.m in Sources */,
 				347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */,
 				C4151B481E670A3300DF6E36 /* JRNavigationController.swift in Sources */,
 				347A1D201F5FE0CB0099E20D /* JRThreadViewController.swift in Sources */,
 				C491D1081E6DB5B100F05C2E /* JRBaseViewController.swift in Sources */,
+				34F5EC0D1F6141350091FC81 /* JRForumContentCell.swift in Sources */,
 				C4151B6F1E670C1800DF6E36 /* UIViewController+CZAddition.m in Sources */,
 				C4151B6D1E670C1800DF6E36 /* UIScreen+CZAddition.m in Sources */,
+				34F5EC0B1F611F840091FC81 /* JRForumSegment.swift in Sources */,
 				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
 				C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */,
 				30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */,
 				348D3B321F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift in Sources */,
 				C4151B6A1E670C1800DF6E36 /* UIButton+CZAddition.m in Sources */,
 				C4151B6B1E670C1800DF6E36 /* UIColor+CZAddition.m in Sources */,
+				34F5EC131F6146380091FC81 /* JRForumPicViewController.swift in Sources */,
 				C491D1041E6D9BF100F05C2E /* JRIgnoreFile.swift in Sources */,
 				343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */,
 				C4151B3F1E67078800DF6E36 /* AppDelegate.swift in Sources */,

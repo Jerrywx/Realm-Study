@@ -13,6 +13,12 @@ class JRForumViewController: JRBaseViewController {
 	/// tableView
 	var tableView: UITableView?
 	
+	/// 圈子头部
+	var forumHeader = JRForumHeader.forumHeader()
+	
+	/// 内容选择器
+	var segment = JRForumSegment.forumHeaderSegment()
+	
 	/// Offset
 	var nowOffset: CGFloat = 0
 	
@@ -62,10 +68,13 @@ extension JRForumViewController {
 	
 	func setupUI() {
 		
-		tableView = UITableView(frame: view.bounds, style: .grouped)
-		tableView?.delegate = self
-		tableView?.dataSource = self
-		tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "normal")
+		let frame = CGRect(x: 0, y: 0, width: UIScreen.scrren_W(), height: UIScreen.screen_H())
+		tableView				= UITableView(frame: frame, style: .plain)
+		tableView?.delegate		= self
+		tableView?.dataSource	= self
+		tableView?.tableHeaderView = forumHeader
+		tableView?.register(JRForumContentCell.self, forCellReuseIdentifier: "normal")
+//		tableView?.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: -40, right: 0)
 		view.addSubview(tableView!)
 	}
 }
@@ -75,32 +84,40 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	///: - UITableViewDataSource
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 30
+		return 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "normal")
-		
-		cell?.textLabel?.text = "---- \(indexPath.row)"
-		
-		return cell!
+		let cell = tableView.dequeueReusableCell(withIdentifier: "normal") as! JRForumContentCell
+		cell.superVC = self
+		cell.selectionStyle = .none
+		return cell
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	
+	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 60
+		return UIScreen.screen_H() - segment.height - 64
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 0.1
+		return 40
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.1
+	}
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		return segment
 	}
 	
 	
@@ -122,18 +139,27 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	/// - Parameter y: contentOffset.y
 	func navigationBarOption(scrollView: UIScrollView, y: CGFloat) {
 		
+		let alphaHeight: CGFloat = 185.0 - 64
+		
 		/// 透明度
-		if y > 150 {
+		if y > alphaHeight {
 			self.navigationController?.navigationBar.subviews.first?.alpha = 1
 		} else {
-			let alpha: CGFloat = y / 150.0
+			let alpha: CGFloat = y / alphaHeight
 			self.navigationController?.navigationBar.subviews.first?.alpha = alpha
 		}
 		
-		let needChange = y + (UIScreen.screen_H() * 1.5) > scrollView.contentSize.height
+		/// 固定 选在器
+		if y > alphaHeight {
+			scrollView.contentOffset = CGPoint(x: 0, y: alphaHeight)
+		}
+		
+		/// 关闭 导航栏隐藏
+		return
+		let needChange = y + (UIScreen.screen_H() * 1) > scrollView.contentSize.height
 		
 		/// 位置
-		if y > 200 && !needChange{
+		if y > alphaHeight && !needChange{
 			
 			guard
 			let navBar = navigationController
@@ -141,12 +167,13 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 				return
 			}
 			
+			/// 修改 NavigationBar 位置
 			navBar.navigationBar.y = navBar.navigationBar.y - nowOffset
 			
+			/// 限制 NavigationBar 位置
 			if navBar.navigationBar.y < -44 {
 				navBar.navigationBar.y = -44
 			}
-			
 			if navBar.navigationBar.y > 20 {
 				navBar.navigationBar.y = 20
 			}

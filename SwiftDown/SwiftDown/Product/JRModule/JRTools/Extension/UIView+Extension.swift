@@ -13,34 +13,21 @@ import Foundation
 
 extension UIView {
 	
-	/// 设置 View 的x
+	/// UIView x
 	var x: CGFloat {
 		set {
-			var newFarme = self.frame
-			newFarme.origin.x = x
-			self.frame = newFarme
+			var tmpFrame = self.frame
+			tmpFrame.origin.x = newValue
+			self.frame = tmpFrame
 		}
 		
 		get {
 			return self.frame.origin.x
 		}
 	}
-	
-	/// 设置 View 的 y
-//	var y: CGFloat {
-//		set {
-//			var newFarme = frame
-//			newFarme.origin.y = y
-//			frame = newFarme
-//		}
-//		
-//		get {
-//			return frame.origin.y
-//		}
-//	}
-	
+
 	/// UIView y
-	var y : CGFloat {
+	var y: CGFloat {
 		
 		get {
 			return frame.origin.y
@@ -53,5 +40,30 @@ extension UIView {
 		}
 	}
 	
+	/// UIView height
+	var height: CGFloat {
+		get {
+			return frame.size.height
+		}
+		
+		set {
+			var tmpFrame: CGRect = frame
+			tmpFrame.size.height = newValue
+			frame = tmpFrame
+		}
+	}
+	
+	/// UIView width
+	var width: CGFloat {
+		get {
+			return frame.size.width
+		}
+		
+		set {
+			var tmpFrame: CGRect = frame
+			tmpFrame.size.width = newValue
+			frame = tmpFrame
+		}
+	}
 	
 }
