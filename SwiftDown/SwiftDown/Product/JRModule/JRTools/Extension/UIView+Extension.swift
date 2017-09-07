@@ -13,11 +13,12 @@ import Foundation
 
 extension UIView {
 	
+	/// 设置 View 的x
 	var x: CGFloat {
 		set {
-			var frame = self.frame
-			frame.origin.x = x
-			self.frame = frame
+			var newFarme = self.frame
+			newFarme.origin.x = x
+			self.frame = newFarme
 		}
 		
 		get {
@@ -25,6 +26,32 @@ extension UIView {
 		}
 	}
 	
+	/// 设置 View 的 y
+//	var y: CGFloat {
+//		set {
+//			var newFarme = frame
+//			newFarme.origin.y = y
+//			frame = newFarme
+//		}
+//		
+//		get {
+//			return frame.origin.y
+//		}
+//	}
+	
+	/// UIView y
+	var y : CGFloat {
+		
+		get {
+			return frame.origin.y
+		}
+		
+		set {
+			var tmpFrame: CGRect = frame
+			tmpFrame.origin.y = newValue
+			frame = tmpFrame
+		}
+	}
 	
 	
 }
