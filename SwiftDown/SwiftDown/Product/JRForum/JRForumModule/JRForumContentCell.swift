@@ -19,6 +19,7 @@ class JRForumContentCell: UITableViewCell {
 	/// 父控制器
 	weak var superVC: JRForumViewController?
 	
+	
 	/// 子控制器
 	var childVCs: [UIViewController]?
 	

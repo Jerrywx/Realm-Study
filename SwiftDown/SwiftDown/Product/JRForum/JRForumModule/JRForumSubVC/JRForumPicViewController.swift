@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JRForumPicViewController: JRBaseViewController {
+class JRForumPicViewController: JRForumSubController {
 
 	/// tableView
 	var tableView: UITableView?

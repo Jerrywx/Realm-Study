@@ -13,6 +13,12 @@ class JRForumViewController: JRBaseViewController {
 	/// tableView
 	var tableView: UITableView?
 	
+	/// 用户信息高度
+	let userInfoH  = UIScreen.screen_H() * 0.382 - 44
+	/// 滚动模式
+	var scrollModel = 0		/// 标识当前tableView 滚动状态
+	var scrollModel2 = 0	/// 标识子控制器中 tableView 滚动状态
+	
 	/// 圈子头部
 	var forumHeader = JRForumHeader.forumHeader()
 	
@@ -74,7 +80,7 @@ extension JRForumViewController {
 		tableView?.dataSource	= self
 		tableView?.tableHeaderView = forumHeader
 		tableView?.register(JRForumContentCell.self, forCellReuseIdentifier: "normal")
-//		tableView?.contentInset = UIEdgeInsets(top: -40, left: 0, bottom: -40, right: 0)
+		tableView?.contentInset = UIEdgeInsets(top: -64, left: 0, bottom: 0, right: 0)
 		view.addSubview(tableView!)
 	}
 }
@@ -128,10 +134,27 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 		let y = scrollView.contentOffset.y
 		
 		nowOffset = y - nowOffset
-		
 		navigationBarOption(scrollView: scrollView, y: y)
-		
 		nowOffset = y
+		
+		///
+		tableViewScroll(y)
+	}
+	
+	/// 个人中心滚动模式控制
+	///
+	/// - Parameter scrollView: 当前scrollview
+	func tableViewScroll(_ y: CGFloat) {
+		/// 滚动模式
+		let margin = userInfoH - 64;
+		
+		if y >= margin || scrollModel2 == 1 {
+			tableView?.contentOffset = CGPoint(x: 0, y: margin)
+			scrollModel = 1
+		} else if (scrollModel2 == 0) {
+			scrollModel = 0
+		}
+		
 	}
 	
 	/// 导航栏处理
