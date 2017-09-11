@@ -16,6 +16,10 @@
 		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
+		341FDE751F66A791007DF3F2 /* JRForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A71F66710B00D34EAC /* JRForumViewController.swift */; };
+		341FDE761F66A7B3007DF3F2 /* JRForumPicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906AA1F6671A400D34EAC /* JRForumPicViewController.swift */; };
+		341FDE771F66A7B3007DF3F2 /* JRForumAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A51F66710B00D34EAC /* JRForumAllViewController.swift */; };
+		341FDE781F66A7B3007DF3F2 /* JRForumTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A61F66710B00D34EAC /* JRForumTopViewController.swift */; };
 		343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */; };
 		3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */; };
 		347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D151F5F95DE0099E20D /* JRTestView.swift */; };
@@ -691,6 +695,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341FDE761F66A7B3007DF3F2 /* JRForumPicViewController.swift in Sources */,
+				341FDE771F66A7B3007DF3F2 /* JRForumAllViewController.swift in Sources */,
+				341FDE781F66A7B3007DF3F2 /* JRForumTopViewController.swift in Sources */,
+				341FDE751F66A791007DF3F2 /* JRForumViewController.swift in Sources */,
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
 				348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */,
 				302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */,
