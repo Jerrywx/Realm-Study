@@ -10,9 +10,10 @@ import UIKit
 
 class JRForumSubController: JRBaseViewController {
 
+	var lastPosition:CGFloat = 0
+	
 	weak var superVC: JRForumViewController?
 	var tableView: JRTableView?
-	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,16 +57,26 @@ extension JRForumSubController: UITableViewDataSource, UITableViewDelegate {
 //		} else {
 //			superVC?.scrollModel2 = 1
 //		}
-		print("--------------- \(scrollView.contentOffset.y)")
-		if scrollView.contentOffset.y > 100 {
-			superVC?.scrollModel2 = 1
-		} else {
+		
+		let y = scrollView.contentOffset.y
+		
+		
+//		if scrollView.contentOffset.y > 100 && (lastPosition - y) > 0 {
+//			superVC?.scrollModel2 = 1
+//		} else {
+//			superVC?.scrollModel2 = 0
+//		}
+		
+		if scrollView.contentOffset.y < 100 {
 			superVC?.scrollModel2 = 0
 		}
+		
 		
 		if scrollView.contentOffset.y <= 0 {
 			superVC?.scrollModel2 = 0
 		}
+		
+		lastPosition = y
 	}
 	
 }

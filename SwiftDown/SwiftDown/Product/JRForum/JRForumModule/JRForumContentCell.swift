@@ -200,17 +200,8 @@ extension JRForumContentCell: UIPageViewControllerDataSource, UIPageViewControll
 		
 		/// 保存将要显示的索引
 		willAppearIndex = index ?? 0
-//		print("----\(pendingViewControllers.count) ----- \(String(describing: index))")
+//		superVC?.saveIndex(index: false)
 	}
-	
-//	func pageViewController(_ pageViewController: UIPageViewController,
-//	                        didFinishAnimating finished: Bool, 
-//	                        previousViewControllers: [UIViewController],
-//	                        transitionCompleted completed: Bool) {
-//		let vc = previousViewControllers.first
-//		let index = controllerList?.index(of: vc as! JRForumSubController)
-//		print("======\(previousViewControllers.count) ----- \(String(describing: index))")
-//	}
 	
 }
 
@@ -229,6 +220,11 @@ extension JRForumContentCell: UIScrollViewDelegate {
 		
 		/// 保存当前索引
 		currentIndex = index
+		
+		
+//		superVC?.saveIndex(index: true)
+//		superVC?.saveLocation(index)
+		print("================================== \(index)")
 	}
 	
 	/// scrollView 滑动回调
@@ -269,9 +265,12 @@ extension JRForumContentCell: UIScrollViewDelegate {
 //		print("--------- \(x) - \(UIScreen.scrren_W()) ==== \(scale)")
 		
 		/// 需要三个参数  当前索引  滑动方向  滑动比例
-		let param = String(format:"参数列表:%@ -- %.2f --- %zd -- %zd" , direction.description, scale, currentIndex, willAppearIndex)
-//		print("----- 参数列表: \(direction) -- \(scale) --- \(currentIndex) -- \(willAppearIndex)")
-		print(param)
+//		let param = String(format:"参数列表:%@ -- %.2f --- %zd -- %zd" , direction.description, scale, currentIndex, willAppearIndex)
+//		print(param)
+		superVC?.changeLocation(currentIndex: currentIndex, 
+		                        nextIndex: willAppearIndex, 
+		                        percentage: scale, 
+		                        direction: direction)
 		
 	}
 	
