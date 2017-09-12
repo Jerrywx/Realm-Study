@@ -11,6 +11,17 @@ import UIKit
 class JRForumContentCell: UITableViewCell {
 
 	var lastIndex = 0
+	
+	var beginOffset: CGFloat = 0
+	
+	/// 滑动方向 wsy
+	var direction:Bool = false
+	/// 当前显示索引
+	var currentIndex = 0
+	/// 将要显示索引
+	var willAppearIndex = 0
+	
+	
 	///
 	weak var superVC: JRForumViewController? {
 		didSet {
@@ -22,8 +33,11 @@ class JRForumContentCell: UITableViewCell {
 	
 	/// segment
 	let segmentH = CGFloat(44);
+	
 	let segment = UIView()
+	
 	let segmentControl = UISegmentedControl(items: ["置顶", "全部", "图片"])
+	
 	/// pageViewController
 	let pageViewController = UIPageViewController(transitionStyle: .scroll,
 	                                              navigationOrientation: .horizontal,
@@ -35,13 +49,9 @@ class JRForumContentCell: UITableViewCell {
 	/// layout
 	var layout = UICollectionViewFlowLayout()
 	
-	/// 父控制器
-//	weak var superVC: JRForumViewController?
-	
-	
 	/// 子控制器
 	var controllerList: [JRForumSubController]?
-	var childVCs: [UIViewController]?
+	
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -129,6 +139,10 @@ extension JRForumContentCell: UIPageViewControllerDataSource, UIPageViewControll
 	/// - Returns: 将要显示的控制器
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 		
+		/// 记录滑动方向
+		direction = false
+		
+		/// 获取控制器
 		let indexVC = controllerList?.index(of: viewController as! JRForumSubController)
 		
 		guard
@@ -152,6 +166,10 @@ extension JRForumContentCell: UIPageViewControllerDataSource, UIPageViewControll
 	/// - Returns: 返回将要显示的控制器
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 		
+		/// 记录滑动方向
+		direction = true
+		
+		/// 获取控制器
 		let indexVC = controllerList?.index(of: viewController as! JRForumSubController)
 		
 		guard
@@ -167,13 +185,39 @@ extension JRForumContentCell: UIPageViewControllerDataSource, UIPageViewControll
 		
 		return list[index + 1]
 	}
-
+	
+	
+	/// 将要显示控制器
+	///
+	/// - Parameters:
+	///   - pageViewController: pageViewController
+	///   - pendingViewControllers: 将要显示的控制器列表
+	func pageViewController(_ pageViewController: UIPageViewController,
+	                        willTransitionTo pendingViewControllers: [UIViewController]) {
+		
+		let vc = pendingViewControllers.first
+		let index = controllerList?.index(of: vc as! JRForumSubController)
+		
+		/// 保存将要显示的索引
+		willAppearIndex = index ?? 0
+//		print("----\(pendingViewControllers.count) ----- \(String(describing: index))")
+	}
+	
+//	func pageViewController(_ pageViewController: UIPageViewController,
+//	                        didFinishAnimating finished: Bool, 
+//	                        previousViewControllers: [UIViewController],
+//	                        transitionCompleted completed: Bool) {
+//		let vc = previousViewControllers.first
+//		let index = controllerList?.index(of: vc as! JRForumSubController)
+//		print("======\(previousViewControllers.count) ----- \(String(describing: index))")
+//	}
+	
 }
 
-
-
+// MARK: - UIScrollViewDelegate
 extension JRForumContentCell: UIScrollViewDelegate {
-	
+
+	/// 停止滑动
 	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 		
 		let vc = pageViewController.viewControllers?.first as! JRForumSubController
@@ -182,6 +226,53 @@ extension JRForumContentCell: UIScrollViewDelegate {
 			return
 		}
 		segmentControl.selectedSegmentIndex = index
+		
+		/// 保存当前索引
+		currentIndex = index
+	}
+	
+	/// scrollView 滑动回调
+	///
+	/// - Parameter scrollView: 被滑动的 scrollview
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		
+		let x = scrollView.contentOffset.x
+		var scale = x / UIScreen.scrren_W()
+		if scale > 1 {
+			scale = scale - 1
+		}
+		
+		let pan = scrollView.panGestureRecognizer
+		
+		switch pan.state {
+		case .began:
+			beginOffset = x
+			break
+			
+		case .changed:
+			if beginOffset > x {
+				direction = false
+			} else {
+				direction = true
+			}
+			break
+			
+		case .cancelled, .failed:
+			print("、、、、失败 \(x)  --------- \(pan.state.rawValue)")
+			break
+			
+		default:
+			break
+		}
+		
+//		print("====== \(pan.state.rawValue)")
+//		print("--------- \(x) - \(UIScreen.scrren_W()) ==== \(scale)")
+		
+		/// 需要三个参数  当前索引  滑动方向  滑动比例
+		let param = String(format:"参数列表:%@ -- %.2f --- %zd -- %zd" , direction.description, scale, currentIndex, willAppearIndex)
+//		print("----- 参数列表: \(direction) -- \(scale) --- \(currentIndex) -- \(willAppearIndex)")
+		print(param)
+		
 	}
 	
 }

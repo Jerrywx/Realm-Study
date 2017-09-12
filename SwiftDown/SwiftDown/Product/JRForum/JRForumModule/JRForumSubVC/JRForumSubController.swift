@@ -31,8 +31,10 @@ class JRForumSubController: JRBaseViewController {
     }
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension JRForumSubController: UITableViewDataSource, UITableViewDelegate {
 	
+	/// UITableViewDataSource
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 20
 	}
@@ -45,21 +47,22 @@ extension JRForumSubController: UITableViewDataSource, UITableViewDelegate {
 		return cell!
 	}
 	
-	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 0.1
-	}
-	
-	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return 0.1
-	}
-	
+	/// UITableViewDelegate
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		
-		if superVC?.scrollModel == 0 && superVC?.scrollModel2 == 0 {
-			tableView?.contentOffset = CGPoint(x: 0, y: 0)
-		} else {
+		
+//		if superVC?.scrollModel == 0 && superVC?.scrollModel2 == 0 {
+//			tableView?.contentOffset = CGPoint(x: 0, y: 0)
+//		} else {
+//			superVC?.scrollModel2 = 1
+//		}
+		print("--------------- \(scrollView.contentOffset.y)")
+		if scrollView.contentOffset.y > 100 {
 			superVC?.scrollModel2 = 1
+		} else {
+			superVC?.scrollModel2 = 0
 		}
+		
 		if scrollView.contentOffset.y <= 0 {
 			superVC?.scrollModel2 = 0
 		}

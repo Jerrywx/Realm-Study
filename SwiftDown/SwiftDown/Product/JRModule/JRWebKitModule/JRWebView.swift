@@ -66,8 +66,6 @@ extension JRWebView {
 			return
 		}
 
-		print("======= \(param)")
-		
 		/// 判断是否是  webView
 		if string.contains("common_webview") {
 			/// 使用webView 方式打开
@@ -88,7 +86,8 @@ extension JRWebView {
 		switch funcName {
 			case "goto_comment_detail":
 				print("---- 打开帖子")
-				delegate?.openWithThread!(forumId: "", threadId: "")
+//				delegate?.openWithThread!(forumId: "", threadId: "")
+				delegate?.openWithForum!(forumId: "")
 			break
 			
 			case "goto_circle_detail":

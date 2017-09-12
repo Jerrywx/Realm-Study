@@ -110,19 +110,11 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	
-	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UIScreen.screen_H() - 64
 	}
-	
-	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 0.1
-	}
-	
-	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return 0.1
-	}
 
+	
 	///: - UITableViewDelegate
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		
@@ -167,11 +159,6 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 			let alpha: CGFloat = y / alphaHeight
 			self.navigationController?.navigationBar.subviews.first?.alpha = alpha
 		}
-		
-		/// 固定 选在器
-//		if y > alphaHeight {
-//			scrollView.contentOffset = CGPoint(x: 0, y: alphaHeight)
-//		}
 		
 		/// 关闭 导航栏隐藏
 		return
