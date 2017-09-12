@@ -13,6 +13,8 @@ class JRForumViewController: JRBaseViewController {
 	/// tableView
 	var tableView: UITableView?
 	
+	let contentCell = JRForumContentCell()
+	
 	/// 用户信息高度
 	let userInfoH  = UIScreen.screen_H() * 0.382 - 44
 	/// 滚动模式
@@ -74,13 +76,15 @@ extension JRForumViewController {
 	
 	func setupUI() {
 		
+		contentCell.superVC = self
+		
 		let frame = CGRect(x: 0, y: 0, width: UIScreen.scrren_W(), height: UIScreen.screen_H())
-		tableView				= UITableView(frame: frame, style: .plain)
+		tableView				= UITableView(frame: frame, style: .grouped)
 		tableView?.delegate		= self
 		tableView?.dataSource	= self
 		tableView?.tableHeaderView = forumHeader
 		tableView?.register(JRForumContentCell.self, forCellReuseIdentifier: "normal")
-		tableView?.contentInset = UIEdgeInsets(top: -64, left: 0, bottom: 0, right: 0)
+		tableView?.showsVerticalScrollIndicator = false
 		view.addSubview(tableView!)
 	}
 }
@@ -99,10 +103,7 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "normal") as! JRForumContentCell
-		cell.superVC = self
-		cell.selectionStyle = .none
-		return cell
+		return contentCell
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -111,22 +112,17 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UIScreen.screen_H() - segment.height - 64
+		return UIScreen.screen_H() - 64
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 40
+		return 0.1
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.1
 	}
-	
-	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-		return segment
-	}
-	
-	
+
 	///: - UITableViewDelegate
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		
@@ -162,7 +158,7 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	/// - Parameter y: contentOffset.y
 	func navigationBarOption(scrollView: UIScrollView, y: CGFloat) {
 		
-		let alphaHeight: CGFloat = 185.0 - 64
+		let alphaHeight: CGFloat = userInfoH - 64
 		
 		/// 透明度
 		if y > alphaHeight {
@@ -173,9 +169,9 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 		}
 		
 		/// 固定 选在器
-		if y > alphaHeight {
-			scrollView.contentOffset = CGPoint(x: 0, y: alphaHeight)
-		}
+//		if y > alphaHeight {
+//			scrollView.contentOffset = CGPoint(x: 0, y: alphaHeight)
+//		}
 		
 		/// 关闭 导航栏隐藏
 		return

@@ -15,7 +15,9 @@ class JRForumHeader: UIView {
 	/// - Returns: 返回圈子头部
 	static func forumHeader() -> JRForumHeader {
 		
-		let farme = CGRect(x: 0, y: 0, width: UIScreen.scrren_W(), height: 185)
+		let height = UIScreen.screen_H() * 0.382 - 44 // 185
+		
+		let farme = CGRect(x: 0, y: 0, width: UIScreen.scrren_W(), height: height)
 		let forumHeader = JRForumHeader(frame: farme)
 		forumHeader.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
 		return forumHeader

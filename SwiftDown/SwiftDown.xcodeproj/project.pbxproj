@@ -94,7 +94,7 @@
 		349E98BD1F5CF37A0059F483 /* JRBookCoverHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverHeader.swift; sourceTree = "<group>"; };
 		34E906A51F66710B00D34EAC /* JRForumAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumAllViewController.swift; sourceTree = "<group>"; };
 		34E906A61F66710B00D34EAC /* JRForumTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumTopViewController.swift; sourceTree = "<group>"; };
-		34E906A71F66710B00D34EAC /* JRForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumViewController.swift; sourceTree = "<group>"; };
+		34E906A71F66710B00D34EAC /* JRForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JRForumViewController.swift; path = JRForumSubVC/JRForumViewController.swift; sourceTree = "<group>"; };
 		34E906A81F66713800D34EAC /* JRForumSubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumSubController.swift; sourceTree = "<group>"; };
 		34E906AA1F6671A400D34EAC /* JRForumPicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumPicViewController.swift; sourceTree = "<group>"; };
 		34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumHeader.swift; sourceTree = "<group>"; };
@@ -290,6 +290,7 @@
 		347A1D1B1F5FE0AE0099E20D /* JRForumModule(圈子) */ = {
 			isa = PBXGroup;
 			children = (
+				34E906A71F66710B00D34EAC /* JRForumViewController.swift */,
 				34E906A41F66710B00D34EAC /* JRForumSubVC */,
 				34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */,
 				34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */,
@@ -341,7 +342,6 @@
 				34E906AA1F6671A400D34EAC /* JRForumPicViewController.swift */,
 				34E906A51F66710B00D34EAC /* JRForumAllViewController.swift */,
 				34E906A61F66710B00D34EAC /* JRForumTopViewController.swift */,
-				34E906A71F66710B00D34EAC /* JRForumViewController.swift */,
 				34E906A81F66713800D34EAC /* JRForumSubController.swift */,
 			);
 			path = JRForumSubVC;
