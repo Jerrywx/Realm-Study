@@ -39,7 +39,7 @@ class JRReaderViewController: JRBaseViewController {
 /// 加载数据
 extension JRReaderViewController {
 	
-	///
+	/// 加载数据
 	func loadData() {
 		
 		guard
@@ -54,6 +54,12 @@ extension JRReaderViewController {
 			self.chapterList = list
 //			self.totalChapterNumber = list.count
 			self.collectionView?.reloadData()
+			
+			/// 下载第一章节
+			let model:JRBookChapterModel = list.first!
+			
+			JRBookServer.loadChapter(bookId: model.bookId!, chapterId: model.chapterId!, chapterModel: nil)
+			
 		}
 	}
 }
@@ -284,6 +290,8 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			/// 书籍顶部
 			if chapterIndex <= (totalChapterNumber / 2 + 1) {
 				chapterOffset = 0
+				
+				if chapterIndex == 0 {return}
 				
 				collectionView.performSelector(onMainThread: #selector(collectionView.reloadData),
 				                                with: nil,
