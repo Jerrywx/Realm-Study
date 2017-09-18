@@ -42,16 +42,54 @@ class JRBookServer: NSObject {
 	/// 加载章节内容
 	///
 	/// - Parameter chapterId: 章节ID
-	static func loadChapter(bookId: String, chapterId: String, chapterModel: JRBookChapterModel? , type: String = "0") {
+	static func loadChapter(bookId: String, chapters:[JRBookChapterModel] , type: String = "0") {
 
-		/// 下载章节内容参数
+		/// 参数判断
+		if bookId.characters.count == 0 || chapters.count == 0 {
+			//MARK:- 请求失败处理
+			return
+		}
+		
+		/// 拼接参数
+		var chapterIds: [String] = [String]()
+		
+		for model in chapters {
+			chapterIds.append(model.chapterId!)
+		}
+
+		let chapterId: String = chapterIds.joined(separator: ",")
+		
 		let param: [String:String] = ["bookId": bookId,
 		                              "chapterId":chapterId,
 		                              "type":type,
 		                              "version":"4.6.1"]
-		
+
 		/// 下载章节内容
 		JRNetWorkManager.shared.myRequest(JRIgnoreFile.Url_kChapterDownLoad, parameters: param) { (json:AnyObject?, isSuccess: Bool) in
+			
+			/// 请求成功
+			if isSuccess {
+
+				guard
+					let jsonData: [AnyHashable : Any] = json as? [AnyHashable : Any]
+				else {
+					return
+				}
+				
+				/// 解析请求数据
+				let response = JRNetModel.yy_model(with: jsonData)
+
+				/// 请求成功
+				if response?.code == JRNetWorkCode.success.rawValue {
+					guard
+						let result = response?.result
+					else {
+							return
+					}
+					print("章节数据== \(result)")
+				}
+
+			}
 			
 			/*
 				bookId = 479435;
@@ -61,10 +99,6 @@ class JRBookServer: NSObject {
 				key = "<null>";
 				status = 1;
 			*/
-			
-			print("=====\(String(describing: json))")
-			
-			
 			
 		}
 	}

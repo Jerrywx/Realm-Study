@@ -39,6 +39,7 @@
 		349E98BC1F5CF14B0059F483 /* JRScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E98BB1F5CF14B0059F483 /* JRScreen.swift */; };
 		349E98BE1F5CF37A0059F483 /* JRBookCoverHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E98BD1F5CF37A0059F483 /* JRBookCoverHeader.swift */; };
 		34E906A91F66713800D34EAC /* JRForumSubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A81F66713800D34EAC /* JRForumSubController.swift */; };
+		34EAFF5D1F6F66C5007895C6 /* JRNetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EAFF5C1F6F66C5007895C6 /* JRNetModel.swift */; };
 		34F5EC091F611B6C0091FC81 /* JRForumHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */; };
 		34F5EC0B1F611F840091FC81 /* JRForumSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */; };
 		34F5EC0D1F6141350091FC81 /* JRForumContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5EC0C1F6141350091FC81 /* JRForumContentCell.swift */; };
@@ -107,6 +108,7 @@
 		34E906A71F66710B00D34EAC /* JRForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JRForumViewController.swift; path = JRForumSubVC/JRForumViewController.swift; sourceTree = "<group>"; };
 		34E906A81F66713800D34EAC /* JRForumSubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumSubController.swift; sourceTree = "<group>"; };
 		34E906AA1F6671A400D34EAC /* JRForumPicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRForumPicViewController.swift; sourceTree = "<group>"; };
+		34EAFF5C1F6F66C5007895C6 /* JRNetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRNetModel.swift; sourceTree = "<group>"; };
 		34F5EC081F611B6C0091FC81 /* JRForumHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumHeader.swift; sourceTree = "<group>"; };
 		34F5EC0A1F611F840091FC81 /* JRForumSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumSegment.swift; sourceTree = "<group>"; };
 		34F5EC0C1F6141350091FC81 /* JRForumContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRForumContentCell.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				C42DB6A51E679F78008E277E /* JRNetWorkManager.swift */,
 				C42DB6A71E67A018008E277E /* JRNetWorkURL.swift */,
 				C491D1031E6D9BF100F05C2E /* JRIgnoreFile.swift */,
+				34EAFF5C1F6F66C5007895C6 /* JRNetModel.swift */,
 			);
 			path = JRNetManager;
 			sourceTree = "<group>";
@@ -731,7 +734,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -754,6 +757,7 @@
 				302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */,
 				347A1D231F5FE1E20099E20D /* JRForumMainController.swift in Sources */,
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
+				34EAFF5D1F6F66C5007895C6 /* JRNetModel.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
 				3029D70E1F6EC5660034EAF2 /* JRBookPageModel.swift in Sources */,

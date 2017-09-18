@@ -57,9 +57,9 @@ extension JRReaderViewController {
 			
 			/// 下载第一章节
 			let model:JRBookChapterModel = list.first!
-			
-			JRBookServer.loadChapter(bookId: model.bookId!, chapterId: model.chapterId!, chapterModel: nil)
-			
+			let chapters = [list[0], list[1], list[2]]
+
+			JRBookServer.loadChapter(bookId: model.bookId!, chapters: chapters)
 		}
 	}
 }

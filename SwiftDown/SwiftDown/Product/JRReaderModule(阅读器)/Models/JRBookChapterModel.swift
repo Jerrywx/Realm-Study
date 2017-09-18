@@ -48,6 +48,8 @@ class JRBookChapterModel: NSObject {
 	var isDowload: Bool = false
 	// 章节页数
 	var pageNumb: Int = 0
+	// 分页列表
+	var pageList: [JRBookPageModel]?
 	
 
 
