@@ -67,10 +67,8 @@ class JRBookServer: NSObject {
 			
 			
 		}
-		
-		
-		
 	}
+	
 	
 	
 }

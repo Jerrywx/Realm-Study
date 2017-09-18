@@ -270,9 +270,9 @@
 		30E12D9D1F6D367F0037FB7B /* JRReaderModule(阅读器) */ = {
 			isa = PBXGroup;
 			children = (
-				3029D7081F6EC5660034EAF2 /* Cells */,
 				3029D70B1F6EC5660034EAF2 /* Controllers */,
 				3029D7051F6EC5660034EAF2 /* Models */,
+				3029D7081F6EC5660034EAF2 /* Cells */,
 				3029D70A1F6EC5660034EAF2 /* Views */,
 				30E12DA21F6D7C320037FB7B /* JRBookServer.swift */,
 			);
