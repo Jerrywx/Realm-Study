@@ -32,4 +32,8 @@ class JRBookPageModel: NSObject {
 	var totalPage: Int = 0
 	
 	
+	override var description: String {
+		return "\(bookId ?? ":::") - \(aContent!.string)\n\n"
+	}
+	
 }

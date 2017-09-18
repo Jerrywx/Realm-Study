@@ -52,14 +52,17 @@ extension JRReaderViewController {
 				let list = models
 			else { return }
 			self.chapterList = list
-//			self.totalChapterNumber = list.count
-			self.collectionView?.reloadData()
-			
+
 			/// 下载第一章节
 			let model:JRBookChapterModel = list.first!
 			let chapters = [list[0], list[1], list[2]]
 
 			JRBookServer.loadChapter(bookId: model.bookId!, chapters: chapters)
+//			print("\(list[0].pageList)")
+//			print("\(list[1].pageList)")
+//			print("\(list[2].pageList)")
+			
+			self.collectionView?.reloadData()
 		}
 	}
 }
@@ -107,6 +110,19 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		
+		guard
+		let list = chapterList
+		else {
+			return 1
+		}
+		
+		let model = list[section + chapterOffset]
+		
+		if model.pageList != nil {
+			return (model.pageList?.count)!
+		}
+		
 		return 1
 	}
 	
@@ -135,6 +151,13 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 		
 		
 		return cell
+	}
+	
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		if indexPath.section == 0 {
+			collectionView.reloadData()
+		}
 	}
 	
 	/// 滑动停止

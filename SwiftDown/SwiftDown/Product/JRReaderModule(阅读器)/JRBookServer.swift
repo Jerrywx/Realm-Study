@@ -52,13 +52,10 @@ class JRBookServer: NSObject {
 		
 		/// 拼接参数
 		var chapterIds: [String] = [String]()
-		
 		for model in chapters {
 			chapterIds.append(model.chapterId!)
 		}
-
 		let chapterId: String = chapterIds.joined(separator: ",")
-		
 		let param: [String:String] = ["bookId": bookId,
 		                              "chapterId":chapterId,
 		                              "type":type,
@@ -86,23 +83,126 @@ class JRBookServer: NSObject {
 					else {
 							return
 					}
-					print("章节数据== \(result)")
+					
+					let models:[JRBookChapterDetial] = NSArray.yy_modelArray(with: JRBookChapterDetial.self, json: result) as! [JRBookChapterDetial]
+					
+					
+					var i = 0
+					///
+					for model in models {
+						let list:[JRBookPageModel] = operatorModels(model: model)
+						
+//						for i in 0..<list.count {
+							let mm = chapters[i]
+							mm.pageList = list
+							mm.pageNumb = list.count
+//						}
+						i = i + 1
+					}
+					
+					print("\(chapters[0].pageList)")
+					print("\(chapters[1].pageList)")
+					print("\(chapters[2].pageList)")
 				}
-
 			}
-			
-			/*
-				bookId = 479435;
-				chapterId = 8167891;
-				chapterName = "\U4e5d\U6708\Uff01";
-				content = "<p>\U3010";
-				key = "<null>";
-				status = 1;
-			*/
-			
 		}
 	}
 	
-	
+	///
+	static func operatorModels(model: JRBookChapterDetial) -> [JRBookPageModel] {
+		
+		/// 段落
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.alignment 		= .justified
+		paragraphStyle.lineSpacing 		= 10
+		paragraphStyle.paragraphSpacing	= 15
+		
+		let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 15),
+		             NSParagraphStyleAttributeName:paragraphStyle]
+		
+		/// 属性字符串
+		let maString = NSMutableAttributedString(string: model.content!, attributes: attri)
+		
+		
+		let frameSetter = CTFramesetterCreateWithAttributedString(maString)
+		
+		let bounds = CGRect(x: 0, y: 0, width: UIScreen.scrren_W() - 40, height: UIScreen.screen_H() - 80)
+		let path = CGPath(rect: bounds, transform: nil)
+		
+		var currentOffset:Int		= 0;
+		var currentInnerOffset:Int	= 0;
+		var hasMorePages: Bool		= true;
+		var pageNumb:Int = 1
+		
+		var mArrays = [JRBookPageModel]()
+		var index = 1
+		
+		while hasMorePages {
+			
+			let frame = CTFramesetterCreateFrame(frameSetter,
+			                                     CFRange(location: currentInnerOffset, length: 0),
+			                                     path, nil)
+			
+			let range = CTFrameGetVisibleStringRange(frame)
+			
+			///
+			if range.location + range.length < maString.length {
+				
+				currentOffset += range.length;
+				currentInnerOffset += range.length;
+				
+				let rag = NSMakeRange(range.location, range.length)
+//				let aSS:NSAttributedString = maString.attributedSubstring(from: rag)
+				
+				let mm = JRBookPageModel()
+				mm.bookId = model.bookId
+				mm.chapterId = model.chapterId
+				mm.chapterName = model.chapterName
+				mm.aContent = maString.attributedSubstring(from: rag)
+				mm.pageNumb = index
+				mArrays.append(mm)
+				index = index + 1
+				
+			} else {
+				let rag	= NSMakeRange(range.location, maString.length - range.location)
+				
+				let mm = JRBookPageModel()
+				mm.bookId = model.bookId
+				mm.chapterId = model.chapterId
+				mm.chapterName = model.chapterName
+				mm.aContent = maString.attributedSubstring(from: rag)
+				
+				mm.pageNumb = index
+				mArrays.append(mm)
+				index = index + 1
+				hasMorePages = false
+			}
+			
+			
+			
+		}
+		
+		return mArrays
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
