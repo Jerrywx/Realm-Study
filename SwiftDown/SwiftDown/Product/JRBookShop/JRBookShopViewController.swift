@@ -29,7 +29,7 @@ extension JRBookShopViewController {
 		print(sender.selectedSegmentIndex)
 		
 		let w = CGFloat(sender.selectedSegmentIndex) * UIScreen.main.screenW
-		let rect = CGRect(x: w, y: 64 + 40, width: UIScreen.main.screenW, height: 1)
+		let rect = CGRect(x: w, y: 82 + 40, width: UIScreen.main.screenW, height: 1)
 		scrollView.scrollRectToVisible(rect, animated: true)
 	}
 	
@@ -51,7 +51,7 @@ extension JRBookShopViewController {
 	fileprivate func setupUI() {
 		
 		/// Segment
-		segmentControl.frame = CGRect(x: 0, y: 64, width: UIScreen.main.screenW, height: 40)
+		segmentControl.frame = CGRect(x: 0, y: 82, width: UIScreen.main.screenW, height: 40)
 		segmentControl.backgroundColor	= #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
 		segmentControl.sectionTitles	= ["精选", "免费", "排行", "书库"]
 		segmentControl.titleTextAttributes = [NSFontAttributeName : UIFont.systemFont(ofSize: 14)]
@@ -65,8 +65,8 @@ extension JRBookShopViewController {
 		view.addSubview(segmentControl)
 		
 		/// scrollView
-		let height = UIScreen.screen_H() - 64 - 49 - 40
-		let frame = CGRect(x: 0, y: 64 + 40,
+		let height = UIScreen.screen_H() - 82 - 78 - 40
+		let frame = CGRect(x: 0, y: 82 + 40,
 		                   width: UIScreen.scrren_W(), 
 		                   height: height)
 		scrollView.frame			= frame
@@ -96,7 +96,7 @@ extension JRBookShopViewController {
 		            Url_ShopRanking,
 		            Url_ShopStore]
 
-		let height = UIScreen.screen_H() - 64 - 49 - 40
+		let height = UIScreen.screen_H() - 82 - 78 - 40
 		
 		for i in 0..<urls.count {
 			let webView: JRWebView = JRWebView(frame: CGRect(x: CGFloat(i) * UIScreen.main.screenW,

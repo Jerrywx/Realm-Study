@@ -143,7 +143,7 @@ extension JRForumViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableViewScroll(_ y: CGFloat) {
 		
 		/// 保存索引
-		saveLocation(curretnIndex)
+//		saveLocation(curretnIndex)
 		
 		/// 滚动模式
 		let margin = userInfoH - 64;
@@ -289,13 +289,32 @@ extension JRForumViewController {
 		}
 		
 		/// 计算实时动画位置
+		
+		var pp = percentage
+		if !direction && percentage != 1{
+			pp = 1 - percentage
+		}
+		
 		let length = endPosition - startPosition
-		let location = percentage * length
+		let location = pp * length
 		
-		print("----\(startPosition)  \(endPosition)--\(location)")
 		
+		
+//		currentIndex: NSInteger, nextIndex: NSInteger, percentage: CGFloat, direction: Bool) {
+//		print("----\(currentIndex)  \(nextIndex)--\(percentage) === \(direction)")
+		print("----- A:\(topPosition) B:\(allPosition) C:\(picPosition) ---- \(currentIndex)")
+	
+//		let string = String(format: "----- A:%.2f B:%.2f C:%.2f ---- %.2f", startPosition, endPosition, percentage, location)
+//		print(string)
 		/// 指定动画
-		tableView?.setContentOffset(CGPoint(x: 0, y: startPosition + location), animated: false)
+		
+		var p = startPosition + location
+//		if !direction {
+//			p = location - location
+//		}
+		
+		tableView?.setContentOffset(CGPoint(x: 0, y: p), animated: false)
+	
 	}
 	
 }

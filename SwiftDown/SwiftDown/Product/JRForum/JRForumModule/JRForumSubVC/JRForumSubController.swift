@@ -10,6 +10,8 @@ import UIKit
 
 class JRForumSubController: JRBaseViewController {
 
+	var contentIndex: NSInteger = 0
+	
 	var lastPosition:CGFloat = 0
 	
 	weak var superVC: JRForumViewController?
@@ -51,21 +53,7 @@ extension JRForumSubController: UITableViewDataSource, UITableViewDelegate {
 	/// UITableViewDelegate
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		
-		
-//		if superVC?.scrollModel == 0 && superVC?.scrollModel2 == 0 {
-//			tableView?.contentOffset = CGPoint(x: 0, y: 0)
-//		} else {
-//			superVC?.scrollModel2 = 1
-//		}
-		
 		let y = scrollView.contentOffset.y
-		
-		
-//		if scrollView.contentOffset.y > 100 && (lastPosition - y) > 0 {
-//			superVC?.scrollModel2 = 1
-//		} else {
-//			superVC?.scrollModel2 = 0
-//		}
 		
 		if scrollView.contentOffset.y < 100 {
 			superVC?.scrollModel2 = 0
@@ -77,6 +65,15 @@ extension JRForumSubController: UITableViewDataSource, UITableViewDelegate {
 		}
 		
 		lastPosition = y
+	}
+	
+	
+	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+		superVC?.saveLocation(contentIndex)
+	}
+	
+	func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+		superVC?.saveLocation(contentIndex)
 	}
 	
 }

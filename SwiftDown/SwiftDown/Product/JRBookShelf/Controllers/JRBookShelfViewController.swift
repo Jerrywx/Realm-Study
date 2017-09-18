@@ -168,7 +168,7 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 //		cell.layout = layout2
 		let model = listModel?[indexPath.row]
 		cell.bookModel = model
-		
+
 		return cell
 	}
 	

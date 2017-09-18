@@ -221,10 +221,12 @@ extension JRForumContentCell: UIScrollViewDelegate {
 		/// 保存当前索引
 		currentIndex = index
 		
+		for vc in controllerList! {
+			vc.contentIndex = index
+		}
 		
-//		superVC?.saveIndex(index: true)
+		superVC?.saveIndex(index: true)
 //		superVC?.saveLocation(index)
-		print("================================== \(index)")
 	}
 	
 	/// scrollView 滑动回调
@@ -243,6 +245,8 @@ extension JRForumContentCell: UIScrollViewDelegate {
 		switch pan.state {
 		case .began:
 			beginOffset = x
+			superVC?.saveIndex(index: false)
+//			superVC?.saveLocation(<#T##currentIndex: NSInteger##NSInteger#>)
 			break
 			
 		case .changed:
