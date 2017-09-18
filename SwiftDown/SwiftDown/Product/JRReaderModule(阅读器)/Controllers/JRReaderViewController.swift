@@ -141,6 +141,22 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				cell.label.text = model.name
 				cell.chapterModel = model
 				cell.index = chapterList?.index(of: model)
+				
+				if model.isDowload {
+					
+					if (model.pageList?.count)! > indexPath.row {
+						let m:JRBookPageModel = model.pageList![indexPath.row]
+						cell.content.attributedText = m.aContent
+						
+						cell.label.text = "\((model.name)!) - \(indexPath.row + 1)/\((model.pageList?.count)!)"
+						
+					} else {
+						cell.content.attributedText = nil
+					}
+				} else {
+					cell.content.attributedText = nil
+				}
+				
 			} else {
 				cell.indexPath = indexPath
 			}

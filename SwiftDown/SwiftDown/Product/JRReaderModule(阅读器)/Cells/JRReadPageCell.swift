@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import YYText
 
 class JRReadPageCell: UICollectionViewCell {
 
 //	let label = UILabel(frame: UIScreen.main.bounds)
-	let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300))
+	let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40))
+	
+	let content = YYLabel(frame: CGRect(x: 20, y: 40,
+	                                    width: UIScreen.scrren_W() - 40,
+	                                    height: UIScreen.screen_H() - 80))
 	
 	/// 章节索引
 	var index: Int?
@@ -47,6 +52,11 @@ extension JRReadPageCell {
 		label.textAlignment = .center
 		label.numberOfLines = 0
 		label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+		
+		content.numberOfLines = 0
+		content.textVerticalAlignment = .top
+		contentView.addSubview(content)
+		
 	}
 }
 

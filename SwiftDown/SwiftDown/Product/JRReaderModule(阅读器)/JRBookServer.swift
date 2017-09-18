@@ -92,17 +92,13 @@ class JRBookServer: NSObject {
 					for model in models {
 						let list:[JRBookPageModel] = operatorModels(model: model)
 						
-//						for i in 0..<list.count {
-							let mm = chapters[i]
-							mm.pageList = list
-							mm.pageNumb = list.count
-//						}
+						let mm = chapters[i]
+						mm.pageList = list
+						mm.pageNumb = list.count
+						mm.isDowload = true
+						
 						i = i + 1
 					}
-					
-					print("\(chapters[0].pageList)")
-					print("\(chapters[1].pageList)")
-					print("\(chapters[2].pageList)")
 				}
 			}
 		}
