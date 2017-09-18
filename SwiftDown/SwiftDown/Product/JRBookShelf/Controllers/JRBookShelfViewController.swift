@@ -29,6 +29,11 @@ class JRBookShelfViewController: JRBaseViewController {
         super.viewDidLoad()
 		/// 初始化界面
 		setupUI()
+		if #available(iOS 11.0, *) {
+			collectionView?.contentInsetAdjustmentBehavior = .automatic
+		} else {
+			// Fallback on earlier versions
+		}
 		/// 加载数据
 		loadData()
     }
@@ -41,7 +46,7 @@ class JRBookShelfViewController: JRBaseViewController {
 		
 		/// 加载内置书
 		JRInternalBookModel.loadInternalBook { (list: [JRInternalBookModel]?, isSuccess: Bool) in
-			
+
 			MBProgressHUD.hide(for: self.view, animated: true)
 			
 			guard let list = list else {
@@ -53,6 +58,13 @@ class JRBookShelfViewController: JRBaseViewController {
 			self.collectionView?.reloadData()
 		}
 	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+//		UIApplication.shared.setStatusBarHidden(false, with: .none)
+		navigationController?.navigationBar.isHidden = false
+	}
+
 }
 
 // MARK: - 初始化界面
@@ -62,7 +74,6 @@ extension JRBookShelfViewController {
 	fileprivate func setupUI() {
 		
 		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//		view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
 		
 		/// layout
 		layout = UICollectionViewFlowLayout()
@@ -148,11 +159,13 @@ extension JRBookShelfViewController {
 				break
 		}
 	}
+
 }
 
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+	
 	@available(iOS 6.0, *)
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		guard let models = listModel else {
@@ -172,6 +185,7 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		return cell
 	}
 	
+	/// 点击 cell
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 	
 		guard
@@ -182,7 +196,13 @@ extension JRBookShelfViewController: UICollectionViewDataSource, UICollectionVie
 		let model = models[indexPath.row]
 
 		/// 打开书架书籍
-		openBookCover(model, indexPath: indexPath)
+//		openBookCover(model, indexPath: indexPath)
+		
+		let readerVC = JRReaderViewController()
+		readerVC.title 		= model.name
+		readerVC.bookModel 	= model
+		readerVC.hidesBottomBarWhenPushed = true
+		navigationController?.pushViewController(readerVC, animated: true)
 	}
 
 	/// 是否可移动

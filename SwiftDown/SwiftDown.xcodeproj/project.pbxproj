@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		302302F51E695FF000EC661B /* JRBookShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F21E695FF000EC661B /* JRBookShelfViewController.swift */; };
 		302302F71E696CB100EC661B /* JRInternalBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302302F61E696CB100EC661B /* JRInternalBookModel.swift */; };
+		3029D70D1F6EC5660034EAF2 /* JRBookChapterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029D7061F6EC5660034EAF2 /* JRBookChapterModel.swift */; };
+		3029D70E1F6EC5660034EAF2 /* JRBookPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029D7071F6EC5660034EAF2 /* JRBookPageModel.swift */; };
+		3029D70F1F6EC5660034EAF2 /* JRReadPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029D7091F6EC5660034EAF2 /* JRReadPageCell.swift */; };
+		3029D7101F6EC5660034EAF2 /* JRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3029D70C1F6EC5660034EAF2 /* JRReaderViewController.swift */; };
 		304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */; };
 		307B2C801E66D6E200A90FC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C7E1E66D6E200A90FC5 /* Main.storyboard */; };
 		307B2C821E66D6E300A90FC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C811E66D6E300A90FC5 /* Assets.xcassets */; };
 		307B2C851E66D6E300A90FC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307B2C831E66D6E300A90FC5 /* LaunchScreen.storyboard */; };
+		30E12DA31F6D7C320037FB7B /* JRBookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E12DA21F6D7C320037FB7B /* JRBookServer.swift */; };
 		30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */; };
 		30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEF6EE1E7141C5003064A3 /* JRWebView.swift */; };
 		30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */; };
@@ -70,12 +75,17 @@
 		25705CE4576130F068A9CC3C /* Pods-SwiftDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftDown/Pods-SwiftDown.release.xcconfig"; sourceTree = "<group>"; };
 		302302F21E695FF000EC661B /* JRBookShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfViewController.swift; sourceTree = "<group>"; };
 		302302F61E696CB100EC661B /* JRInternalBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRInternalBookModel.swift; sourceTree = "<group>"; };
+		3029D7061F6EC5660034EAF2 /* JRBookChapterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookChapterModel.swift; sourceTree = "<group>"; };
+		3029D7071F6EC5660034EAF2 /* JRBookPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookPageModel.swift; sourceTree = "<group>"; };
+		3029D7091F6EC5660034EAF2 /* JRReadPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRReadPageCell.swift; sourceTree = "<group>"; };
+		3029D70C1F6EC5660034EAF2 /* JRReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRReaderViewController.swift; sourceTree = "<group>"; };
 		304B596A1E7CF8EC00C54ACD /* JRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JRProgressHUD.swift; path = SwiftDown/Product/JRBaseModule/Controllers/JRProgressHUD.swift; sourceTree = SOURCE_ROOT; };
 		307B2C771E66D6E200A90FC5 /* SwiftDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307B2C7F1E66D6E200A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		307B2C811E66D6E300A90FC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307B2C841E66D6E300A90FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307B2C861E66D6E300A90FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30E12DA21F6D7C320037FB7B /* JRBookServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRBookServer.swift; sourceTree = "<group>"; };
 		30EEF6EB1E7120DC003064A3 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +196,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3029D7051F6EC5660034EAF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3029D7061F6EC5660034EAF2 /* JRBookChapterModel.swift */,
+				3029D7071F6EC5660034EAF2 /* JRBookPageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3029D7081F6EC5660034EAF2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3029D7091F6EC5660034EAF2 /* JRReadPageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3029D70A1F6EC5660034EAF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3029D70B1F6EC5660034EAF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3029D70C1F6EC5660034EAF2 /* JRReaderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		307B2C6E1E66D6E200A90FC5 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +265,18 @@
 				C4151B701E670C6500DF6E36 /* SwiftDemo-Bridge.h */,
 			);
 			name = SupportFile;
+			sourceTree = "<group>";
+		};
+		30E12D9D1F6D367F0037FB7B /* JRReaderModule(阅读器) */ = {
+			isa = PBXGroup;
+			children = (
+				3029D70B1F6EC5660034EAF2 /* Controllers */,
+				3029D7051F6EC5660034EAF2 /* Models */,
+				3029D7081F6EC5660034EAF2 /* Cells */,
+				3029D70A1F6EC5660034EAF2 /* Views */,
+				30E12DA21F6D7C320037FB7B /* JRBookServer.swift */,
+			);
+			path = "JRReaderModule(阅读器)";
 			sourceTree = "<group>";
 		};
 		30EEF6EA1E7120A7003064A3 /* Extension */ = {
@@ -347,14 +401,6 @@
 			path = JRForumSubVC;
 			sourceTree = "<group>";
 		};
-		34F5EC071F60E4D30091FC81 /* JRReaderModule(阅读器) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "JRReaderModule(阅读器)";
-			path = JRReaderModule;
-			sourceTree = "<group>";
-		};
 		34FCA1191E892004009AA44E /* SwiftMainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,7 +441,7 @@
 			children = (
 				C4151B381E67078800DF6E36 /* AppDelegate.swift */,
 				C4151B3E1E67078800DF6E36 /* ViewController.swift */,
-				34F5EC071F60E4D30091FC81 /* JRReaderModule(阅读器) */,
+				30E12D9D1F6D367F0037FB7B /* JRReaderModule(阅读器) */,
 				C4151B441E6709CA00DF6E36 /* JRMainModule(框架) */,
 				C4151B411E67096F00DF6E36 /* JRBaseModule(基类) */,
 				C4151B391E67078800DF6E36 /* JRBookShelf(书架) */,
@@ -685,7 +731,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -698,6 +744,7 @@
 				341FDE761F66A7B3007DF3F2 /* JRForumPicViewController.swift in Sources */,
 				341FDE771F66A7B3007DF3F2 /* JRForumAllViewController.swift in Sources */,
 				341FDE781F66A7B3007DF3F2 /* JRForumTopViewController.swift in Sources */,
+				30E12DA31F6D7C320037FB7B /* JRBookServer.swift in Sources */,
 				341FDE751F66A791007DF3F2 /* JRForumViewController.swift in Sources */,
 				C4151B461E6709EE00DF6E36 /* JRMainViewController.swift in Sources */,
 				348D3B301F554B80007DD89E /* JRBookCoverTransition.swift in Sources */,
@@ -709,9 +756,12 @@
 				C491D10A1E6DB5C600F05C2E /* JRTableView.swift in Sources */,
 				C42DB6A81E67A018008E277E /* JRNetWorkURL.swift in Sources */,
 				30F9F3871E7BD48B00FB36C0 /* JRTestViewController.swift in Sources */,
+				3029D70E1F6EC5660034EAF2 /* JRBookPageModel.swift in Sources */,
 				349E98BE1F5CF37A0059F483 /* JRBookCoverHeader.swift in Sources */,
 				304B596B1E7CF8EC00C54ACD /* JRProgressHUD.swift in Sources */,
 				34FCA11C1E892004009AA44E /* JRSwiftViewController.swift in Sources */,
+				3029D70D1F6EC5660034EAF2 /* JRBookChapterModel.swift in Sources */,
+				3029D70F1F6EC5660034EAF2 /* JRReadPageCell.swift in Sources */,
 				3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */,
 				C4151B681E670C1800DF6E36 /* NSString+CZHash.m in Sources */,
 				349E98BC1F5CF14B0059F483 /* JRScreen.swift in Sources */,
@@ -724,6 +774,7 @@
 				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
 				34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */,
 				348D3B341F554C4A007DD89E /* JRBookCoverPresentation.swift in Sources */,
+				3029D7101F6EC5660034EAF2 /* JRReaderViewController.swift in Sources */,
 				30EEF6EC1E7120DD003064A3 /* UIScreen+Extension.swift in Sources */,
 				C4151B781E670D8300DF6E36 /* JRPersonViewController.swift in Sources */,
 				34F5EC091F611B6C0091FC81 /* JRForumHeader.swift in Sources */,

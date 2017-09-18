@@ -15,5 +15,6 @@ platform :ios, '8.0'
   pod 'Alamofire'			, '~> 4.3.0'
   pod 'ReactiveCocoa'		, '6.0.1'
   pod 'HMSegmentedControl'	, '~> 1.5.3'
+  pod 'YYText'				, '~> 1.0.7'
 
 end
