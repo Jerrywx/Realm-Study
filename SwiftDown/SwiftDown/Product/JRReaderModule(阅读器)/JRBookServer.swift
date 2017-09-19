@@ -42,7 +42,10 @@ class JRBookServer: NSObject {
 	/// 加载章节内容
 	///
 	/// - Parameter chapterId: 章节ID
-	static func loadChapter(bookId: String, chapters:[JRBookChapterModel] , type: String = "0") {
+	static func loadChapter(bookId: String,
+	                        chapters:[JRBookChapterModel],
+	                        type: String = "0", 
+	                        completion: @escaping (_ isSuccess: Bool) -> ()) {
 
 		/// 参数判断
 		if bookId.characters.count == 0 || chapters.count == 0 {
@@ -99,12 +102,18 @@ class JRBookServer: NSObject {
 						
 						i = i + 1
 					}
+					
+					completion(true)
+				} else {
+					completion(false)
 				}
+			} else {
+				completion(false)
 			}
 		}
 	}
 	
-	///
+	/// 解析章节数据
 	static func operatorModels(model: JRBookChapterDetial) -> [JRBookPageModel] {
 		
 		/// 段落
@@ -115,6 +124,10 @@ class JRBookServer: NSObject {
 		
 		let attri = [NSFontAttributeName: UIFont.systemFont(ofSize: 15),
 		             NSParagraphStyleAttributeName:paragraphStyle]
+		
+		if model.content == nil {
+			return [JRBookPageModel]()
+		}
 		
 		/// 属性字符串
 		let maString = NSMutableAttributedString(string: model.content!, attributes: attri)

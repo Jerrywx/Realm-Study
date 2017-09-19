@@ -54,6 +54,7 @@ extension JRReadPageCell {
 		label.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 		
 		content.numberOfLines = 0
+		content.displaysAsynchronously = true
 		content.textVerticalAlignment = .top
 		contentView.addSubview(content)
 		

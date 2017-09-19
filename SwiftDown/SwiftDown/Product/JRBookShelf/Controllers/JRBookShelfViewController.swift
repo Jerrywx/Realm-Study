@@ -30,7 +30,7 @@ class JRBookShelfViewController: JRBaseViewController {
 		/// 初始化界面
 		setupUI()
 		if #available(iOS 11.0, *) {
-			collectionView?.contentInsetAdjustmentBehavior = .automatic
+//			collectionView?.contentInsetAdjustmentBehavior = .automatic
 		} else {
 			// Fallback on earlier versions
 		}

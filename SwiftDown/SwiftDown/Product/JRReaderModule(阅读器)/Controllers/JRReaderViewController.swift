@@ -57,12 +57,10 @@ extension JRReaderViewController {
 			let model:JRBookChapterModel = list.first!
 			let chapters = [list[0], list[1], list[2]]
 
-			JRBookServer.loadChapter(bookId: model.bookId!, chapters: chapters)
-//			print("\(list[0].pageList)")
-//			print("\(list[1].pageList)")
-//			print("\(list[2].pageList)")
-			
-			self.collectionView?.reloadData()
+			/// 下载前三章节
+			JRBookServer.loadChapter(bookId: model.bookId!, chapters: chapters, completion: { (isSuccess:Bool) in
+				self.collectionView?.reloadData()
+			})
 		}
 	}
 }
@@ -92,7 +90,7 @@ extension JRReaderViewController {
 		view.addSubview(collectionView!)
 		
 		if #available(iOS 11.0, *) {
-			collectionView?.contentInsetAdjustmentBehavior = .never
+//			collectionView?.contentInsetAdjustmentBehavior = .never
 		}
 	}
 
@@ -119,7 +117,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 		
 		let model = list[section + chapterOffset]
 		
-		if model.pageList != nil {
+		if model.pageList != nil && (model.pageList?.count)! > 0 {
 			return (model.pageList?.count)!
 		}
 		
@@ -164,12 +162,9 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			cell.indexPath = indexPath
 		}
 		
-		
-		
 		return cell
 	}
-	
-	
+
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		if indexPath.section == 0 {
 			collectionView.reloadData()
@@ -294,22 +289,21 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 //		}
 	}
 
-	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+	///
+	func collectionView(_ collectionView: UICollectionView, 
+	                    willDisplay cell: UICollectionViewCell, 
+	                    forItemAt indexPath: IndexPath) {
 		
-		print("--------------- \(indexPath)");
+		///
+		print("--------- \(indexPath)")
+		
 		guard
 			let cel: JRReadPageCell = cell as? JRReadPageCell
-			else {
-				return
-		}
-		
-		print("--------------- 1");
+			else { return }
 		guard
 			let chapterIndex = cel.index
-		else {
-				return
-		}
-		print("--------------- 2");
+		else { return }
+
 		/// 大于时
 		if indexPath.section >= maxChapter {
 			// 21 15
@@ -318,9 +312,17 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			                                with: nil,
 			                                waitUntilDone: false)
 			let y = collectionView.contentOffset.y
-			let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
-			let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * 10 + of)
+//			let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
+			
+			let pageCount = topPage(section: indexPath.section) - 1
+//			let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount) + of)
+			let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 			collectionView.contentOffset = point
+			
+			
+//			let indexPath = IndexPath(row: 0, section: 11)
+//			collectionView.scrollToItem(at: indexPath, at: .top, animated: false)
+//
 		}
 		
 		/// 小于时
@@ -336,8 +338,11 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				                                with: nil,
 				                                waitUntilDone: false)
 				let y = collectionView.contentOffset.y
-				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
-				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(chapterIndex - 1) + of)
+//				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
+//				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(chapterIndex - 1) + of)
+				
+				let pageCount = topPage(section: indexPath.section) - 1
+				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 				collectionView.contentOffset = point
 				
 			} else {
@@ -346,14 +351,71 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				                                with: nil,
 				                                waitUntilDone: false)
 				let y = collectionView.contentOffset.y
-				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
-				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * 10 + of)
+//				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
+//				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * 10 + of)
+				let pageCount = topPage(section: indexPath.section) - 1
+				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 				collectionView.contentOffset = point
 			}
 		}
-		print("--------------- 3");
+	
+		//// 加载未加载章节
+		loadNewChapter(index: indexPath.section + chapterOffset)
+		
+	}
+	
+	func topPage(section: Int) -> Int {
+		
+		var numb = 0
+		
+		for i in chapterOffset..<chapterOffset + 11 {
+			print("---------_AAAAAAAAAAAAAAA \(i)")
+			let model = chapterList?[i]
+			
+			if model?.pageList == nil {
+				numb = numb + 1
+				print("========================================== \(i) -- 1")
+			} else {
+				numb = numb + (model?.pageList?.count)!
+				print("========================================== \(i) -- \((model?.pageList?.count)!)")
+			}
+		}
+		return numb
+	}
+	
+	
+	/// 加载指定章节
+	///
+	/// - Parameter index: 章节索引
+	func loadNewChapter(index: Int) {
+		
+		///
+		let model:JRBookChapterModel = (chapterList?[index])!
+		
+		if model.isDowload {
+			return
+		}
+		
+		JRBookServer.loadChapter(bookId: model.bookId!, chapters: [model], completion: { (isSuccess:Bool) in
+
+			var ind = index
+			if index >= self.maxChapter {
+				ind = index - self.chapterOffset
+			}
+			
+			let indexSet = NSIndexSet(index: ind)
+			print("================== AAA \(indexSet)")
+			self.collectionView?.reloadSections(indexSet as IndexSet)
+		})
+		
 	}
 	
 }
+
+
+
+
+
+
 
 
