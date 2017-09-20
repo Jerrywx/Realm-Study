@@ -314,7 +314,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			let y = collectionView.contentOffset.y
 //			let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
 			
-			let pageCount = topPage(section: indexPath.section) - 1
+			let pageCount = topPage(section: indexPath.section, count: 11) - 1
 //			let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount) + of)
 			let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 			collectionView.contentOffset = point
@@ -341,7 +341,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 //				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
 //				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(chapterIndex - 1) + of)
 				
-				let pageCount = topPage(section: indexPath.section) - 1
+				let pageCount = topPage(section: indexPath.section, count: chapterIndex)
 				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 				collectionView.contentOffset = point
 				
@@ -351,9 +351,8 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				                                with: nil,
 				                                waitUntilDone: false)
 				let y = collectionView.contentOffset.y
-//				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
-//				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * 10 + of)
-				let pageCount = topPage(section: indexPath.section) - 1
+				
+				let pageCount = topPage(section: indexPath.section, count: 12)
 				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))
 				collectionView.contentOffset = point
 			}
@@ -364,20 +363,17 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 		
 	}
 	
-	func topPage(section: Int) -> Int {
+	func topPage(section: Int, count: Int) -> Int {
 		
 		var numb = 0
 		
-		for i in chapterOffset..<chapterOffset + 11 {
-			print("---------_AAAAAAAAAAAAAAA \(i)")
+		for i in chapterOffset..<chapterOffset + count {
 			let model = chapterList?[i]
 			
 			if model?.pageList == nil {
 				numb = numb + 1
-				print("========================================== \(i) -- 1")
 			} else {
 				numb = numb + (model?.pageList?.count)!
-				print("========================================== \(i) -- \((model?.pageList?.count)!)")
 			}
 		}
 		return numb
@@ -405,7 +401,10 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			
 			let indexSet = NSIndexSet(index: ind)
 			print("================== AAA \(indexSet)")
-			self.collectionView?.reloadSections(indexSet as IndexSet)
+			
+			self.collectionView?.performBatchUpdates({
+				self.collectionView?.reloadSections(indexSet as IndexSet)
+			}, completion: nil)
 		})
 		
 	}
