@@ -53,6 +53,15 @@ class JRBookShelfViewController: JRBaseViewController {
 				return;
 			}
 			self.listModel = list
+			
+			
+			let mm = JRInternalBookModel()
+			mm.name = "神品透视"
+			mm.bookId = "567556"
+			mm.picUrl = "http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/x/xv8ntbbe9ccug5o.jpg"
+			self.listModel?.append(mm)
+
+			
 //			self.listModel?.append(contentsOf: list)
 
 			self.collectionView?.reloadData()

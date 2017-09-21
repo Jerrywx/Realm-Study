@@ -63,7 +63,7 @@ extension JRReaderViewController {
 				let list = models
 			else { return }
 			self.chapterList = list
-
+			/// 567556
 			/// 下载第一章节
 			let model:JRBookChapterModel = list.first!
 			let chapters = [list[0], list[1], list[2]]
@@ -102,7 +102,7 @@ extension JRReaderViewController {
 		view.addSubview(collectionView!)
 		
 		if #available(iOS 11.0, *) {
-//			collectionView?.contentInsetAdjustmentBehavior = .never
+			collectionView?.contentInsetAdjustmentBehavior = .never
 		}
 		
 		/// 添加点击事件
