@@ -28,6 +28,12 @@ class JRReaderViewController: JRBaseViewController {
 	var chapterList: [JRBookChapterModel]?
 	
 	
+	/// 头部View
+	let topView: JRBookReadTopView = JRBookReadTopView.bookReadTopView()
+	/// 底部View
+	let bottomView: JRBookReadBottomView = JRBookReadBottomView.bookReaedBottomView()
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupUI()
@@ -92,8 +98,22 @@ extension JRReaderViewController {
 		if #available(iOS 11.0, *) {
 //			collectionView?.contentInsetAdjustmentBehavior = .never
 		}
+		
+		/// 添加点击事件
+		let tap = UITapGestureRecognizer(target: self, action: #selector(openControlView))
+		collectionView?.addGestureRecognizer(tap)
+		
+		/// 添加 控制view
+		view.addSubview(topView)
+		view.addSubview(bottomView)
 	}
 
+	/// 打开控制View
+	func openControlView() {
+		topView.appear = !topView.appear;
+		bottomView.appear = !bottomView.appear;
+	}
+	
 	/// 隐藏导航栏
 	override var prefersStatusBarHidden: Bool {
 		return true
@@ -166,9 +186,9 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 	}
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		if indexPath.section == 0 {
-			collectionView.reloadData()
-		}
+//		if indexPath.section == 0 {
+//			collectionView.reloadData()
+//		}
 	}
 	
 	/// 滑动停止
@@ -311,7 +331,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			collectionView.performSelector(onMainThread: #selector(collectionView.reloadData),
 			                                with: nil,
 			                                waitUntilDone: false)
-			let y = collectionView.contentOffset.y
+//			let y = collectionView.contentOffset.y
 //			let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
 			
 			let pageCount = topPage(section: indexPath.section, count: 11) - 1
@@ -337,7 +357,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				collectionView.performSelector(onMainThread: #selector(collectionView.reloadData),
 				                                with: nil,
 				                                waitUntilDone: false)
-				let y = collectionView.contentOffset.y
+//				let y = collectionView.contentOffset.y
 //				let of = y - UIScreen.main.bounds.size.height * CGFloat((indexPath.section - 1))
 //				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(chapterIndex - 1) + of)
 				
@@ -350,7 +370,7 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 				collectionView.performSelector(onMainThread: #selector(collectionView.reloadData),
 				                                with: nil,
 				                                waitUntilDone: false)
-				let y = collectionView.contentOffset.y
+//				let y = collectionView.contentOffset.y
 				
 				let pageCount = topPage(section: indexPath.section, count: 12)
 				let point = CGPoint(x: 0, y: UIScreen.main.bounds.size.height * CGFloat(pageCount))

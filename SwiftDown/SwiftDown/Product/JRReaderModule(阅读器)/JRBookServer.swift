@@ -141,7 +141,6 @@ class JRBookServer: NSObject {
 		var currentOffset:Int		= 0;
 		var currentInnerOffset:Int	= 0;
 		var hasMorePages: Bool		= true;
-		var pageNumb:Int = 1
 		
 		var mArrays = [JRBookPageModel]()
 		var index = 1

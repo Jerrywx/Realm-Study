@@ -27,6 +27,9 @@
 		341FDE771F66A7B3007DF3F2 /* JRForumAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A51F66710B00D34EAC /* JRForumAllViewController.swift */; };
 		341FDE781F66A7B3007DF3F2 /* JRForumTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E906A61F66710B00D34EAC /* JRForumTopViewController.swift */; };
 		343CC07C1F4579AD00FD69D7 /* JRBookShelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */; };
+		3454CEEE1F73BAEE00718B61 /* JRBookReadTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454CEED1F73BAEE00718B61 /* JRBookReadTopView.swift */; };
+		3454CEF01F73BAFA00718B61 /* JRBookReadBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454CEEF1F73BAFA00718B61 /* JRBookReadBottomView.swift */; };
+		3454CEF31F73C1DC00718B61 /* JRBookLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454CEF21F73C1DC00718B61 /* JRBookLogViewController.swift */; };
 		3479A7C41F5506D300E373B8 /* JRBookCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */; };
 		347A1D161F5F95DE0099E20D /* JRTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D151F5F95DE0099E20D /* JRTestView.swift */; };
 		347A1D181F5F9D370099E20D /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */; };
@@ -93,6 +96,9 @@
 		30EEF6EE1E7141C5003064A3 /* JRWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRWebView.swift; sourceTree = "<group>"; };
 		30F9F3861E7BD48B00FB36C0 /* JRTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestViewController.swift; sourceTree = "<group>"; };
 		343CC07B1F4579AD00FD69D7 /* JRBookShelfCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookShelfCell.swift; sourceTree = "<group>"; };
+		3454CEED1F73BAEE00718B61 /* JRBookReadTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookReadTopView.swift; sourceTree = "<group>"; };
+		3454CEEF1F73BAFA00718B61 /* JRBookReadBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookReadBottomView.swift; sourceTree = "<group>"; };
+		3454CEF21F73C1DC00718B61 /* JRBookLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookLogViewController.swift; sourceTree = "<group>"; };
 		3479A7C11F5506D300E373B8 /* JRBookCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRBookCoverController.swift; sourceTree = "<group>"; };
 		347A1D151F5F95DE0099E20D /* JRTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRTestView.swift; sourceTree = "<group>"; };
 		347A1D171F5F9D370099E20D /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
@@ -218,13 +224,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3029D70A1F6EC5660034EAF2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		3029D70B1F6EC5660034EAF2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,10 +274,11 @@
 		30E12D9D1F6D367F0037FB7B /* JRReaderModule(阅读器) */ = {
 			isa = PBXGroup;
 			children = (
+				3454CEF11F73C1BF00718B61 /* BookLog(书籍目录) */,
 				3029D70B1F6EC5660034EAF2 /* Controllers */,
 				3029D7051F6EC5660034EAF2 /* Models */,
 				3029D7081F6EC5660034EAF2 /* Cells */,
-				3029D70A1F6EC5660034EAF2 /* Views */,
+				3454CEEC1F73BAE000718B61 /* Views */,
 				30E12DA21F6D7C320037FB7B /* JRBookServer.swift */,
 			);
 			path = "JRReaderModule(阅读器)";
@@ -301,6 +301,24 @@
 				347A1D191F5FD61C0099E20D /* JRWebViewViewController.swift */,
 			);
 			path = JRWebKitModule;
+			sourceTree = "<group>";
+		};
+		3454CEEC1F73BAE000718B61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3454CEED1F73BAEE00718B61 /* JRBookReadTopView.swift */,
+				3454CEEF1F73BAFA00718B61 /* JRBookReadBottomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3454CEF11F73C1BF00718B61 /* BookLog(书籍目录) */ = {
+			isa = PBXGroup;
+			children = (
+				3454CEF21F73C1DC00718B61 /* JRBookLogViewController.swift */,
+			);
+			name = "BookLog(书籍目录)";
+			path = BookLog;
 			sourceTree = "<group>";
 		};
 		3479A7BC1F55063900E373B8 /* JRBookCoverModule(书封) */ = {
@@ -749,6 +767,7 @@
 			files = (
 				341FDE761F66A7B3007DF3F2 /* JRForumPicViewController.swift in Sources */,
 				341FDE771F66A7B3007DF3F2 /* JRForumAllViewController.swift in Sources */,
+				3454CEF31F73C1DC00718B61 /* JRBookLogViewController.swift in Sources */,
 				341FDE781F66A7B3007DF3F2 /* JRForumTopViewController.swift in Sources */,
 				30E12DA31F6D7C320037FB7B /* JRBookServer.swift in Sources */,
 				341FDE751F66A791007DF3F2 /* JRForumViewController.swift in Sources */,
@@ -778,6 +797,7 @@
 				C4151B651E670C1800DF6E36 /* NSAttributedString+CZAdditon.m in Sources */,
 				C4151B671E670C1800DF6E36 /* NSString+CZBase64.m in Sources */,
 				C4151B661E670C1800DF6E36 /* NSObject+CZRuntime.m in Sources */,
+				3454CEF01F73BAFA00718B61 /* JRBookReadBottomView.swift in Sources */,
 				C4151B401E67078800DF6E36 /* ViewController.swift in Sources */,
 				C4151B741E670D4D00DF6E36 /* JRBookShopViewController.swift in Sources */,
 				34FCA11F1E8921F8009AA44E /* SwiftCollectionType.swift in Sources */,
@@ -798,6 +818,7 @@
 				34F5EC0B1F611F840091FC81 /* JRForumSegment.swift in Sources */,
 				C4151B6E1E670C1800DF6E36 /* UIView+CZAddition.m in Sources */,
 				C4151B691E670C1800DF6E36 /* NSString+CZPath.m in Sources */,
+				3454CEEE1F73BAEE00718B61 /* JRBookReadTopView.swift in Sources */,
 				30EEF6EF1E7141C5003064A3 /* JRWebView.swift in Sources */,
 				34E906A91F66713800D34EAC /* JRForumSubController.swift in Sources */,
 				348D3B321F554BC2007DD89E /* JRBookCoverTransitionAnimated.swift in Sources */,

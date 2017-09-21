@@ -308,7 +308,7 @@ extension JRForumViewController {
 //		print(string)
 		/// 指定动画
 		
-		var p = startPosition + location
+		let p = startPosition + location
 //		if !direction {
 //			p = location - location
 //		}
