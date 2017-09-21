@@ -40,6 +40,11 @@ class JRReaderViewController: JRBaseViewController {
 		
 		loadData()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		navigationController?.navigationBar.y = -64
+	}
 }
 
 /// 加载数据
@@ -78,8 +83,9 @@ extension JRReaderViewController {
 	func setupUI() {
 		///
 		view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-		navigationController?.navigationBar.isHidden = true
-		
+		automaticallyAdjustsScrollViewInsets = false
+//		navigationController?.navigationBar.isHidden = true
+
 		/// layout
 		layout.minimumLineSpacing = 0
 		layout.minimumInteritemSpacing = 0
@@ -106,6 +112,7 @@ extension JRReaderViewController {
 		/// 添加 控制view
 		view.addSubview(topView)
 		view.addSubview(bottomView)
+		bottomView.delegate = self
 	}
 
 	/// 打开控制View
@@ -427,6 +434,19 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			}, completion: nil)
 		})
 		
+	}
+	
+}
+
+/// 底部操作代理
+extension JRReaderViewController: JRBookReadBottomViewDelegate {
+	
+	func openOther(sender: UIButton) {
+		topView.appear = false
+		bottomView.appear = false
+		
+		let logVC = JRBookLogViewController()
+		navigationController?.pushViewController(logVC, animated: true)
 	}
 	
 }

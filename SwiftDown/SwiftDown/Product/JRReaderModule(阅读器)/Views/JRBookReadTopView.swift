@@ -41,7 +41,7 @@ extension JRBookReadTopView {
 	
 	///
 	func setupUI() {
-		 backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		 backgroundColor = UIColor.black.withAlphaComponent(0.6)
 	}
 	/// 显示 topView
 	func appearTopView() {

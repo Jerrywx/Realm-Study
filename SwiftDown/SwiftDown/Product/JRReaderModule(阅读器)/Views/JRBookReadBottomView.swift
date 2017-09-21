@@ -10,6 +10,8 @@ import UIKit
 
 class JRBookReadBottomView: UIView {
 
+	weak var delegate: JRReaderViewController?
+	
 	var appear:Bool = false {
 		didSet {
 			if appear {
@@ -19,8 +21,7 @@ class JRBookReadBottomView: UIView {
 			}
 		}
 	}
-	
-	
+
 	class func bookReaedBottomView() -> JRBookReadBottomView {
 	
 		let frame = CGRect(x: 0, y: UIScreen.screen_H(), width: UIScreen.scrren_W(), height: 111)
@@ -35,7 +36,21 @@ extension JRBookReadBottomView {
 	
 	///
 	func setupUI() {
-		backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+		backgroundColor = UIColor.black.withAlphaComponent(0.6)
+		
+		let count = 4
+		let w: CGFloat = UIScreen.scrren_W() / CGFloat(count)
+		let y: CGFloat = 40
+		let h: CGFloat = frame.size.height - y
+		
+		for i in 0..<count {
+			let x = CGFloat(i) * w
+			let button = UIButton(frame: CGRect(x: x, y: y, width: w, height: h))
+			button.tag = i
+			button.setTitle("目录", for: .normal)
+			button.addTarget(self, action: #selector(operateBookRead(sender:)), for: .touchUpInside)
+			addSubview(button)
+		}
 	}
 	
 	/// 显示底部
@@ -52,5 +67,21 @@ extension JRBookReadBottomView {
 		}
 	}
 	
+}
+
+extension JRBookReadBottomView {
+
+	/// 底部操作
+	func operateBookRead(sender: UIButton) {
+		delegate?.openOther(sender: sender)
+	}
+}
+
+
+/// JRWebView 代理协议
+@objc protocol JRBookReadBottomViewDelegate {
+
+	func openOther(sender:UIButton);
+
 }
 
