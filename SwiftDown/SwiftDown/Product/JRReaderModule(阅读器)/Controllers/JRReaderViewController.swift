@@ -446,6 +446,7 @@ extension JRReaderViewController: JRBookReadBottomViewDelegate {
 		bottomView.appear = false
 		
 		let logVC = JRBookLogViewController()
+		logVC.logArray = chapterList!
 		navigationController?.pushViewController(logVC, animated: true)
 	}
 	
