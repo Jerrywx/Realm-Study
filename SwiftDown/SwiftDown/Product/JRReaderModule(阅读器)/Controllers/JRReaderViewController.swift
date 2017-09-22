@@ -473,7 +473,12 @@ extension JRReaderViewController: JRBookReadBottomViewDelegate {
 }
 
 
-
+/// 章节跳转
+extension JRReaderViewController {
+	
+	
+	
+}
 
 
 
