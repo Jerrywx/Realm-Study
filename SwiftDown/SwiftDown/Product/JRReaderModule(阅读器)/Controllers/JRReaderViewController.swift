@@ -101,9 +101,9 @@ extension JRReaderViewController {
 		collectionView?.register(JRReadPageCell.self, forCellWithReuseIdentifier: "cell")
 		view.addSubview(collectionView!)
 		
-		if #available(iOS 11.0, *) {
-			collectionView?.contentInsetAdjustmentBehavior = .never
-		}
+//		if #available(iOS 11.0, *) {
+//			collectionView?.contentInsetAdjustmentBehavior = .never
+//		}
 		
 		/// 添加点击事件
 		let tap = UITapGestureRecognizer(target: self, action: #selector(openControlView))
@@ -429,9 +429,29 @@ extension JRReaderViewController: UICollectionViewDataSource, UICollectionViewDe
 			let indexSet = NSIndexSet(index: ind)
 			print("================== AAA \(indexSet)")
 			
-			self.collectionView?.performBatchUpdates({
-				self.collectionView?.reloadSections(indexSet as IndexSet)
-			}, completion: nil)
+			
+			let indexPath: IndexPath = NSIndexPath(row: 0, section: ind) as IndexPath
+			
+			let cell = self.collectionView?.cellForItem(at: indexPath)
+			
+			if cell == nil {
+				return
+			}
+			
+			let cell2 = cell as! JRReadPageCell
+			
+			let mm = cell2.chapterModel
+			
+			print("------AAAA:\(String(describing: mm?.chapterId!)) -- \(String(describing: mm?.name!)) --- \(String(describing: model.chapterId))")
+			
+			
+			self.collectionView?.reloadData()
+//			self.collectionView?.performBatchUpdates({
+//				self.collectionView?.reloadSections(indexSet as IndexSet)
+//			}, completion: nil)
+//			self.collectionView?.performSelector(onMainThread: #selector(self.collectionView?.reloadSections(_:)),
+//			                                     with: indexSet,
+//			                                     waitUntilDone: false)
 		})
 		
 	}
